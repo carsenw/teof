@@ -1,0 +1,335 @@
+{
+    "info": [
+        {"showState": "", "focus": "view", "changeVariable": "", "x": 0, "xChange": 0, "y": 0, "yChange": 0, "width": 0, "widthChange": 0, "height": 0, "heightChange": 0, "rectColor": {"h": 0, "s": 0, "b": 100, "a": 1}, "textString": "", "textVariable": "", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 0, "a": 1}, "buttonAction": "", "hoverColor": {"h": 0, "s": 0, "b": 75, "a": 1}},
+        
+        {"showState": "title", "width": 1, "height": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.25}, "textString": "The Essence of Frequency (Prototype)", "textPaddingScale": 0.3, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "title", "y": 0.1, "width": 1, "height": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Carsen's CSC30 Major Project", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "title", "y": 0.3, "width": 0.25, "height": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Play", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "enterWorld", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 50, "b": 40, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "portalLevelName", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": -0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# BPM", "textVariable": "portalLevelTempo", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": 0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# minor", "textVariable": "portalLevelKey", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
+        
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 50, "b": 40, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Completed: #", "textVariable": "portalLevelCompleted", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": 0.04, "widthChange": 0.48, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Click to play", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}, "buttonAction": "enterLevel", "hoverColor": {"h": "portalColorH", "s": 50, "b": 30, "a": 1}},
+
+        {"showState": "world", "x": 0.35, "y": -0.4625, "width": 0.3, "height": 0.075, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "Levels completed: #", "textVariable": "totalLevelsCompleted", "textColor": {"h": 0, "s": 0, "b": 0, "a": 1}},
+        {"showState": "world", "changeVariable": "paused", "x": -0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "textColor": {"h": 0, "s": 0, "b": 0, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
+        
+        {"showState": "world", "changeVariable": "paused", "yChange": 0, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
+        {"showState": "world", "changeVariable": "paused", "yChange": -0.15, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Game paused", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "world", "changeVariable": "paused", "yChange": 0, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Resume", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+        {"showState": "world", "changeVariable": "paused", "yChange": 0.15, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Back to title", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "exitWorld", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+
+        {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.35, "width": 0.5, "height": 0.2, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
+        {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.31, "width": 0.5, "height": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "levelName", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "level", "changeVariable": "levelIntro", "x": -0.375, "xChange": -0.5, "y": 0.39, "width": 0.25, "height": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# BPM", "textVariable": "levelTempo", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "level", "changeVariable": "levelIntro", "x": -0.125, "xChange": -0.5, "y": 0.39, "width": 0.25, "height": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# minor", "textVariable": "levelKey", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        
+        {"showState": "level", "changeVariable": "paused", "x": -0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "textColor": {"h": 0, "s": 0, "b": 0, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
+        
+        {"showState": "level", "changeVariable": "paused", "yChange": 0, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
+        {"showState": "level", "changeVariable": "paused", "yChange": -0.15, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Game paused", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "level", "changeVariable": "paused", "yChange": 0, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Resume", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+        {"showState": "level", "changeVariable": "paused", "yChange": 0.15, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Exit level", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "exitLevel", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+        
+        {"showState": "level", "changeVariable": "paused", "x": -0.25, "y": 0.31, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "levelName", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "level", "changeVariable": "paused", "x": -0.375, "y": 0.39, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# BPM", "textVariable": "levelTempo", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "level", "changeVariable": "paused", "x": -0.125, "y": 0.39, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# minor", "textVariable": "levelKey", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+
+        {"showState": "level", "x": 0, "y": 0.49, "width": 1, "height": 0.02, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": 0, "y": 0.49, "width": 0.99, "height": 0.01, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 1}},
+        {"showState": "level", "changeVariable": "levelProgress", "x": -0.495, "xChange": 0.495, "y": 0.49, "width": 0, "widthChange": 0.99, "height": 0.01, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}}
+    ],
+    "world": {
+        "walls": [
+            {
+                "isWorldBorder": true,
+                "color": {"h": 0, "s": 0, "b": 30},
+                "corners": [
+                    {"x": -200, "y": 200},
+                    {"x": -200, "y": -200},
+                    {"x": -1200, "y": -200},
+                    {"x": -1200, "y": -400},
+                    {"x": -1600, "y": -400},
+                    {"x": -1600, "y": 0},
+                    {"x": -2000, "y": 0},
+                    {"x": -2000, "y": -200},
+                    {"x": -2000, "y": -800},
+                    {"x": -1000, "y": -800},
+                    {"x": -1000, "y": -600},
+                    {"x": -600, "y": -600},
+                    {"x": -600, "y": -800},
+                    {"x": -200, "y": -800},
+                    {"x": -200, "y": -1400},
+                    {"x": -1000, "y": -1400},
+                    {"x": -1000, "y": -1800},
+                    {"x": -200, "y": -1800},
+                    {"x": 200, "y": -1800},
+                    {"x": 200, "y": -1400},
+                    {"x": 600, "y": -1400},
+                    {"x": 600, "y": -200},
+                    {"x": 200, "y": -200},
+                    {"x": 200, "y": 200}
+                ]
+            },
+            {
+                "isWorldBorder": false,
+                "color": {"h": 0, "s": 0, "b": 30},
+                "corners": [
+                    {"x": 0, "y": -600},
+                    {"x": 400, "y": -600},
+                    {"x": 400, "y": -1000},
+                    {"x": 0, "y": -1000}
+                ]
+            }
+        ],
+        "portals": [
+            {"levelIndex": 0, "x": -1800, "y": -200},
+            {"levelIndex": 0, "x": -800, "y": -1600}
+        ],
+        "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
+        "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
+        "startView": {"x": 0, "y": 0, "size": 800},
+        "startGameTime": {"time": 0, "timeOffset": 0, "paused": false, "pauseTime": 0, "pausedPending": false},
+        "startTransition": {"duration": 1000, "color": {"h": 0, "s": 0, "b": 0}, "active": false, "switchTime": 0}
+    },
+    "levels": {
+        "playerProperties": {"size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
+        "capsuleProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 40}},
+        "pathProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 30}},
+        "introProperties": {"duration": 5000, "infoAnimateTime": 1000},
+        "levelProperties": [
+            {
+                "details": {"name": "Maneuvers", "minorKey": "D", "tempo": 132, "colorH": 216},
+                "capsulePath": [
+                    {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 100, "bdSize": 40, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                    {"timeBeat": 8, "x": 200},
+
+                    {"timeBeat": 16, "x": 400, "bdColorBack": {"s": 50, "b": 10}, "bdColorFront": {"s": 100, "b": 10}},
+                    {"timeBeat": 24, "x": 600},
+
+                    {"timeBeat": 32, "x": 800, "capsuleW": 250, "capsuleH": 250},
+                    {"timeBeat": 36, "x": 900, "bdSize": 30},
+                    {"timeBeat": 40, "x": 1000},
+                    {"timeBeat": 44, "x": 1100, "bdSize": 40},
+                    {"timeBeat": 48, "x": 1200},
+                    {"timeBeat": 52, "x": 1300, "bdSize": 30},
+                    {"timeBeat": 56, "x": 1400},
+                    {"timeBeat": 60, "x": 1500, "bdSize": 40},
+
+                    {"timeBeat": 64, "x": 1600, "capsuleW": 200, "capsuleH": 200, "bdSize": 60, "bdColorBack": {"s": 75, "b": 15}, "bdColorFront": {"s": 100, "b": 15}, "viewSize": 900},
+                    {"timeBeat": 68, "y": 200, "bdAngle": 90},
+                    {"timeBeat": 72, "y": 400},
+                    {"timeBeat": 76, "x": 1800, "bdAngle": 0},
+                    {"timeBeat": 80, "x": 2000},
+                    {"timeBeat": 84, "y": 600, "bdAngle": 90},
+                    {"timeBeat": 88, "y": 800},
+                    {"timeBeat": 92, "x": 1800, "bdAngle": 0},
+                    
+                    {"timeBeat": 96, "x": 1600},
+                    {"timeBeat": 100, "y": 1000, "bdAngle": 90},
+                    {"timeBeat": 104, "y": 1200},
+                    {"timeBeat": 108, "x": 1400, "bdAngle": 0},
+                    {"timeBeat": 112, "x": 1200},
+                    {"timeBeat": 116, "y": 1000, "bdAngle": 90},
+                    {"timeBeat": 120, "y": 800},
+                    {"timeBeat": 124, "x": 1000, "bdAngle": 0},
+
+                    {"timeBeat": 128, "x": 800, "bdSize": 80, "bdColorBack": {"s": 100, "b": 15}, "bdColorFront": {"s": 100, "b": 10}},
+                    {"timeBeat": 130, "x": 700, "capsuleW": 400},
+                    {"timeBeat": 132, "x": 600},
+                    {"timeBeat": 144, "y": 1400},
+                    {"timeBeat": 152, "x": 300, "y": 1800},
+                    {"timeBeat": 160, "x": 600, "y": 2200},
+                    {"timeBeat": 176, "y": 3000},
+                    {"timeBeat": 184, "x": 300, "y": 3400},
+                    {"timeBeat": 188, "x": 450, "y": 3600},
+                    {"timeBeat": 192, "x": 600, "y": 3800, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                ],
+                "attackSequences": {
+                    "boss": [
+                        {"startBeat": 0, "moveBeats": 32, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 100, "b": 100}, "shape": "maneuversBoss", "withCapsule": "none", "xStart": 1200, "yStart": 0, "wStart": 225, "hStart": 200, "angleStart": -90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"shape": "square", "xStart": 1125, "yStart": 125, "wStart": 25, "hStart": 50},
+                        {"yStart": -125},
+                        {"startBeat": 32, "moveBeats": 28, "shape": "maneuversBoss", "withCapsule": "move", "xStart": 400, "yStart": 0, "wStart": 225, "hStart": 200},
+                        {"moveBeats": 28, "fadeBeats": 1, "shape": "square", "xStart": 325, "yStart": 125, "wStart": 25, "hStart": 50},
+                        {"yStart": -125},
+
+                        {"startBeat": 60, "moveBeats": 4, "fadeBeats": 0, "shape": "maneuversBoss", "xStart": 0, "yStart": 0, "wStart": 225, "hStart": 200, "offsetXStart": 400, "offsetXMove": -100, "offsetAngleMove": -90},
+                        {"startBeat": 64, "moveBeats": 64, "yStart": -300, "angleStart": -180, "offsetXStart": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+
+                        {"startBeat": 128, "moveBeats": 2, "xMove": -300},
+                        {"startBeat": 130, "xStart": -300, "xMove": 0},
+                        {"startBeat": 132, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 136, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 138, "xStart": -300, "xMove": 0},
+                        {"startBeat": 140, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 144, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 146, "xStart": -300, "xMove": 0},
+                        {"startBeat": 148, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 152, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 154, "xStart": -300, "xMove": 0},
+                        {"startBeat": 156, "moveBeats": 4, "xStart": -300, "xMove": 600},
+
+                        {"startBeat": 160, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 162, "xStart": -300, "xMove": 0},
+                        {"startBeat": 164, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 168, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 170, "xStart": -300, "xMove": 0},
+                        {"startBeat": 172, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 176, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 178, "xStart": -300, "xMove": 0},
+                        {"startBeat": 180, "moveBeats": 4, "xStart": -300, "xMove": 600},
+                        {"startBeat": 184, "moveBeats": 2, "xStart": 300, "xMove": -600},
+                        {"startBeat": 186, "xStart": -300, "xMove": 0},
+                        {"startBeat": 188, "moveBeats": 4, "xStart": -300, "xMove": 600}
+                    ],
+                    "pillarWeave": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 4, "color": {"s": 100, "b": 100}, "shape": "square", "withCapsule": "start", "xStart": 200, "yStart": 100, "wStart": 25, "hStart": 200, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": -200, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 4, "yStart": -100},
+                        {"startBeat": 8, "yStart": 100},
+                        {"startBeat": 12, "yStart": -100}
+                    ],
+                    "oncomingScatter": [
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 4, "color": {"s": 100, "b": 100}, "shape": "squareArch", "withCapsule": "start", "xStart": 300, "yStart": 0, "wStart": 15, "hStart": 15, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": -400, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 1, "yStart": 100},
+                        {"startBeat": 2, "yStart": 0},
+                        {"startBeat": 3, "yStart": -100}
+                    ],
+                    "horizontalLasers": [
+                        {"startBeat": 0, "moveBeats": 0.25, "warnBeats": 2, "fadeBeats": 0.25, "color": {"s": 100, "b": 100}, "shape": "square", "withCapsule": "move", "xStart": -100, "yStart": -125, "wStart": 800, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 1, "yStart": 25},
+                        {"startBeat": 2, "yStart": -50},
+                        {"startBeat": 3, "yStart": 75},
+                        {"startBeat": 4, "yStart": 125},
+                        {"startBeat": 5, "yStart": -25},
+                        {"startBeat": 6, "yStart": 50},
+                        {"startBeat": 7, "yStart": -75}
+                    ],
+                    "verticalDoubleLasers": [
+                        {"startBeat": 0, "moveBeats": 0.25, "warnBeats": 4, "fadeBeats": 0.25, "color": {"s": 100, "b": 100}, "shape": "square", "withCapsule": "start", "xStart": 50, "yStart": 200, "wStart": 40, "hStart": 800, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 0, "xStart": -50}
+                    ],
+                    "squareRing": [
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 100, "b": 100}, "shape": "squareBump", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 25, "hStart": 25, "angleStart": -90, "offsetXStart": 100, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 90},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 4, "warnBeats": 0, "offsetAngleStart": 0, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 8, "offsetAngleStart": 0, "offsetAngleMove": -90},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 12, "offsetAngleStart": 0, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 16, "offsetAngleStart": 0, "offsetAngleMove": 90},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 20, "offsetAngleStart": 0, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 24, "offsetAngleStart": 0, "offsetAngleMove": -90},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270},
+                        {"startBeat": 28,"fadeBeats": 1, "offsetAngleStart": 0, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 270}
+                    ],
+                    "squareThrow": [
+                        {"startBeat": 2, "moveBeats": 2, "warnBeats": 2, "fadeBeats": 2, "color": {"s": 100, "b": 100}, "shape": "squareDivots", "withCapsule": "start", "xStart": 150, "yStart": -300, "wStart": 35, "hStart": 35, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 800, "wMove": 0, "hMove": 0, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"xStart": 50, "yStart": -450},
+                        {"xStart": -50, "yStart": -600},
+                        {"xStart": -150, "yStart": -750},
+
+                        {"startBeat": 2, "moveBeats": 2, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 100, "b": 100}, "shape": "square", "withCapsule": "start", "xStart": 150, "yStart": 1350, "wStart": 50, "hStart": 1800, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 1800, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"xStart": 50},
+                        {"xStart": -50},
+                        {"xStart": -150}
+                    ],
+                    "pillarSweep": [
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 2, "fadeBeats": 2, "color": {"s": 100, "b": 100}, "shape": "square", "withCapsule": "move", "xStart": -200, "yStart": -100, "wStart": 25, "hStart": 200, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 600, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"xStart": -400, "yStart": 100}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "boss", "startBeat": 0},
+                    {"sequence": "pillarWeave", "startBeat": 0},
+
+                    {"sequence": "pillarWeave", "startBeat": 16, "hStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 16},
+                    {"sequence": "oncomingScatter", "startBeat": 20},
+                    {"sequence": "oncomingScatter", "startBeat": 24},
+                    {"sequence": "oncomingScatter", "startBeat": 28},
+
+                    {"sequence": "horizontalLasers", "startBeat": 32},
+                    {"sequence": "horizontalLasers", "startBeat": 40},
+                    {"sequence": "oncomingScatter", "startBeat": 32},
+                    {"sequence": "oncomingScatter", "startBeat": 36},
+                    {"sequence": "oncomingScatter", "startBeat": 40},
+                    {"sequence": "oncomingScatter", "startBeat": 44},
+
+                    {"sequence": "horizontalLasers", "startBeat": 48},
+                    {"sequence": "oncomingScatter", "startBeat": 48},
+                    {"sequence": "oncomingScatter", "startBeat": 52},
+                    {"sequence": "oncomingScatter", "startBeat": 56},
+
+                    {"sequence": "verticalDoubleLasers", "startBeat": 64, "xStart": 25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 72, "xStart": -25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 80, "xStart": 25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 88, "xStart": 25},
+                    {"sequence": "squareRing", "startBeat": 64, "xStart": 1600, "yStart": 200},
+                    {"sequence": "squareRing", "startBeat": 64, "xStart": 1800, "yStart": 400},
+                    {"sequence": "squareRing", "startBeat": 64, "xStart": 2000, "yStart": 600},
+                    {"sequence": "squareRing", "startBeat": 64, "xStart": 1800, "yStart": 800},
+
+                    {"sequence": "verticalDoubleLasers", "startBeat": 96, "xStart": -25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 104, "xStart": 25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 112, "xStart": -25},
+                    {"sequence": "verticalDoubleLasers", "startBeat": 120, "xStart": 25},
+                    {"sequence": "squareRing", "startBeat": 96, "xStart": 1600, "yStart": 1000, "wStart": 15, "hStart": 15},
+                    {"sequence": "squareRing", "startBeat": 96, "xStart": 1400, "yStart": 1200, "wStart": 15, "hStart": 15},
+                    {"sequence": "squareRing", "startBeat": 96, "xStart": 1200, "yStart": 1000, "wStart": 15, "hStart": 15},
+                    {"sequence": "squareRing", "startBeat": 96, "xStart": 1000, "yStart": 800, "wStart": 15, "hStart": 15},
+
+                    {"sequence": "squareThrow", "startBeat": 128},
+                    {"sequence": "squareThrow", "startBeat": 136},
+                    {"sequence": "squareThrow", "startBeat": 144},
+                    {"sequence": "squareThrow", "startBeat": 152},
+                    {"sequence": "pillarSweep", "startBeat": 132},
+                    {"sequence": "pillarSweep", "startBeat": 140},
+                    {"sequence": "pillarSweep", "startBeat": 148},
+                    {"sequence": "pillarSweep", "startBeat": 156},
+
+                    {"sequence": "squareThrow", "startBeat": 160},
+                    {"sequence": "squareThrow", "startBeat": 168},
+                    {"sequence": "squareThrow", "startBeat": 176},
+                    {"sequence": "squareThrow", "startBeat": 184},
+                    {"sequence": "pillarSweep", "startBeat": 164},
+                    {"sequence": "pillarSweep", "startBeat": 172},
+                    {"sequence": "pillarSweep", "startBeat": 180},
+                    {"sequence": "pillarSweep", "startBeat": 188},
+                    {"sequence": "oncomingScatter", "startBeat": 160, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 164, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 168, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 172, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 176, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 180, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 184, "xStart": -100},
+                    {"sequence": "oncomingScatter", "startBeat": 188, "xStart": -100}
+                ]
+            }
+        ]
+    }
+}
