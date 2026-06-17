@@ -1,18 +1,6 @@
-// CSC30 Major Project
+// The Essence of Frequency
 // Carsen Waters
-// June 12 2026
-//
-// Extras for Experts:
-// - Handling of window resizing while the project is running (windowResized function)
-// - p5.collide2d library for collision between shapes (added before in-class demo)
-// - Storing game data in JSON file
-// - Using Object.keys() and object bracket notation for setting object properties from data file
-// - Using p5.sound library to play music, considering loading delays and audioContext to synchronize it with the levels
-// - Different drawing modes, notably the HSB color system
-// - Functions with default parameters (level parameter for game state functions)
-// - Trigonometry functions for calculating player movement, as well as obstacle drawing and collision
-// - Functions such as constrain, lerp, min used in various calculations
-// - Drawing complex shapes with beginShape/endShape, vertex, and beginContour/endContour
+// 2026
 
 
 //////// Constants ////////
