@@ -2,7 +2,6 @@
 // Carsen Waters
 // 2026
 
-
 //////// Constants ////////
 
 // Key codes
@@ -387,7 +386,6 @@ function setGameState(state, level = []) {
     
     // Set up and register the first frame of the level (start the level after the transition and level intro)
     levelState.startTime = gameTime.time + transition.duration + levelState.intro.duration;
-    levelState.musicPlaying = true;
     levelProgress();
     moveCapsule();
     moveObstacles();
@@ -406,20 +404,38 @@ function beatsToMillis(beats) {
 //////// Draw loop functions used in all game states ////////
 
 function updateGameTime() {
-  // Handle pausing
+  // Handle pause toggling
   if (gameTime.paused !== gameTime.pausedPending) {
     gameTime.paused = gameTime.pausedPending;
 
     if (gameTime.paused) {
-      gameTime.pauseTime = millis();
+      gameTime.pauseStartTime = millis();
     } else {
-      gameTime.timeOffset += millis() - gameTime.pauseTime;
+      gameTime.timeOffset += millis() - gameTime.pauseStartTime;
     }
+  }
+
+  // Handle rewind toggling
+  if (gameTime.rewinding !== gameTime.rewindPending) {
+    gameTime.rewinding = gameTime.rewindPending;
+
+    gameTime.rewindStartTime = gameTime.time;
   }
 
   // Update the game time for the current frame
   if (!gameTime.paused) {
-    gameTime.time = millis() - gameTime.timeOffset;
+    if (gameTime.rewinding) {
+      // Rewind time
+      gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
+      gameTime.time = millis() - gameTime.timeOffset;
+      if (gameTime.rewindStartTime - gameTime.time >= gameTime.rewindTotalTime || gameState === STATES.level && gameTime.time <= levelState.startTime) {
+        gameTime.rewindPending = false;
+      }
+
+    } else {
+      // Update time normally
+      gameTime.time = millis() - gameTime.timeOffset;
+    }
   }
 }
 
@@ -428,14 +444,16 @@ function updateMusic() {
     // Update the level music to play or stop
     let levelMusic = levelState.levelObject.music;
 
-    if (levelState.musicPlaying !== levelMusic.isPlaying()) {
-      if (levelState.musicPlaying && gameTime.time >= levelState.startTime && getAudioContext().state === "running") {
+    if (gameTime.time >= levelState.startTime && !gameTime.paused && !gameTime.rewinding && getAudioContext().state === "running") {
+      if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
         levelMusic.play(undefined, undefined, undefined, (gameTime.time - levelState.startTime) / 1000);
         gameTime.timeOffset += millis() - startMusicTime;
+      }
 
-      } else {
+    } else {
+      if (levelMusic.isPlaying()) {
         levelMusic.stop();
       }
     }
@@ -920,23 +938,21 @@ class Info {
 
         let action = this.data.buttonAction;
 
-        if (action === "togglePause" || action === "exitWorld" || action === "exitLevel") {
+        if (action === "togglePause" || action === "exitWorld" || action === "exitLevel" || action === "restartLevel") {
           gameTime.pausedPending = !gameTime.paused;
-
-          if (action === "togglePause" && gameState === STATES.level) {
-            levelState.musicPlaying = !gameTime.pausedPending;
-          }
         }
 
-        if (action === "enterLevel") {
-          pendGameState(STATES.level, player.nearestPortal.levelObject);
-
+        if (action === "exitWorld") {
+          pendGameState(STATES.title);
+          
         } else if (action === "enterWorld" || action === "exitLevel") {
           pendGameState(STATES.world);
 
-        } else if (action === "exitWorld") {
-          pendGameState(STATES.title);
-
+        } else if (action === "enterLevel") {
+          pendGameState(STATES.level, player.nearestPortal.levelObject);
+          
+        } else if (action === "restartLevel") {
+          pendGameState(STATES.level, levelState.levelObject);
         }
       }
     }
@@ -1103,12 +1119,11 @@ class Obstacle {
             corner.x = this.x + (rotatedX * cos(-this.offsetAngle) + rotatedY * sin(-this.offsetAngle));
             corner.y = this.y + (-rotatedX * sin(-this.offsetAngle) + rotatedY * cos(-this.offsetAngle));
           }
-          collision = collideRectPoly(player.x - player.size/2, player.y - player.size/2, player.size, player.size, polygon);
+          collision = collideRectPoly(player.x - player.size/2, player.y - player.size/2, player.size, player.size, polygon, true);
         }
         
         if (collision) {
-          // Exit to the world state if player is hit
-          pendGameState(STATES.world, 0);
+          gameTime.rewindPending = true;
         }
       }
     }
