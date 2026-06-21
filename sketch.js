@@ -2,6 +2,8 @@
 // Carsen Waters
 // 2026
 
+//lines 436 637 653, also include music with rewinds somehow
+
 //////// Constants ////////
 
 // Key codes
@@ -416,26 +418,32 @@ function updateGameTime() {
   }
 
   // Handle rewind toggling
+  if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount || gameState === STATES.level && gameTime.time <= levelState.startTime) {
+    gameTime.rewindPending = false;
+  }
   if (gameTime.rewinding !== gameTime.rewindPending) {
     gameTime.rewinding = gameTime.rewindPending;
 
-    gameTime.rewindStartTime = gameTime.time;
+    if (gameTime.rewinding) {
+      gameTime.rewindStartTime = millis();
+      gameTime.rewindStartGameTime = gameTime.time;
+    }
   }
 
   // Update the game time for the current frame
   if (!gameTime.paused) {
     if (gameTime.rewinding) {
-      // Rewind time
-      gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
-      gameTime.time = millis() - gameTime.timeOffset;
-      if (gameTime.rewindStartTime - gameTime.time >= gameTime.rewindTotalTime || gameState === STATES.level && gameTime.time <= levelState.startTime) {
-        gameTime.rewindPending = false;
-      }
+      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {///wait at the end of the rewind too??
+        // Rewind time
+        gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
 
-    } else {
-      // Update time normally
-      gameTime.time = millis() - gameTime.timeOffset;
+      } else {
+        // Hold time still
+        gameTime.timeOffset += millis() - gameTime.timeOffset - gameTime.time;
+      }
     }
+    // Update game time
+    gameTime.time = millis() - gameTime.timeOffset;
   }
 }
 
@@ -474,56 +482,64 @@ function updateMusic() {
 }
 
 function movePlayer() {
-  let inputRight = keyIsDown(KEYS.right) || keyIsDown(KEYS.d);
-  let inputLeft = keyIsDown(KEYS.left) || keyIsDown(KEYS.a);
-  let inputDown = keyIsDown(KEYS.down) || keyIsDown(KEYS.s);
-  let inputUp = keyIsDown(KEYS.up) || keyIsDown(KEYS.w);
-
-  // Only move if two or less directions are inputted
-  if (inputRight + inputLeft + inputDown + inputUp <= 2) {
-    // Convert input into movement direction
-    let angle = inputRight * 360 * inputUp + inputLeft * 180 + inputDown * 90 + inputUp * 270;
-    if (inputRight !== inputLeft && inputDown !== inputUp) {
-      angle = angle / 2;
-    }
-    
-    if (gameState === STATES.world) {
-      // Move player and collide with world walls
-      if (inputRight !== inputLeft || inputDown !== inputUp) {
-        let collide = false;
-        player.x += cos(angle) * player.speed;
-        for (let wall of worldWalls) {
-          if (wall.isCollidingPlayer()) {
-            collide = true;
-          }
-        }
-        if (collide) {
-          player.x -= cos(angle) * player.speed;
-        }
+  if (!(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration)) {
+    let inputRight = keyIsDown(KEYS.right) || keyIsDown(KEYS.d);
+    let inputLeft = keyIsDown(KEYS.left) || keyIsDown(KEYS.a);
+    let inputDown = keyIsDown(KEYS.down) || keyIsDown(KEYS.s);
+    let inputUp = keyIsDown(KEYS.up) || keyIsDown(KEYS.w);
   
-        collide = false;
-        player.y += sin(angle) * player.speed;
-        for (let wall of worldWalls) {
-          if (wall.isCollidingPlayer()) {
-            collide = true;
+    // Only move if two or less directions are inputted
+    if (inputRight + inputLeft + inputDown + inputUp <= 2) {
+      // Convert input into movement direction
+      let angle = inputRight * 360 * inputUp + inputLeft * 180 + inputDown * 90 + inputUp * 270;
+      if (inputRight !== inputLeft && inputDown !== inputUp) {
+        angle = angle / 2;
+      }
+      
+      if (gameState === STATES.world) {
+        // Move player and collide with world walls
+        if (inputRight !== inputLeft || inputDown !== inputUp) {
+          let collide = false;
+          player.x += cos(angle) * player.speed;
+          for (let wall of worldWalls) {
+            if (wall.isCollidingPlayer()) {
+              collide = true;
+            }
+          }
+          if (collide) {
+            player.x -= cos(angle) * player.speed;
+          }
+    
+          collide = false;
+          player.y += sin(angle) * player.speed;
+          for (let wall of worldWalls) {
+            if (wall.isCollidingPlayer()) {
+              collide = true;
+            }
+          }
+          if (collide) {
+            player.y -= sin(angle) * player.speed;
           }
         }
-        if (collide) {
-          player.y -= sin(angle) * player.speed;
+      } else if (gameState === STATES.level) {
+        // Move player
+        if (inputRight !== inputLeft || inputDown !== inputUp) {
+          player.x += cos(angle) * player.speed;
+          player.y += sin(angle) * player.speed;
         }
+        
+        // Keep the player in the capsule
+        let currentCapsule = levelState.capsule;
+        
+        player.x = constrain(player.x, currentCapsule.x - (currentCapsule.width/2 - player.size/2), currentCapsule.x + (currentCapsule.width/2 - player.size/2));
+        player.y = constrain(player.y, currentCapsule.y - (currentCapsule.height/2 - player.size/2), currentCapsule.y + (currentCapsule.height/2 - player.size/2));
       }
-    } else if (gameState === STATES.level) {
-      // Move player
-      if (inputRight !== inputLeft || inputDown !== inputUp) {
-        player.x += cos(angle) * player.speed;
-        player.y += sin(angle) * player.speed;
-      }
-      
-      // Keep the player in the capsule
-      let currentCapsule = levelState.capsule;
-      
-      player.x = constrain(player.x, currentCapsule.x - (currentCapsule.width/2 - player.size/2), currentCapsule.x + (currentCapsule.width/2 - player.size/2));
-      player.y = constrain(player.y, currentCapsule.y - (currentCapsule.height/2 - player.size/2), currentCapsule.y + (currentCapsule.height/2 - player.size/2));
+    }
+
+  } else {
+    if (gameState === STATES.level) {
+      player.x = levelState.capsule.x;
+      player.y = levelState.capsule.y;
     }
   }
 }
@@ -616,9 +632,26 @@ function drawBackground() {
 
 function drawPlayer() {
   // Draw the player
+  let hitAnimationAmount;
+  if (gameTime.rewinding) {
+    ///////later add check if it's beginning or end of rewind
+    hitAnimationAmount = constrain((millis() - gameTime.rewindStartTime) / (gameTime.rewindWaitDuration / 10), 0, 1);
+
+  } else {
+    hitAnimationAmount = 0;
+  }
+
+  let rewindCooldown = gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration;
+  let colorB;
+  if (rewindCooldown) {
+    colorB = player.color.b / 2;
+  } else {
+    colorB = player.color.b;
+  }
+  
   noStroke();
-  fill(player.color.h, player.color.s, player.color.b);
-  square(player.x, player.y, player.size);
+  fill(player.color.h, player.color.s, colorB, 1 - hitAnimationAmount);////make more local variables like colorA
+  square(player.x, player.y, player.size * (1 + hitAnimationAmount * 5));
 }
 
 function drawInfo() {
@@ -821,7 +854,7 @@ class Info {
         }
 
       } else if (this.data.changeVariable === "levelIntro") {
-        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.intro.infoAnimateTime)) / levelState.intro.infoAnimateTime, 0, 1);
+        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.intro.infoAnimateDuration)) / levelState.intro.infoAnimateDuration, 0, 1);
 
       } else if (this.data.changeVariable === "levelProgress") {
         changeAmount = constrain((gameTime.time - levelState.startTime) / beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length-1].timeBeat), 0, 1);
@@ -1102,7 +1135,7 @@ class Obstacle {
       this.offsetX = lerp(this.data.offsetXStart, this.data.offsetXStart + this.data.offsetXMove, amountThroughMovement);
       this.offsetAngle = lerp(this.data.offsetAngleStart, this.data.offsetAngleStart + this.data.offsetAngleMove, amountThroughMovement);
       
-      if (this.active) {
+      if (this.active && !gameTime.rewinding && !(gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration)) {
         // Check for player collision with the obstacle
         let collision;
         if (this.data.shape === "circle") {
@@ -1130,10 +1163,10 @@ class Obstacle {
   }
 
   draw() {
-    // Draw the obstacle in its proper position and orientaton
     if (this.visible) {
       noStroke();
 
+      // Determine transparency based on obstacle start time
       let colorA;
       if (this.active) {
         colorA = 1;
@@ -1145,7 +1178,8 @@ class Obstacle {
         }
       }
       fill(levelState.levelObject.colorH, this.data.color.s, this.data.color.b, colorA);
-
+      
+      // Draw the obstacle in its proper position and orientaton
       push();
       translate(this.x, this.y);
       rotate(this.offsetAngle);

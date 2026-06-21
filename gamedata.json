@@ -94,14 +94,14 @@
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": -1800, "y": -400, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
         "startView": {"x": 0, "y": 0, "size": 800},
-        "startGameTime": {"time": 0, "timeOffset": 0, "paused": false, "pauseStartTime": 0, "pausedPending": false, "rewinding": false, "rewindStartTime": 0, "rewindTotalTime": 3000, "rewindSpeed": 4, "rewindPending": false},
+        "startGameTime": {"time": 0, "timeOffset": 0, "paused": false, "pausedPending": false, "pauseStartTime": 0, "rewinding": false, "rewindPending": false, "rewindStartTime": 0, "rewindStartGameTime": 0, "rewindWaitDuration": 1000, "rewindTimeAmount": 5000, "rewindCooldownDuration": 2000, "rewindSpeed": 5},
         "startTransition": {"duration": 1000, "color": {"h": 0, "s": 0, "b": 0}, "active": false, "switchTime": 0}
     },
     "levels": {
         "playerProperties": {"size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
         "capsuleProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 40}},
         "pathProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 30}},
-        "introProperties": {"duration": 5000, "infoAnimateTime": 1000},
+        "introProperties": {"duration": 5000, "infoAnimateDuration": 1000},
         "levelProperties": [
             {
                 "details": {"name": "Maneuvers", "minorKey": "D", "tempo": 132, "colorH": 216},
