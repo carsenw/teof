@@ -22,7 +22,7 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Level portals
             - [ ] Level progress info
                 - [x] Level completed indicator
-                - [ ] Best score/attempts?
+                - [ ] Best score
             - [x] Song info
             - [ ] Level icons?
             - [ ] Portal entering animation?
@@ -52,11 +52,10 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Start transition
         - [x] Progress indicator
         - [x] Level completion
-            - [ ] Different amounts of points (Further progress/less hits)
+            - [ ] Different amounts of points (Less hits)
             - [ ] Completion animation
-        - [x] Level failing
-            - [ ] Multiple tries (Lives/Checkpoints)
-            - [ ] Failing animation
+        - [x] Level Rewinding
+        - [ ] Level Failing
     - [x] Pause menu
 - Game data
     - [ ] Fninshed world area

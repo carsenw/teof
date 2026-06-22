@@ -2,8 +2,6 @@
 // Carsen Waters
 // 2026
 
-//lines 436 637 653, also include music with rewinds somehow
-
 //////// Constants ////////
 
 // Key codes
@@ -327,12 +325,17 @@ function pendGameState(state, level = []) {
     pendingStateLevel = level;
     
     transition.active = true;
-    transition.switchTime = gameTime.time + transition.duration;
+    transition.switchTime = millis() + transition.duration;
   }
 }
 
 function setGameState(state, level = []) {
   // Clean up the old game state
+  gameTime.pausedPending = false;
+  gameTime.paused = false;
+  gameTime.rewindPending = false;
+  gameTime.rewinding = false;
+
   if (gameState === STATES.world) {
     if (player !== undefined) {
       player.nearestPortal = undefined;
@@ -433,7 +436,7 @@ function updateGameTime() {
   // Update the game time for the current frame
   if (!gameTime.paused) {
     if (gameTime.rewinding) {
-      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {///wait at the end of the rewind too??
+      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {
         // Rewind time
         gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
 
@@ -452,7 +455,7 @@ function updateMusic() {
     // Update the level music to play or stop
     let levelMusic = levelState.levelObject.music;
 
-    if (gameTime.time >= levelState.startTime && !gameTime.paused && !gameTime.rewinding && getAudioContext().state === "running") {
+    if (gameTime.time >= levelState.startTime && !gameTime.paused && !(!gameTime.rewinding && levelMusic.rate() < 1) && getAudioContext().state === "running") {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
@@ -466,11 +469,24 @@ function updateMusic() {
       }
     }
 
-    // Fade the music volume with the transition
-    if (transition.active) {
-      levelMusic.setVolume(abs(gameTime.time - transition.switchTime) / transition.duration);
+    // Change the music speed and volume during rewinds
+    if (gameTime.rewinding) {
+      if (millis() - gameTime.rewindStartTime < gameTime.rewindWaitDuration) {
+        levelMusic.setVolume((1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1)) / 2 + 0.5);
+        levelMusic.rate(1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1));
+
+      } else {
+        levelMusic.setVolume(0.5);
+        levelMusic.rate(-gameTime.rewindSpeed);
+      }
+
+    } else if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration) {
+      levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1) / 2 + 0.5);
+      levelMusic.rate(1);
+
     } else {
       levelMusic.setVolume(1);
+      levelMusic.rate(1);
     }
 
   } else {
@@ -482,7 +498,7 @@ function updateMusic() {
 }
 
 function movePlayer() {
-  if (!(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration)) {
+  if (!gameTime.rewinding) {
     let inputRight = keyIsDown(KEYS.right) || keyIsDown(KEYS.d);
     let inputLeft = keyIsDown(KEYS.left) || keyIsDown(KEYS.a);
     let inputDown = keyIsDown(KEYS.down) || keyIsDown(KEYS.s);
@@ -537,7 +553,7 @@ function movePlayer() {
     }
 
   } else {
-    if (gameState === STATES.level) {
+    if (gameState === STATES.level && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {
       player.x = levelState.capsule.x;
       player.y = levelState.capsule.y;
     }
@@ -631,27 +647,36 @@ function drawBackground() {
 }
 
 function drawPlayer() {
-  // Draw the player
-  let hitAnimationAmount;
+  // Prepare drawing properties for hit and respawn animations
+  let colorA;
+  let shapeSize;
   if (gameTime.rewinding) {
-    ///////later add check if it's beginning or end of rewind
-    hitAnimationAmount = constrain((millis() - gameTime.rewindStartTime) / (gameTime.rewindWaitDuration / 10), 0, 1);
+    let animationAmount = constrain((millis() - gameTime.rewindStartTime) / (gameTime.rewindWaitDuration / 10), 0, 1);
+
+    colorA = 1 - animationAmount;
+    shapeSize = player.size * (1 + animationAmount * 5);
+
+  } else if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration) {
+    let animationAmount = 1 - constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1);
+    animationAmount = sqrt(animationAmount);
+    
+    colorA = (1 - animationAmount) / 4;
+    shapeSize = player.size * (1 + animationAmount * 5);
+    
+    // Draw player shadow if respawning
+    noStroke();
+    fill(player.color.h, player.color.s, player.color.b / 2);
+    square(player.x, player.y, player.size);
 
   } else {
-    hitAnimationAmount = 0;
+    colorA = 1;
+    shapeSize = player.size;
   }
 
-  let rewindCooldown = gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration;
-  let colorB;
-  if (rewindCooldown) {
-    colorB = player.color.b / 2;
-  } else {
-    colorB = player.color.b;
-  }
-  
+  // Draw the player
   noStroke();
-  fill(player.color.h, player.color.s, colorB, 1 - hitAnimationAmount);////make more local variables like colorA
-  square(player.x, player.y, player.size * (1 + hitAnimationAmount * 5));
+  fill(player.color.h, player.color.s, player.color.b, colorA);
+  square(player.x, player.y, shapeSize);
 }
 
 function drawInfo() {
@@ -663,12 +688,12 @@ function drawInfo() {
 
 function checkTransition() {
   // Check if it's time to change the game state or finish the transition
-  if (pendingState !== STATES.none && gameTime.time >= transition.switchTime) {
+  if (pendingState !== STATES.none && millis() >= transition.switchTime) {
     setGameState(pendingState, pendingStateLevel);
     
     pendingState = STATES.none;
     pendingStateLevel = [];
-  } else if (transition.active && gameTime.time >= transition.switchTime + transition.duration) {
+  } else if (transition.active && millis() >= transition.switchTime + transition.duration) {
     transition.active = false;
   }
 }
@@ -676,7 +701,7 @@ function checkTransition() {
 function drawTransition() {
   // Draw the transition as a fade to black based on how close the current time is to the switch time
   if (transition.active) {
-    background(transition.color.h, transition.color.s, transition.color.b, 1 - abs(gameTime.time - transition.switchTime) / transition.duration);
+    background(transition.color.h, transition.color.s, transition.color.b, 1 - abs(millis() - transition.switchTime) / transition.duration);
   }
 }
 
@@ -971,7 +996,7 @@ class Info {
 
         let action = this.data.buttonAction;
 
-        if (action === "togglePause" || action === "exitWorld" || action === "exitLevel" || action === "restartLevel") {
+        if (action === "togglePause") {
           gameTime.pausedPending = !gameTime.paused;
         }
 
