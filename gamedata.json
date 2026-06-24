@@ -94,7 +94,7 @@
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": -1800, "y": -400, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
         "startView": {"x": 0, "y": 0, "size": 800},
-        "startGameTime": {"time": 0, "timeOffset": 0, "paused": false, "pausedPending": false, "pauseStartTime": 0, "rewinding": false, "rewindPending": false, "rewindStartTime": 0, "rewindStartGameTime": 0, "rewindWaitDuration": 1000, "rewindTimeAmount": 5000, "rewindCooldownDuration": 2000, "rewindSpeed": 4},
+        "startGameTime": {"gameMillis": 0, "time": 0, "timeOffset": 0, "paused": false, "pausedPending": false, "pauseStartTime": 0, "rewinding": false, "rewindPending": false, "rewindStartTime": 0, "rewindStartGameTime": 0, "rewindWaitDuration": 1000, "rewindTimeAmount": 5000, "rewindCooldownDuration": 2000, "rewindSpeed": 4},
         "startTransition": {"duration": 1000, "color": {"h": 0, "s": 0, "b": 0}, "active": false, "switchTime": 0}
     },
     "levels": {
@@ -148,7 +148,9 @@
                     {"timeBeat": 176, "y": 3000},
                     {"timeBeat": 184, "x": 300, "y": 3400},
                     {"timeBeat": 188, "x": 450, "y": 3600},
-                    {"timeBeat": 192, "x": 600, "y": 3800, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+
+                    {"timeBeat": 192, "x": 600, "y": 3800, "capsuleW": 200, "bdSize": 40, "bdColorBack": {"s": 50, "b": 10}, "bdColorFront": {"s": 100, "b": 10}, "viewSize": 800},
+                    {"timeBeat": 224, "x": 1400}
                 ],
                 "attackSequences": {
                     "boss": [
@@ -156,7 +158,7 @@
                         {"shape": "square", "xStart": 1125, "yStart": 125, "wStart": 25, "hStart": 50},
                         {"yStart": -125},
                         {"startBeat": 32, "moveBeats": 28, "shape": "maneuversBoss", "withCapsule": "move", "xStart": 400, "yStart": 0, "wStart": 225, "hStart": 200},
-                        {"moveBeats": 28, "fadeBeats": 1, "shape": "square", "xStart": 325, "yStart": 125, "wStart": 25, "hStart": 50},
+                        {"fadeBeats": 1, "shape": "square", "xStart": 325, "yStart": 125, "wStart": 25, "hStart": 50},
                         {"yStart": -125},
 
                         {"startBeat": 60, "moveBeats": 4, "fadeBeats": 0, "shape": "maneuversBoss", "xStart": 0, "yStart": 0, "wStart": 225, "hStart": 200, "offsetXStart": 400, "offsetXMove": -100, "offsetAngleMove": -90},
@@ -186,7 +188,12 @@
                         {"startBeat": 180, "moveBeats": 4, "xStart": -300, "xMove": 600},
                         {"startBeat": 184, "moveBeats": 2, "xStart": 300, "xMove": -600},
                         {"startBeat": 186, "xStart": -300, "xMove": 0},
-                        {"startBeat": 188, "moveBeats": 4, "xStart": -300, "xMove": 600}
+                        {"startBeat": 188, "moveBeats": 4, "xStart": -300, "xMove": 600},
+
+                        {"startBeat": 192, "moveBeats": 4, "xStart": 300, "xMove": 100, "yMove": 300, "angleMove": 90},
+                        {"startBeat": 196, "moveBeats": 28, "shape": "maneuversBoss", "withCapsule": "move", "xStart": 400, "yStart": 0, "angleStart": -90, "xMove": 0, "yMove": 0, "angleMove": 0},
+                        {"warnBeats": 1, "fadeBeats": 1, "shape": "square", "xStart": 325, "yStart": 125, "wStart": 25, "hStart": 50},
+                        {"yStart": -125}
                     ],
                     "pillarWeave": [
                         {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 4, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "start", "xStart": 200, "yStart": 100, "wStart": 25, "hStart": 200, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": -200, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
@@ -328,7 +335,9 @@
                     {"sequence": "oncomingScatter", "startBeat": 176, "xStart": -100},
                     {"sequence": "oncomingScatter", "startBeat": 180, "xStart": -100},
                     {"sequence": "oncomingScatter", "startBeat": 184, "xStart": -100},
-                    {"sequence": "oncomingScatter", "startBeat": 188, "xStart": -100}
+                    {"sequence": "oncomingScatter", "startBeat": 188, "xStart": -100},
+
+                    {"sequence": "pillarWeave", "startBeat": 192, "hStart": -100}
                 ]
             }
         ]

@@ -2,6 +2,8 @@
 // Carsen Waters
 // 2026
 
+///split horizontal laser into first and second, use at beat 196 and 52ish
+
 //////// Constants ////////
 
 // Key codes
@@ -175,6 +177,15 @@ function setup() {
 
   // Ensure audio is ready to play for when its needed
   userStartAudio();
+
+  // Pause the game if the page is hidden
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      gameTime.pausedPending = true;
+      updateGameTime();
+      updateMusic();
+    }
+  });
 
   // Set up game data
 
