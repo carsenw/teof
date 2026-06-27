@@ -2,7 +2,7 @@
 // Carsen Waters
 // 2026
 
-///split horizontal laser into first and second, use at beat 196 and 52ish
+//Wait right before level start (after info goes away)? also so wait at level end before completion info
 
 //////// Constants ////////
 
@@ -126,7 +126,7 @@ let allLevels = [];
 
 //////// Variables for playing the game ////////
 
-// Game states and objects
+// Game time, states, and objects
 let gameTime;
 
 let gameState;
@@ -343,9 +343,9 @@ function pendGameState(state, level = []) {
 function setGameState(state, level = []) {
   // Clean up the old game state
   gameTime.pausedPending = false;
-  gameTime.paused = false;
   gameTime.rewindPending = false;
-  gameTime.rewinding = false;
+  updateGameTime();
+  updateMusic();
 
   if (gameState === STATES.world) {
     if (player !== undefined) {
@@ -466,7 +466,7 @@ function updateMusic() {
     // Update the level music to play or stop
     let levelMusic = levelState.levelObject.music;
 
-    if (gameTime.time >= levelState.startTime && !gameTime.paused && !(!gameTime.rewinding && levelMusic.rate() < 1) && getAudioContext().state === "running") {
+    if (gameTime.time >= levelState.startTime && gameTime.time < levelState.startTime + levelMusic.duration() * 1000 && !gameTime.paused && !(!gameTime.rewinding && levelMusic.rate() < 1) && getAudioContext().state === "running") {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();

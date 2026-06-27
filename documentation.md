@@ -47,19 +47,17 @@ The player will be able to explore a main world area, and play levels from porta
             - [x] Player collision
             - [x] Different obstacle shapes
             - [x] Warning and fading
-            - [x] Boss obstacles
     - Progress
-        - [x] Start transition
+        - [x] Start animation
         - [x] Progress indicator
-        - [x] Level completion
-            - [ ] Different amounts of points (Less hits)
-            - [ ] Completion animation
+        - [ ] Completion animation
+        - [ ] Hit counter
         - [x] Level Rewinding
         - [ ] Level Failing
     - [x] Pause menu
 - Game data
-    - [ ] Fninshed world area
-    - [ ] Finished levels (12 levels, full songs)
+    - [ ] World area
+    - [ ] Levels
 
 ## Testing
 
