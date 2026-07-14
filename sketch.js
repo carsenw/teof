@@ -2,7 +2,7 @@
 // Carsen Waters
 // 2026
 
-//Wait right before level start (after info goes away)? also so wait at level end before completion info
+//completion info - make info in gamedata, add code in info class, change timing in levelprogress
 
 //////// Constants ////////
 
@@ -432,7 +432,7 @@ function updateGameTime() {
   }
 
   // Handle rewind toggling
-  if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount || gameState === STATES.level && gameTime.time <= levelState.startTime) {
+  if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount || gameState === STATES.level && gameTime.time <= levelState.startTime - levelState.intro.infoHideDuration) {
     gameTime.rewindPending = false;
   }
   if (gameTime.rewinding !== gameTime.rewindPending) {
@@ -766,9 +766,11 @@ function levelProgress() {
         levelState.lastNodeTime = levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat);
         
       } else {
-        // If the last node in the level has been passed, exit to the world state
-        levelState.levelObject.progress = true;
-        pendGameState(STATES.world, 0);
+        // If the last node in the level has been passed, exit to the world state after level outro
+        if (gameTime.time >= levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat) + /*levelState.intro.duration*/ levelState.intro.infoHideDuration) {
+          levelState.levelObject.progress = true;
+          pendGameState(STATES.world, 0);
+        }
       }
       
     } else {
@@ -890,11 +892,11 @@ class Info {
         }
 
       } else if (this.data.changeVariable === "levelIntro") {
-        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.intro.infoAnimateDuration)) / levelState.intro.infoAnimateDuration, 0, 1);
+        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.intro.infoHideDuration - levelState.intro.infoAnimateDuration)) / levelState.intro.infoAnimateDuration, 0, 1);
 
       } else if (this.data.changeVariable === "levelProgress") {
         changeAmount = constrain((gameTime.time - levelState.startTime) / beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length-1].timeBeat), 0, 1);
-
+      //add one for level outro
       } else if (this.data.changeVariable === "portalPlayerHover") {
         changeAmount = player.nearestPortal.playerHover;
       }
