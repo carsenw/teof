@@ -2,6 +2,9 @@
 // Carsen Waters
 // 2026
 
+//apple bug
+//pressing key to pause
+//slow/fast player movement
 //completion info - make info in gamedata, add code in info class, change timing in levelprogress
 
 //////// Constants ////////
@@ -421,6 +424,9 @@ function beatsToMillis(beats) {
 
 function updateGameTime() {
   // Handle pause toggling
+  if (gameState === STATES.title) {
+    gameTime.pausedPending = false;
+  }
   if (gameTime.paused !== gameTime.pausedPending) {
     gameTime.paused = gameTime.pausedPending;
 

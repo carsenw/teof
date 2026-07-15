@@ -51,8 +51,8 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Start animation
         - [x] Progress indicator
         - [ ] Completion animation
-        - [ ] Hit counter
         - [x] Level Rewinding
+        - [ ] Hit counter
         - [ ] Level Failing
     - [x] Pause menu
 - Game data
@@ -87,3 +87,13 @@ The player will be able to explore a main world area, and play levels from porta
 - Thought boss battle levels would be cool
 - Suggested putting more thought into visual detail
 - Thought interesting game mechanics could be added
+
+### Tester 1 (WITH programming experience) - 2026-07-15
+
+- Found that the game is laggy and crashes on Apple devices
+- Suggested possibly having the player move with the capsule
+
+### Tester 5 (WITHOUT programming experience) - 2026-07-15
+
+- Thought level was too hard for a beginning level, and would work better for a later level
+- Suggested making the player movement less fast, or being able to move at different speeds
