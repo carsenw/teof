@@ -2,9 +2,9 @@
 // Carsen Waters
 // 2026
 
-//apple bug
 //pressing key to pause
 //slow/fast player movement
+//make level easier
 //completion info - make info in gamedata, add code in info class, change timing in levelprogress
 
 //////// Constants ////////
@@ -472,7 +472,7 @@ function updateMusic() {
     // Update the level music to play or stop
     let levelMusic = levelState.levelObject.music;
 
-    if (gameTime.time >= levelState.startTime && gameTime.time < levelState.startTime + levelMusic.duration() * 1000 && !gameTime.paused && !(!gameTime.rewinding && levelMusic.rate() < 1) && getAudioContext().state === "running") {
+    if (gameTime.time >= levelState.startTime && gameTime.time < levelState.startTime + levelMusic.duration() * 1000 && !gameTime.paused && !(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) && getAudioContext().state === "running") {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
@@ -486,24 +486,15 @@ function updateMusic() {
       }
     }
 
-    // Change the music speed and volume during rewinds
+    // Change the music volume during rewinds
     if (gameTime.rewinding) {
-      if (millis() - gameTime.rewindStartTime < gameTime.rewindWaitDuration) {
-        levelMusic.setVolume((1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1)) / 2 + 0.5);
-        levelMusic.rate(1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1));
-
-      } else {
-        levelMusic.setVolume(0.5);
-        levelMusic.rate(-gameTime.rewindSpeed);
-      }
+      levelMusic.setVolume(1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1));
 
     } else if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration) {
-      levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1) / 2 + 0.5);
-      levelMusic.rate(1);
+      levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1));
 
     } else {
       levelMusic.setVolume(1);
-      levelMusic.rate(1);
     }
 
   } else {
