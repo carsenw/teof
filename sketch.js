@@ -476,7 +476,7 @@ function updateMusic() {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
-        levelMusic.play(undefined, undefined, undefined, (gameTime.time - levelState.startTime) / 1000);
+        //levelMusic.play(undefined, undefined, undefined, (gameTime.time - levelState.startTime) / 1000);
         gameTime.timeOffset += millis() - startMusicTime;
       }
 
