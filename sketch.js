@@ -2,21 +2,21 @@
 // Carsen Waters
 // 2026
 
-//pressing key to pause
-//slow/fast player movement
-//make level easier
-//completion info - make info in gamedata, add code in info class, change timing in levelprogress
 
 //////// Constants ////////
 
 // Key codes
 const KEYS = {
+  shift: 16,
+  escape: 27,
+  space: 32,
   left: 37,
   up: 38,
   right: 39,
   down: 40,
   a: 65,
   d: 68,
+  p: 80,
   s: 83,
   w: 87,
 };
@@ -401,10 +401,10 @@ function setGameState(state, level = []) {
       levelState.obstacles.push(newObstacle);
     }
 
-    levelState.intro = levelsData.introProperties;
+    levelState.message = levelsData.messageProperties;
     
     // Set up and register the first frame of the level (start the level after the transition and level intro)
-    levelState.startTime = gameTime.time + transition.duration + levelState.intro.duration;
+    levelState.startTime = gameTime.time + transition.duration + levelState.message.duration;
     levelProgress();
     moveCapsule();
     moveObstacles();
@@ -438,7 +438,7 @@ function updateGameTime() {
   }
 
   // Handle rewind toggling
-  if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount || gameState === STATES.level && gameTime.time <= levelState.startTime - levelState.intro.infoHideDuration) {
+  if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount || gameState === STATES.level && gameTime.time <= levelState.startTime - levelState.message.infoHideDuration) {
     gameTime.rewindPending = false;
   }
   if (gameTime.rewinding !== gameTime.rewindPending) {
@@ -519,37 +519,42 @@ function movePlayer() {
       if (inputRight !== inputLeft && inputDown !== inputUp) {
         angle = angle / 2;
       }
+
+      let moveSpeed = player.speed;
+      if (keyIsDown(KEYS.shift) || keyIsDown(KEYS.space)) {
+        moveSpeed /= 2;
+      }
       
       if (gameState === STATES.world) {
         // Move player and collide with world walls
         if (inputRight !== inputLeft || inputDown !== inputUp) {
           let collide = false;
-          player.x += cos(angle) * player.speed;
+          player.x += cos(angle) * moveSpeed;
           for (let wall of worldWalls) {
             if (wall.isCollidingPlayer()) {
               collide = true;
             }
           }
           if (collide) {
-            player.x -= cos(angle) * player.speed;
+            player.x -= cos(angle) * moveSpeed;
           }
     
           collide = false;
-          player.y += sin(angle) * player.speed;
+          player.y += sin(angle) * moveSpeed;
           for (let wall of worldWalls) {
             if (wall.isCollidingPlayer()) {
               collide = true;
             }
           }
           if (collide) {
-            player.y -= sin(angle) * player.speed;
+            player.y -= sin(angle) * moveSpeed;
           }
         }
       } else if (gameState === STATES.level) {
         // Move player
         if (inputRight !== inputLeft || inputDown !== inputUp) {
-          player.x += cos(angle) * player.speed;
-          player.y += sin(angle) * player.speed;
+          player.x += cos(angle) * moveSpeed;
+          player.y += sin(angle) * moveSpeed;
         }
         
         // Keep the player in the capsule
@@ -590,7 +595,7 @@ function updateInfo() {
     info.update();
   }
   
-  mouseCanClick = !(mouseIsPressed && mouseButton === LEFT);
+  mouseCanClick = !(mouseIsPressed && mouseButton === LEFT || (keyIsDown(KEYS.escape) || keyIsDown(KEYS.p)));
 }
 
 function drawView() {
@@ -764,7 +769,7 @@ function levelProgress() {
         
       } else {
         // If the last node in the level has been passed, exit to the world state after level outro
-        if (gameTime.time >= levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat) + /*levelState.intro.duration*/ levelState.intro.infoHideDuration) {
+        if (gameTime.time >= levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat) + levelState.message.duration) {
           levelState.levelObject.progress = true;
           pendGameState(STATES.world, 0);
         }
@@ -889,11 +894,14 @@ class Info {
         }
 
       } else if (this.data.changeVariable === "levelIntro") {
-        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.intro.infoHideDuration - levelState.intro.infoAnimateDuration)) / levelState.intro.infoAnimateDuration, 0, 1);
+        changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.message.infoHideDuration - levelState.message.infoAnimateDuration)) / levelState.message.infoAnimateDuration, 0, 1);
 
       } else if (this.data.changeVariable === "levelProgress") {
         changeAmount = constrain((gameTime.time - levelState.startTime) / beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length-1].timeBeat), 0, 1);
-      //add one for level outro
+      
+      } else if (this.data.changeVariable === "levelCompletion") {
+        changeAmount = constrain((gameTime.time - (levelState.startTime + beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length - 1].timeBeat) + levelState.message.infoHideDuration)) / levelState.message.infoAnimateDuration, 0, 1);
+      
       } else if (this.data.changeVariable === "portalPlayerHover") {
         changeAmount = player.nearestPortal.playerHover;
       }
@@ -1000,8 +1008,15 @@ class Info {
         this.textColor = color(this.textColor.h, this.textColor.s, this.textColor.b, this.textColor.a);
       }
 
+      // Check for keys triggering button actions
+      let buttonTriggered = false;
+      let action = this.data.buttonAction;
+      if (action === "togglePause" && (keyIsDown(KEYS.escape) || keyIsDown(KEYS.p))) {
+        buttonTriggered = true;
+      }
+
       // Carry out button actions
-      if (mouseHover && mouseIsPressed && mouseButton === LEFT && mouseCanClick) {
+      if ((mouseHover && mouseIsPressed && mouseButton === LEFT || buttonTriggered) && mouseCanClick) {
         mouseCanClick = false;
 
         let action = this.data.buttonAction;

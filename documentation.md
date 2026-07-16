@@ -50,7 +50,7 @@ The player will be able to explore a main world area, and play levels from porta
     - Progress
         - [x] Start animation
         - [x] Progress indicator
-        - [ ] Completion animation
+        - [x] Completion animation
         - [x] Level Rewinding
         - [ ] Hit counter
         - [ ] Level Failing
