@@ -229,7 +229,7 @@
                         {"startBeat": 12, "yStart": -100}
                     ],
                     "oncomingScatter": [
-                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 4, "color": {"s": 90, "b": 90}, "shape": "squareArch", "withCapsule": "start", "xStart": 300, "yStart": 0, "wStart": 15, "hStart": 15, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": -400, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 4, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "start", "xStart": 300, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": -400, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
                         {"startBeat": 1, "yStart": 100},
                         {"startBeat": 2, "yStart": 0},
                         {"startBeat": 3, "yStart": -100}
@@ -251,7 +251,7 @@
                         {"startBeat": 0, "xStart": -50}
                     ],
                     "squareRing": [
-                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "squareBump", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 20, "hStart": 20, "angleStart": -90, "offsetXStart": 100, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 90},
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "squareBump", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 25, "hStart": 25, "angleStart": -90, "offsetXStart": 100, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 90},
                         {"offsetAngleStart": 90},
                         {"offsetAngleStart": 180},
                         {"offsetAngleStart": 270},
