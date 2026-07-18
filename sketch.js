@@ -392,6 +392,8 @@ function setGameState(state, level = []) {
     levelState.capsule = levelsData.capsuleProperties;
     levelState.path = levelsData.pathProperties;
 
+    levelState.message = levelsData.messageProperties;
+
     levelState.levelObject = level;
 
     levelState.obstacles = [];
@@ -400,8 +402,6 @@ function setGameState(state, level = []) {
       newObstacle.findStartPosition();
       levelState.obstacles.push(newObstacle);
     }
-
-    levelState.message = levelsData.messageProperties;
     
     // Set up and register the first frame of the level (start the level after the transition and level intro)
     levelState.startTime = gameTime.time + transition.duration + levelState.message.duration;
@@ -451,9 +451,9 @@ function updateGameTime() {
   }
 
   // Update the game time for the current frame
-  if (!gameTime.paused) {
+  if (!transition.active && !gameTime.paused) {
     if (gameTime.rewinding) {
-      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {
+      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration && !(gameState === STATES.level && player.lives <= 0)) {
         // Rewind time
         gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
 
@@ -472,7 +472,7 @@ function updateMusic() {
     // Update the level music to play or stop
     let levelMusic = levelState.levelObject.music;
 
-    if (gameTime.time >= levelState.startTime && gameTime.time < levelState.startTime + levelMusic.duration() * 1000 && !gameTime.paused && !(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) && getAudioContext().state === "running") {
+    if (gameTime.time >= levelState.startTime && gameTime.time < levelState.startTime + levelMusic.duration() * 1000 && !transition.active && !gameTime.paused && !(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) && getAudioContext().state === "running") {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
@@ -567,6 +567,10 @@ function movePlayer() {
 
   } else {
     if (gameState === STATES.level && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration) {
+      if (player.lives <= 0) {
+        pendGameState(STATES.world);
+      }
+
       player.x = levelState.capsule.x;
       player.y = levelState.capsule.y;
     }
@@ -771,7 +775,7 @@ function levelProgress() {
         // If the last node in the level has been passed, exit to the world state after level outro
         if (gameTime.time >= levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat) + levelState.message.duration) {
           levelState.levelObject.progress = true;
-          pendGameState(STATES.world, 0);
+          pendGameState(STATES.world);
         }
       }
       
@@ -951,6 +955,9 @@ class Info {
             }
           }
           textVariable = completedCount;
+
+        } else if (this.data.textVariable === "playerLives") {
+          textVariable = player.lives;
 
         } else if (this.data.textVariable === "portalLevelName") {
           textVariable = player.nearestPortal.levelObject.name;
@@ -1206,6 +1213,7 @@ class Obstacle {
         }
         
         if (collision) {
+          player.lives -= 1;
           gameTime.rewindPending = true;
         }
       }

@@ -52,8 +52,8 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Progress indicator
         - [x] Completion animation
         - [x] Level Rewinding
-        - [ ] Hit counter
-        - [ ] Level Failing
+        - [x] Hit counter
+        - [x] Level Failing
     - [x] Pause menu
 - Game data
     - [ ] World area
