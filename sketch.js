@@ -2,7 +2,6 @@
 // Carsen Waters
 // 2026
 
-//player looks like respawning when leave level during respawn. add gameTime.rewindStartGameTime = 0; to setgamestate? when setgame state calls updategametime() i don't think it happends because of !transition.active in setgamestate()
 //also should make the level circle score things disappear when need. and show them somehow end of leevel etc.
 
 
@@ -350,6 +349,7 @@ function setGameState(state, level = []) {
   // Clean up the old game state
   gameTime.pausedPending = false;
   gameTime.rewindPending = false;
+  gameTime.rewindStartGameTime = 0;
   updateGameTime();
   updateMusic();
 
@@ -454,7 +454,7 @@ function updateGameTime() {
   }
 
   // Update the game time for the current frame
-  if (!transition.active && !gameTime.paused) {
+  if (!gameTime.paused) {
     if (gameTime.rewinding) {
       if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration && !(gameState === STATES.level && player.lives <= 0)) {
         // Rewind time
@@ -912,12 +912,10 @@ class Info {
       } else if (this.data.changeVariable === "levelLives") {
         changeAmount = player.lives / gameData.levels.playerProperties.lives;
 
-      } else if (this.data.changeVariable === "levelLivesScore") {
+      } else if (this.data.changeVariable === "levelScoreLives") {
         let playerMaxLives = gameData.levels.playerProperties.lives;
-        let playerLivesScore = floor((sqrt(8 * (playerMaxLives - player.lives) + 1) - 1) / 2);
-        let playerScaledLivesScore = playerMaxLives - playerLivesScore * (playerLivesScore + 1) / 2;
-
-        changeAmount = playerScaledLivesScore / playerMaxLives;
+        let playerMaxLivesScore = gameData.levels.playerProperties.livesScore;
+        changeAmount = (playerMaxLives - (playerMaxLivesScore - player.livesScore) * (playerMaxLivesScore - player.livesScore + 1) / 2) / gameData.levels.playerProperties.lives;
       
       } else if (this.data.changeVariable === "portalPlayerHover") {
         changeAmount = player.nearestPortal.playerHover;
@@ -1224,6 +1222,13 @@ class Obstacle {
         
         if (collision) {
           player.lives -= 1;
+
+          let playerMaxLives = gameData.levels.playerProperties.lives;
+          let playerMaxLivesScore = gameData.levels.playerProperties.livesScore;
+          if (player.lives <= playerMaxLives - (playerMaxLivesScore - (player.livesScore - 1)) * (playerMaxLivesScore - (player.livesScore - 1) + 1) / 2) {
+            player.livesScore -= 1;
+          }
+
           gameTime.rewindPending = true;
         }
       }

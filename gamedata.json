@@ -49,7 +49,7 @@
 
         {"showState": "level", "x": -0.2725, "y": -0.48, "width": 0.455, "height": 0.04, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.2725, "y": -0.48, "width": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScore", "x": -0.4975, "xChange": 0.225, "y": -0.48, "width": 0, "widthChange": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 20, "a": 1}},
+        {"showState": "level", "changeVariable": "levelScoreLives", "x": -0.4975, "xChange": 0.225, "y": -0.48, "width": 0, "widthChange": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 20, "a": 1}},
         {"showState": "level", "changeVariable": "levelLives", "x": -0.4975, "xChange": 0.225, "y": -0.48, "width": 0, "widthChange": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}},
         {"showState": "level", "x": -0.4975, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.3475, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
@@ -117,7 +117,7 @@
         "startTransition": {"duration": 1000, "color": {"h": 0, "s": 0, "b": 0}, "active": false, "switchTime": 0}
     },
     "levels": {
-        "playerProperties": {"size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}, "lives": 15},
+        "playerProperties": {"size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}, "lives": 15, "livesScore": 5},
         "capsuleProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 40}},
         "pathProperties": {"border": 5, "color": {"h": 0, "s": 0, "b": 30}},
         "messageProperties": {"duration": 7000, "infoAnimateDuration": 1000, "infoHideDuration": 2000},
