@@ -2,6 +2,9 @@
 // Carsen Waters
 // 2026
 
+//player looks like respawning when leave level during respawn. add gameTime.rewindStartGameTime = 0; to setgamestate? when setgame state calls updategametime() i don't think it happends because of !transition.active in setgamestate()
+//also should make the level circle score things disappear when need. and show them somehow end of leevel etc.
+
 
 //////// Constants ////////
 
@@ -900,11 +903,21 @@ class Info {
       } else if (this.data.changeVariable === "levelIntro") {
         changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.message.infoHideDuration - levelState.message.infoAnimateDuration)) / levelState.message.infoAnimateDuration, 0, 1);
 
+      } else if (this.data.changeVariable === "levelCompletion") {
+        changeAmount = constrain((gameTime.time - (levelState.startTime + beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length - 1].timeBeat) + levelState.message.infoHideDuration)) / levelState.message.infoAnimateDuration, 0, 1);
+      
       } else if (this.data.changeVariable === "levelProgress") {
         changeAmount = constrain((gameTime.time - levelState.startTime) / beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length-1].timeBeat), 0, 1);
       
-      } else if (this.data.changeVariable === "levelCompletion") {
-        changeAmount = constrain((gameTime.time - (levelState.startTime + beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length - 1].timeBeat) + levelState.message.infoHideDuration)) / levelState.message.infoAnimateDuration, 0, 1);
+      } else if (this.data.changeVariable === "levelLives") {
+        changeAmount = player.lives / gameData.levels.playerProperties.lives;
+
+      } else if (this.data.changeVariable === "levelLivesScore") {
+        let playerMaxLives = gameData.levels.playerProperties.lives;
+        let playerLivesScore = floor((sqrt(8 * (playerMaxLives - player.lives) + 1) - 1) / 2);
+        let playerScaledLivesScore = playerMaxLives - playerLivesScore * (playerLivesScore + 1) / 2;
+
+        changeAmount = playerScaledLivesScore / playerMaxLives;
       
       } else if (this.data.changeVariable === "portalPlayerHover") {
         changeAmount = player.nearestPortal.playerHover;
@@ -955,9 +968,6 @@ class Info {
             }
           }
           textVariable = completedCount;
-
-        } else if (this.data.textVariable === "playerLives") {
-          textVariable = player.lives;
 
         } else if (this.data.textVariable === "portalLevelName") {
           textVariable = player.nearestPortal.levelObject.name;

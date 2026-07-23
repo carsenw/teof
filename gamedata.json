@@ -15,14 +15,14 @@
         {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Completed: #", "textVariable": "portalLevelCompleted", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
         {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": 0.04, "widthChange": 0.48, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Click to play", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}, "buttonAction": "enterLevel", "hoverColor": {"h": "portalColorH", "s": 50, "b": 30, "a": 1}},
 
-        {"showState": "world", "changeVariable": "paused", "x": -0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
+        {"showState": "world", "changeVariable": "paused", "x": 0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
         
         {"showState": "world", "changeVariable": "paused", "yChange": 0, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
         {"showState": "world", "changeVariable": "paused", "yChange": -0.3, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Game paused", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
         {"showState": "world", "changeVariable": "paused", "yChange": -0.15, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Resume", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
         {"showState": "world", "changeVariable": "paused", "yChange": 0, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Back to title", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "exitWorld", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
 
-        {"showState": "world", "x": 0.35, "y": -0.4625, "width": 0.3, "height": 0.075, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "Levels completed: #", "textVariable": "totalLevelsCompleted"},
+        {"showState": "world", "x": -0.35, "y": -0.4625, "width": 0.3, "height": 0.075, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "Levels completed: #", "textVariable": "totalLevelsCompleted"},
 
         {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.35, "width": 0.5, "height": 0.2, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
         {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.31, "width": 0.5, "height": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "levelName", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
@@ -31,7 +31,7 @@
 
         {"showState": "level", "changeVariable": "levelCompletion", "x": 1, "xChange": -1, "y": 0.35, "width": 1, "height": 0.2, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}, "textString": "Level Completed!", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
         
-        {"showState": "level", "changeVariable": "paused", "x": -0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
+        {"showState": "level", "changeVariable": "paused", "x": 0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
         
         {"showState": "level", "changeVariable": "paused", "yChange": 0, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
         {"showState": "level", "changeVariable": "paused", "yChange": -0.3, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Game paused", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
@@ -47,7 +47,21 @@
         {"showState": "level", "x": 0, "y": 0.49, "width": 0.99, "height": 0.01, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 1}},
         {"showState": "level", "changeVariable": "levelProgress", "x": -0.495, "xChange": 0.495, "y": 0.49, "width": 0, "widthChange": 0.99, "height": 0.01, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}},
 
-        {"showState": "level", "x": 0.4, "y": -0.47, "width": 0.2, "height": 0.06, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "Lives: #", "textVariable": "playerLives"}
+        {"showState": "level", "x": -0.2725, "y": -0.48, "width": 0.455, "height": 0.04, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.2725, "y": -0.48, "width": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScore", "x": -0.4975, "xChange": 0.225, "y": -0.48, "width": 0, "widthChange": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 20, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLives", "x": -0.4975, "xChange": 0.225, "y": -0.48, "width": 0, "widthChange": 0.45, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}},
+        {"showState": "level", "x": -0.4975, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.3475, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.2275, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.1375, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.0775, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.0475, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
+        {"showState": "level", "x": -0.4225, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "x": -0.2875, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "x": -0.1825, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "x": -0.1075, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "x": -0.0625, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}}
     ],
     "world": {
         "walls": [
