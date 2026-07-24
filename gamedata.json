@@ -57,11 +57,11 @@
         {"showState": "level", "x": -0.1375, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.0775, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.0475, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
-        {"showState": "level", "x": -0.4225, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "x": -0.2875, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "x": -0.1825, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "x": -0.1075, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "x": -0.0625, "y": -0.48, "width": 0.015, "height": 0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}}
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow1", "x": -0.4225, "y": -0.48, "width": 0.015, "height": 0.015, "widthChange": -0.015, "heightChange": -0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow2", "x": -0.2875, "y": -0.48, "width": 0.015, "height": 0.015, "widthChange": -0.015, "heightChange": -0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow3", "x": -0.1825, "y": -0.48, "width": 0.015, "height": 0.015, "widthChange": -0.015, "heightChange": -0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow4", "x": -0.1075, "y": -0.48, "width": 0.015, "height": 0.015, "widthChange": -0.015, "heightChange": -0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow5", "x": -0.0625, "y": -0.48, "width": 0.015, "height": 0.015, "widthChange": -0.015, "heightChange": -0.015, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⬤", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}}
     ],
     "world": {
         "walls": [

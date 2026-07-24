@@ -2,8 +2,6 @@
 // Carsen Waters
 // 2026
 
-//also should make the level circle score things disappear when need. and show them somehow end of leevel etc.
-
 
 //////// Constants ////////
 
@@ -917,6 +915,13 @@ class Info {
         let playerMaxLivesScore = gameData.levels.playerProperties.livesScore;
         changeAmount = (playerMaxLives - (playerMaxLivesScore - player.livesScore) * (playerMaxLivesScore - player.livesScore + 1) / 2) / gameData.levels.playerProperties.lives;
       
+      } else if (this.data.changeVariable.includes("levelLivesScoreBelow")) {
+        if (player.livesScore < this.data.changeVariable.slice(20)) {
+          changeAmount = 1;
+        } else {
+          changeAmount = 0;
+        }
+
       } else if (this.data.changeVariable === "portalPlayerHover") {
         changeAmount = player.nearestPortal.playerHover;
       }
