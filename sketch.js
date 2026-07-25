@@ -236,7 +236,7 @@ function setup() {
     newLevelDetails.music = gameMusic[newLevelDetails.name];
     newLevelDetails.nodes = newCapsuleNodes;
     newLevelDetails.attacks = newLevelAttacks;
-    newLevelDetails.progress = false;
+    newLevelDetails.bestScore = 0;
     allLevels.push(newLevelDetails);
   }
 
@@ -775,7 +775,10 @@ function levelProgress() {
       } else {
         // If the last node in the level has been passed, exit to the world state after level outro
         if (gameTime.time >= levelState.startTime + beatsToMillis(levelState.levelObject.nodes[nodeIndex].timeBeat) + levelState.message.duration) {
-          levelState.levelObject.progress = true;
+          if (player.livesScore > levelState.levelObject.bestScore) {
+            levelState.levelObject.bestScore = player.livesScore;
+          }
+
           pendGameState(STATES.world);
         }
       }
@@ -963,14 +966,12 @@ class Info {
 
       } else {
         let textVariable;
-        if (this.data.textVariable === "totalLevelsCompleted") {
-          let completedCount = 0;
+        if (this.data.textVariable === "totalLevelScores") {
+          let scoreCount = 0;
           for (let level of allLevels) {
-            if (level.progress) {
-              completedCount++;
-            }
+            scoreCount += level.bestScore;
           }
-          textVariable = completedCount;
+          textVariable = scoreCount;
 
         } else if (this.data.textVariable === "portalLevelName") {
           textVariable = player.nearestPortal.levelObject.name;
@@ -981,8 +982,23 @@ class Info {
         } else if (this.data.textVariable === "portalLevelKey") {
           textVariable = player.nearestPortal.levelObject.minorKey;
 
-        } else if (this.data.textVariable === "portalLevelCompleted") {
-          textVariable = player.nearestPortal.levelObject.progress;
+        } else if (this.data.textVariable === "portalLevelScore" || this.data.textVariable === "levelScore") {
+          let scoreTextVariable;
+          if (this.data.textVariable === "portalLevelScore") {
+            scoreTextVariable = player.nearestPortal.levelObject.bestScore;
+          } else if (this.data.textVariable === "levelScore") {
+            scoreTextVariable = player.livesScore;
+          }
+
+          let scoreText = "";
+          for (let score = 1; score <= gameData.levels.playerProperties.livesScore; score += 1) {
+            if (scoreTextVariable >= score) {
+              scoreText += "◼";
+            } else {
+              scoreText += "◻";
+            }
+          }
+          textVariable = scoreText;
 
         } else if (this.data.textVariable === "levelName") {
           textVariable = levelState.levelObject.name;

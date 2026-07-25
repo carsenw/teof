@@ -20,9 +20,7 @@ The player will be able to explore a main world area, and play levels from porta
         - [ ] World obstacles
         - [ ] Other world features?
         - [x] Level portals
-            - [ ] Level progress info
-                - [x] Level completed indicator
-                - [ ] Best score
+            - [x] Best score
             - [x] Song info
             - [ ] Level icons?
             - [ ] Portal entering animation?
