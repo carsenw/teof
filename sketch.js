@@ -177,11 +177,12 @@ function setup() {
   angleMode(DEGREES);
   colorMode(HSB);
   textAlign(CENTER, CENTER);
+  textFont("arial");
 
   // Ensure audio is ready to play for when its needed
   userStartAudio();
 
-  // Pause the game if the page is hidden
+  // Pause the game whenever the page gets hidden
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) {
       gameTime.pausedPending = true;
@@ -1139,8 +1140,8 @@ class Portal {
     this.x = x;
     this.y = y;
     this.size = 100;
-    this.colorPrimary = {s: 50, b: 40};
-    this.colorSecondary = {s: 50, b: 80};
+    this.colorPrimary = {s: 70, b: 40};
+    this.colorSecondary = {s: 70, b: 80};
     this.levelObject = levelObject;
     this.playerHover = 0;
     this.hoverSpeed = 0.1;

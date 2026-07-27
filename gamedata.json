@@ -6,14 +6,14 @@
         {"showState": "title", "y": 0.1, "width": 1, "height": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "An unfinished game by Carsen W", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
         {"showState": "title", "y": 0.3, "width": 0.25, "height": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Play", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "enterWorld", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
 
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 50, "b": 40, "a": 1}},
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "portalLevelName", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": -0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# BPM", "textVariable": "portalLevelTempo", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": 0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# minor", "textVariable": "portalLevelKey", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 70, "b": 40, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": -0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "portalLevelName", "textColor": {"h": "portalColorH", "s": 70, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": -0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# BPM", "textVariable": "portalLevelTempo", "textColor": {"h": "portalColorH", "s": 70, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "xChange": 0.125, "y": -0.25, "yChange": 0.04, "widthChange": 0.25, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "# minor", "textVariable": "portalLevelKey", "textColor": {"h": "portalColorH", "s": 70, "b": 80, "a": 1}},
         
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 50, "b": 40, "a": 1}},
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "portalLevelScore", "textPaddingScale": 0.25, "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}},
-        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": 0.04, "widthChange": 0.48, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Click to play", "textColor": {"h": "portalColorH", "s": 50, "b": 80, "a": 1}, "buttonAction": "enterLevel", "hoverColor": {"h": "portalColorH", "s": 50, "b": 30, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "widthChange": 0.5, "heightChange": 0.18, "rectColor": {"h": "portalColorH", "s": 70, "b": 40, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": -0.04, "widthChange": 0.5, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "portalLevelScore", "textPaddingScale": 0.25, "textColor": {"h": "portalColorH", "s": 70, "b": 80, "a": 1}},
+        {"showState": "world", "focus": "portal", "changeVariable": "portalPlayerHover", "y": 0.25, "yChange": 0.04, "widthChange": 0.48, "heightChange": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Click to play", "textColor": {"h": "portalColorH", "s": 70, "b": 80, "a": 1}, "buttonAction": "enterLevel", "hoverColor": {"h": "portalColorH", "s": 70, "b": 30, "a": 1}},
 
         {"showState": "world", "changeVariable": "paused", "x": 0.48, "xChange": 0.48, "y": -0.48, "yChange": 0.48, "width": 0.04, "widthChange": -0.04, "height": 0.04, "heightChange": -0.04, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "☰", "textPaddingScale": 0.25, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 1}},
         
@@ -72,24 +72,11 @@
                 "corners": [
                     {"x": -200, "y": 200},
                     {"x": -200, "y": -200},
-                    {"x": -1200, "y": -200},
-                    {"x": -1200, "y": -400},
-                    {"x": -1600, "y": -400},
-                    {"x": -1600, "y": 0},
-                    {"x": -2000, "y": 0},
-                    {"x": -2000, "y": -200},
-                    {"x": -2000, "y": -800},
-                    {"x": -1000, "y": -800},
-                    {"x": -1000, "y": -600},
+                    {"x": -600, "y": -200},
                     {"x": -600, "y": -600},
                     {"x": -600, "y": -800},
                     {"x": -200, "y": -800},
                     {"x": -200, "y": -1400},
-                    {"x": -1000, "y": -1400},
-                    {"x": -1000, "y": -1800},
-                    {"x": -200, "y": -1800},
-                    {"x": 200, "y": -1800},
-                    {"x": 200, "y": -1400},
                     {"x": 600, "y": -1400},
                     {"x": 600, "y": -200},
                     {"x": 200, "y": -200},
@@ -108,11 +95,21 @@
             }
         ],
         "portals": [
-            {"levelIndex": 0, "x": -1800, "y": -200},
-            {"levelIndex": 0, "x": -800, "y": -1600}
+            {"levelIndex": 0, "x": -400, "y": -400},
+            {"levelIndex": 0, "x": 400, "y": -400},
+            {"levelIndex": 0, "x": 0, "y": -200},
+            {"levelIndex": 0, "x": 0, "y": -400},
+            {"levelIndex": 0, "x": -200, "y": -600},
+            {"levelIndex": 0, "x": -100, "y": -900},
+            {"levelIndex": 0, "x": -100, "y": -1300},
+            {"levelIndex": 0, "x": 100, "y": -1100},
+            {"levelIndex": 0, "x": 100, "y": -1300},
+            {"levelIndex": 0, "x": 300, "y": -1100},
+            {"levelIndex": 0, "x": 300, "y": -1300},
+            {"levelIndex": 0, "x": 500, "y": -1100}
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
-        "startPlayer": {"x": -1800, "y": -400, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
+        "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
         "startView": {"x": 0, "y": 0, "size": 800},
         "startGameTime": {"gameMillis": 0, "time": 0, "timeOffset": 0, "paused": false, "pausedPending": false, "pauseStartTime": 0, "rewinding": false, "rewindPending": false, "rewindStartTime": 0, "rewindStartGameTime": 0, "rewindWaitDuration": 1000, "rewindTimeAmount": 5000, "rewindCooldownDuration": 2000, "rewindSpeed": 4},
         "startTransition": {"duration": 1000, "color": {"h": 0, "s": 0, "b": 0}, "active": false, "switchTime": 0}
@@ -441,6 +438,160 @@
                     {"sequence": "squareRing", "startBeat": 288, "xStart": 2000, "yStart": 6600, "wStart": 10, "hStart": 10},
                     {"sequence": "squareRing", "startBeat": 288, "xStart": 2200, "yStart": 6800, "wStart": 10, "hStart": 10},
                     {"sequence": "squareRing", "startBeat": 288, "xStart": 2400, "yStart": 7000, "wStart": 10, "hStart": 10}
+                ]
+            },
+            {
+                "details": {"name": "The Return Journey", "minorKey": "F", "tempo": 150, "colorH": 283},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "The Lasting Effects of Success", "minorKey": "G♯", "tempo": 160, "colorH": 125},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Artificial Dust Machine", "minorKey": "E", "tempo": 124, "colorH": 43},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "First Renewal", "minorKey": "A", "tempo": 114, "colorH": 317},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Beacons", "minorKey": "G", "tempo": 118, "colorH": 188},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Dry Swamp", "minorKey": "C♯", "tempo": 108, "colorH": 15},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Shadow Mode", "minorKey": "B♭", "tempo": 142, "colorH": 346},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Strange Amoeba", "minorKey": "F♯", "tempo": 94, "colorH": 73},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Inevitable Destiny", "minorKey": "C", "tempo": 176, "colorH": 260},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "Quest Conclusion", "minorKey": "B", "tempo": 102, "colorH": 155},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
+                ]
+            },
+            {
+                "details": {"name": "The Culmination of Frequency", "minorKey": "E♭", "tempo": 168, "colorH": -1},
+                "capsulePath": [
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                    ],
+                "attackSequences": {
+                    "name": [
+                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ]
+                },
+                "attackProgram": [
+                    {"sequence": "name", "startBeat": 0}
                 ]
             }
         ]
