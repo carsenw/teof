@@ -994,9 +994,9 @@ class Info {
           let scoreText = "";
           for (let score = 1; score <= gameData.levels.playerProperties.livesScore; score += 1) {
             if (scoreTextVariable >= score) {
-              scoreText += "◼";
+              scoreText += "■";
             } else {
-              scoreText += "◻";
+              scoreText += "□";
             }
           }
           textVariable = scoreText;

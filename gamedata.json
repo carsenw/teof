@@ -22,7 +22,7 @@
         {"showState": "world", "changeVariable": "paused", "yChange": -0.15, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Resume", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "togglePause", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
         {"showState": "world", "changeVariable": "paused", "yChange": 0, "widthChange": 0.25, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Back to title", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "exitWorld", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
 
-        {"showState": "world", "x": -0.4, "y": -0.4625, "width": 0.2, "height": 0.075, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "◼ #", "textVariable": "totalLevelScores"},
+        {"showState": "world", "x": -0.4, "y": -0.4625, "width": 0.2, "height": 0.075, "rectColor": {"h": 0, "s": 0, "b": 60, "a": 1}, "textString": "■ #", "textVariable": "totalLevelScores"},
 
         {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.35, "width": 0.5, "height": 0.2, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0.5}},
         {"showState": "level", "changeVariable": "levelIntro", "x": -0.25, "xChange": -0.5, "y": 0.31, "width": 0.5, "height": 0.08, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textVariable": "levelName", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
@@ -58,11 +58,11 @@
         {"showState": "level", "x": -0.1375, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.0775, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
         {"showState": "level", "x": -0.0475, "y": -0.48, "width": 0.005, "height": 0.03, "rectColor": {"h": 0, "s": 0, "b": 30, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScoreBelow1", "x": -0.4225, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◼", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScoreBelow2", "x": -0.2875, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◼", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScoreBelow3", "x": -0.1825, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◼", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScoreBelow4", "x": -0.1075, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◼", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
-        {"showState": "level", "changeVariable": "levelLivesScoreBelow5", "x": -0.0625, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◼", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}}
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow1", "x": -0.4225, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "■", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow2", "x": -0.2875, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "■", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow3", "x": -0.1825, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "■", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow4", "x": -0.1075, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "■", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}},
+        {"showState": "level", "changeVariable": "levelLivesScoreBelow5", "x": -0.0625, "y": -0.48, "width": 0.02, "height": 0.02, "widthChange": -0.02, "heightChange": -0.02, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "■", "textPaddingScale": 0, "textColor": {"h": 0, "s": 0, "b": 100, "a": 1}}
     ],
     "world": {
         "walls": [
