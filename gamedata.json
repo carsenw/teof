@@ -454,10 +454,12 @@
                         {"timeBeat": 32, "y": 0}
                 ],
                 "attackSequences": {
-                    "spinnerScatterL": [
-                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
-
-                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 30, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
+                    "boss": [
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -180, "yStart": 0, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 16, "xStart": -540, "angleMove": 720}
+                    ],
+                    "radialScatterL": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
                         {"startBeat": 0.5, "offsetAngleStart": 247.5},
                         {"startBeat": 1, "offsetAngleStart": 45},
                         {"startBeat": 1.5, "offsetAngleStart": 202.5},
@@ -490,10 +492,8 @@
                         {"startBeat": 15, "offsetAngleStart": 135},
                         {"startBeat": 15.5, "offsetAngleStart": 292.5}                      
                     ],
-                    "spinnerScatterR": [
-                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 720, "offsetXMove": 0, "offsetAngleMove": 0},
-
-                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 30, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
+                    "radialScatterR": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
                         {"startBeat": 0.5, "offsetAngleStart": 292.5},
                         {"startBeat": 1, "offsetAngleStart": 135},
                         {"startBeat": 1.5, "offsetAngleStart": 337.5},
@@ -525,11 +525,31 @@
                         {"startBeat": 14.5, "offsetAngleStart": 202.5},
                         {"startBeat": 15, "offsetAngleStart": 45},
                         {"startBeat": 15.5, "offsetAngleStart": 247.5}
+                    ],
+                    "capsuleCircles": [
+                        {"startBeat": 0, "moveBeats": 0.5, "warnBeats": 4, "fadeBeats": 1.5, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "move", "xStart": 25, "yStart": -150, "wStart": 15, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 1, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 2, "warnBeats": 4, "fadeBeats": 1.5, "xStart": 100, "yStart": 150, "wStart": 15},
+                        {"startBeat": 3, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 4, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -100, "yStart": 75, "wStart": 15},
+                        {"startBeat": 5, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 6, "warnBeats": 4, "fadeBeats": 1.5, "xStart": 100, "yStart": 25, "wStart": 15},
+                        {"startBeat": 7, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 8, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -100, "yStart": -150, "wStart": 15},
+                        {"startBeat": 9, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 10, "warnBeats": 4, "fadeBeats": 1.5, "xStart": 100, "yStart": -75, "wStart": 15},
+                        {"startBeat": 11, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 12, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -100, "yStart": -25, "wStart": 15},
+                        {"startBeat": 13, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45},
+                        {"startBeat": 14, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -25, "yStart": 150, "wStart": 15},
+                        {"startBeat": 15, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45}
                     ]
                 },
                 "attackProgram": [
-                    {"sequence": "spinnerScatterL", "startBeat": 0, "xStart": -180},
-                    {"sequence": "spinnerScatterR", "startBeat": 16, "xStart": -540}
+                    {"sequence": "boss", "startBeat": 0},
+                    {"sequence": "radialScatterL", "startBeat": 0, "xStart": -180, "offsetXStart": 30},
+                    {"sequence": "radialScatterR", "startBeat": 16, "xStart": -540, "offsetXStart": 30},
+                    {"sequence": "capsuleCircles", "startBeat": 16}
                 ]
             },
             {
