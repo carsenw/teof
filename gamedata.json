@@ -444,19 +444,32 @@
                 "details": {"name": "The Return Journey", "minorKey": "F", "tempo": 150, "colorH": 283},
                 "capsulePath": [
                         {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 300, "bdShape": "hexagon", "bdSpacing": 150, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 25, "b": 10}, "viewSize": 800},
-                        {"timeBeat": 4, "y": 200, "bdSize": 5},
-                        {"timeBeat": 8, "x": -180, "y": 290, "bdSize": 10},
-                        {"timeBeat": 12, "x": -360, "y": 200, "bdSize": 15},
+                        {"timeBeat": 4, "y": 180, "bdSize": 5},
+                        {"timeBeat": 8, "x": -150, "y": 270, "bdSize": 10},
+                        {"timeBeat": 12, "x": -300, "y": 180, "bdSize": 15},
                         {"timeBeat": 16, "y": 0, "bdSize": 20},
-                        {"timeBeat": 20, "y": -200},
-                        {"timeBeat": 24, "x": -540, "y": -290},
-                        {"timeBeat": 28, "x": -720, "y": -200},
-                        {"timeBeat": 32, "y": 0}
+                        {"timeBeat": 20, "y": -180},
+                        {"timeBeat": 24, "x": -450, "y": -270},
+                        {"timeBeat": 28, "x": -600, "y": -180},
+                        {"timeBeat": 31, "y": -45},
+                        {"timeBeat": 32, "y": 0, "bdColorBack": {"s": 25, "b": 5}, "bdColorFront": {"s": 50, "b": 10}},
+                        {"timeBeat": 40, "x": -1080},
+                        {"timeBeat": 48, "x": -1320, "y": -400},
+                        {"timeBeat": 56, "x": -1080, "y": -800},
+                        {"timeBeat": 63, "x": -660},
+                        {"timeBeat": 64, "x": -600, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}}
                 ],
                 "attackSequences": {
                     "boss": [
-                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -180, "yStart": 0, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 16, "xStart": -540, "angleMove": 720}
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -150, "yStart": 0, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 16, "xStart": -450, "angleMove": 720},
+                        {"startBeat": 32, "moveBeats": 6, "warnBeats": 4, "fadeBeats": 0, "withCapsule": "move", "xStart": 0, "wStart": 120, "hStart": 120, "angleStart": 90, "offsetAngleStart": 180, "offsetXStart": 240, "angleMove": 0},
+                        {"startBeat": 38, "moveBeats": 2, "warnBeats": 0, "offsetAngleMove": 60},
+                        {"startBeat": 40, "moveBeats": 6, "offsetAngleStart": 240, "offsetAngleMove": 0},
+                        {"startBeat": 46, "moveBeats": 2, "offsetAngleMove": 60},
+                        {"startBeat": 48, "moveBeats": 6, "offsetAngleStart": 300, "offsetAngleMove": 0},
+                        {"startBeat": 54, "moveBeats": 2, "offsetAngleMove": 60},
+                        {"startBeat": 56, "moveBeats": 8, "fadeBeats": 4, "offsetAngleStart": 0, "offsetAngleMove": 0}
                     ],
                     "radialScatterL": [
                         {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
@@ -547,8 +560,8 @@
                 },
                 "attackProgram": [
                     {"sequence": "boss", "startBeat": 0},
-                    {"sequence": "radialScatterL", "startBeat": 0, "xStart": -180, "offsetXStart": 30},
-                    {"sequence": "radialScatterR", "startBeat": 16, "xStart": -540, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 0, "xStart": -150, "offsetXStart": 30},
+                    {"sequence": "radialScatterR", "startBeat": 16, "xStart": -450, "offsetXStart": 30},
                     {"sequence": "capsuleCircles", "startBeat": 16}
                 ]
             },
