@@ -96,17 +96,7 @@
         ],
         "portals": [
             {"levelIndex": 0, "x": -400, "y": -400},
-            {"levelIndex": 1, "x": 400, "y": -400},
-            {"levelIndex": 0, "x": 0, "y": -200},
-            {"levelIndex": 0, "x": 0, "y": -400},
-            {"levelIndex": 0, "x": -200, "y": -600},
-            {"levelIndex": 0, "x": -100, "y": -900},
-            {"levelIndex": 0, "x": -100, "y": -1300},
-            {"levelIndex": 0, "x": 100, "y": -1100},
-            {"levelIndex": 0, "x": 100, "y": -1300},
-            {"levelIndex": 0, "x": 300, "y": -1100},
-            {"levelIndex": 0, "x": 300, "y": -1300},
-            {"levelIndex": 0, "x": 500, "y": -1100}
+            {"levelIndex": 1, "x": 400, "y": -400}
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
@@ -458,13 +448,24 @@
                         {"timeBeat": 56, "x": -1080, "y": -680},
                         {"timeBeat": 63, "x": -660},
                         {"timeBeat": 64, "x": -600, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}},
-                        {"timeBeat": 71, "y": -1120, "bdShape": "circle", "bdSize": 36, "viewSize": 625},
-                        {"timeBeat": 72, "y": -1160, "bdColorFront": {"s": 60, "b": 12}, "viewSize": 600}
+                        {"timeBeat": 71, "y": -1120, "bdShape": "circle", "bdSize": 36},
+                        {"timeBeat": 72, "y": -1160, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 80, "x": -300, "y": -980},
+                        {"timeBeat": 88, "x": 0, "y": -1160},
+                        {"timeBeat": 96, "x": 300, "y": -1340},
+                        {"timeBeat": 104, "x": 600, "y": -1160},
+                        {"timeBeat": 112, "x": 780, "y": -1460},
+                        {"timeBeat": 120, "x": 600, "y": -1760},
+                        {"timeBeat": 128, "x": 420, "y": -2060},
+                        {"timeBeat": 132, "x": 510, "y": -2210},
+                        {"timeBeat": 136 ,"x": 600, "y": -2360, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
+                        {"timeBeat": 200, "x": -3240}
                 ],
                 "attackSequences": {
                     "boss": [
                         {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -150, "yStart": 0, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
                         {"startBeat": 16, "xStart": -450, "angleMove": 720},
+
                         {"startBeat": 32, "moveBeats": 7, "warnBeats": 4, "fadeBeats": 0, "withCapsule": "move", "xStart": 0, "angleStart": 90, "offsetAngleStart": 180, "offsetXStart": 240, "angleMove": 0},
                         {"startBeat": 39, "moveBeats": 1, "warnBeats": 0, "offsetAngleMove": 45},
                         {"startBeat": 40, "moveBeats": 7, "offsetAngleStart": 225, "offsetAngleMove": 0},
@@ -472,7 +473,47 @@
                         {"startBeat": 48, "moveBeats": 7, "offsetAngleStart": 315, "offsetAngleMove": 0},
                         {"startBeat": 55, "moveBeats": 1, "offsetAngleMove": 45},
                         {"startBeat": 56, "moveBeats": 8, "offsetAngleStart": 0, "offsetAngleMove": 0},
-                        {"startBeat": 64, "moveBeats": 4, "withCapsule": "start", "xMove": 240}
+                        {"startBeat": 64, "moveBeats": 4, "withCapsule": "start", "offsetXMove": 240},
+
+                        {"startBeat": 72, "warnBeats": 4, "withCapsule": "move", "angleStart": 0, "offsetXStart": 240, "offsetAngleStart": 60, "offsetXMove": -480},
+                        {"startBeat": 76, "warnBeats": 0, "offsetXStart": -240, "offsetAngleStart": 60, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 80, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 84, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
+                        {"startBeat": 88, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": -480, "offsetAngleMove": 0},
+                        {"startBeat": 92, "offsetXStart": -240, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 96, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 100, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
+                        {"startBeat": 104, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": -480, "offsetAngleMove": 0},
+                        {"startBeat": 108, "offsetXStart": -240, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 112, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 116, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
+                        {"startBeat": 120, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": -480, "offsetAngleMove": 0},
+                        {"startBeat": 124, "offsetXStart": -240, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 128, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 132, "offsetXStart": 240, "angleMove": -270, "offsetXMove": 0, "offsetAngleMove": 60},
+
+                        {"startBeat": 136, "moveBeats": 4, "angleStart": 90, "offsetXStart": 240, "offsetAngleStart": 180, "angleMove": 360, "offsetXMove": -480, "offsetAngleMove": 0},
+                        {"startBeat": 140, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 144, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
+                        {"startBeat": 148, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 152, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
+                        {"startBeat": 156, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 160, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
+                        {"startBeat": 164, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 168, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
+                        {"startBeat": 172, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 176, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
+                        {"startBeat": 180, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 184, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
+                        {"startBeat": 188, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
+                        {"startBeat": 192, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
+                        {"startBeat": 196, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480}
+                    ],
+                    "spinHexagonL": [
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0}
+                    ],
+                    "spinHexagonR": [
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 720, "offsetXMove": 0, "offsetAngleMove": 0}
                     ],
                     "radialScatterL": [
                         {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "triangle", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 10, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 90, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 540, "offsetAngleMove": 0},
@@ -560,7 +601,7 @@
                         {"startBeat": 14, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -25, "yStart": 150, "wStart": 15},
                         {"startBeat": 15, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45}
                     ],
-                    "spears": [
+                    "spearsPivot": [
                         {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": 0, "yStart": 0, "wStart": 180, "hStart": 30, "angleStart": 0, "offsetXStart": -330, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
                         {"startBeat": 6, "wStart": 60, "offsetXStart": -270},
                         {"startBeat": 8, "wStart": 180,  "offsetXStart": -330, "offsetAngleStart": 45},
@@ -569,6 +610,32 @@
                         {"startBeat": 22, "wStart": 60,  "offsetXStart": -270},
                         {"startBeat": 24, "wStart": 120, "offsetXStart": -300, "offsetAngleStart": 180},
                         {"startBeat": 28}
+                    ],
+                    "spearsTriple": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": -330, "yStart": 0, "wStart": 180, "hStart": 30, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 480, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"yStart": -60},
+                        {"yStart": 60},
+                        {"startBeat": 6, "yStart": 0, "wStart": 60, "xStart": -270},
+                        {"yStart": -90},
+                        {"yStart": 90},
+                        {"startBeat": 8, "yStart": 0, "wStart": 180,  "xStart": -330},
+                        {"yStart": -60},
+                        {"yStart": 60},
+                        {"startBeat": 14, "yStart": 0, "wStart": 60,  "xStart": -270},
+                        {"yStart": -90},
+                        {"yStart": 90},
+                        {"startBeat": 16, "yStart": 0, "wStart": 180, "xStart": -330},
+                        {"yStart": -120},
+                        {"yStart": 120},
+                        {"startBeat": 22, "yStart": 0, "wStart": 60,  "xStart": -270},
+                        {"yStart": -150},
+                        {"yStart": 150},
+                        {"startBeat": 24, "yStart": 0, "wStart": 120, "xStart": -300},
+                        {"yStart": -120},
+                        {"yStart": 120},
+                        {"startBeat": 28, "yStart": 0},
+                        {"yStart": -90},
+                        {"yStart": 90}
                     ]
                 },
                 "attackProgram": [
@@ -577,9 +644,20 @@
                     {"sequence": "radialScatterR", "startBeat": 16, "xStart": -450, "offsetXStart": 30},
                     {"sequence": "capsuleCircles", "startBeat": 16},
 
-                    {"sequence": "spears", "startBeat": 32},
+                    {"sequence": "spearsPivot", "startBeat": 32},
                     {"sequence": "capsuleCircles", "startBeat": 32},
-                    {"sequence": "capsuleCircles", "startBeat": 48}
+                    {"sequence": "capsuleCircles", "startBeat": 48},
+
+                    {"sequence": "spinHexagonR", "startBeat": 88, "xStart": 300, "yStart": -980},
+                    {"sequence": "radialScatterR", "startBeat": 88, "xStart": 300, "yStart": -980, "offsetXStart": 30},
+                    {"sequence": "spinHexagonR", "startBeat": 104, "xStart": 420, "yStart": -1460},
+                    {"sequence": "radialScatterR", "startBeat": 104, "xStart": 420, "yStart": -1460, "offsetXStart": 30},
+                    {"sequence": "radialScatterR", "startBeat": 104.25, "xStart": 420, "yStart": -1460, "offsetXStart": 30, "offsetAngleStart": 22.5},
+                    {"sequence": "spinHexagonL", "startBeat": 120, "xStart": 780, "yStart": -2060},
+                    {"sequence": "radialScatterL", "startBeat": 120, "xStart": 780, "yStart": -2060, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 120.25, "xStart": 780, "yStart": -2060, "offsetXStart": 30, "offsetAngleStart": -22.5},
+
+                    {"sequence": "spearsTriple", "startBeat": 168}
                 ]
             },
             {
