@@ -2,6 +2,7 @@
 // Carsen Waters
 // 2026
 
+////mayyybe boss can move the other way (start on right) in the chorus??
 
 //////// Constants ////////
 
@@ -560,6 +561,7 @@ function movePlayer() {
         angle = angle / 2;
       }
 
+      // Move slower if shift or space is pressed
       let moveSpeed = player.speed;
       if (keyIsDown(KEYS.shift) || keyIsDown(KEYS.space)) {
         moveSpeed /= 2;
@@ -596,13 +598,15 @@ function movePlayer() {
           player.x += cos(angle) * moveSpeed;
           player.y += sin(angle) * moveSpeed;
         }
-        
-        // Keep the player in the capsule
-        let currentCapsule = levelState.capsule;
-        
-        player.x = constrain(player.x, currentCapsule.x - (currentCapsule.width/2 - player.size/2), currentCapsule.x + (currentCapsule.width/2 - player.size/2));
-        player.y = constrain(player.y, currentCapsule.y - (currentCapsule.height/2 - player.size/2), currentCapsule.y + (currentCapsule.height/2 - player.size/2));
       }
+    }
+
+    if (gameState === STATES.level) {
+      // Keep the player in the capsule
+      let currentCapsule = levelState.capsule;
+        
+      player.x = constrain(player.x, currentCapsule.x - (currentCapsule.width/2 - player.size/2), currentCapsule.x + (currentCapsule.width/2 - player.size/2));
+      player.y = constrain(player.y, currentCapsule.y - (currentCapsule.height/2 - player.size/2), currentCapsule.y + (currentCapsule.height/2 - player.size/2));
     }
 
   } else {

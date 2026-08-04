@@ -442,13 +442,16 @@
                         {"timeBeat": 24, "x": -450, "y": -270},
                         {"timeBeat": 28, "x": -600, "y": -180},
                         {"timeBeat": 31, "y": -45},
+
                         {"timeBeat": 32, "y": 0, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
                         {"timeBeat": 40, "x": -1080},
                         {"timeBeat": 48, "x": -1420, "y": -340},
                         {"timeBeat": 56, "x": -1080, "y": -680},
                         {"timeBeat": 63, "x": -660},
+
                         {"timeBeat": 64, "x": -600, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}},
                         {"timeBeat": 71, "y": -1120, "bdShape": "circle", "bdSize": 36},
+
                         {"timeBeat": 72, "y": -1160, "bdColorFront": {"s": 60, "b": 12}},
                         {"timeBeat": 80, "x": -300, "y": -980},
                         {"timeBeat": 88, "x": 0, "y": -1160},
@@ -458,8 +461,19 @@
                         {"timeBeat": 120, "x": 600, "y": -1760},
                         {"timeBeat": 128, "x": 420, "y": -2060},
                         {"timeBeat": 132, "x": 510, "y": -2210},
-                        {"timeBeat": 136 ,"x": 600, "y": -2360, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
-                        {"timeBeat": 200, "x": -3240}
+
+                        {"timeBeat": 136 ,"x": 600, "y": -2360, "bdSize": 72, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
+                        {"timeBeat": 199, "x": -3180},
+
+                        {"timeBeat": 200, "x": -3240, "bdSize": 36, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 208, "y": -1880},
+                        {"timeBeat": 216, "x": -3580, "y": -1540},
+                        {"timeBeat": 224, "x": -3920, "y": -1880},
+                        {"timeBeat": 232, "y": -2360},
+                        {"timeBeat": 240, "x": -4400},
+                        {"timeBeat": 248, "x": -4740, "y": -2700},
+                        {"timeBeat": 256, "x": -4400, "y": -3040},
+                        {"timeBeat": 264, "x": -3920}
                 ],
                 "attackSequences": {
                     "boss": [
@@ -473,6 +487,7 @@
                         {"startBeat": 48, "moveBeats": 7, "offsetAngleStart": 315, "offsetAngleMove": 0},
                         {"startBeat": 55, "moveBeats": 1, "offsetAngleMove": 45},
                         {"startBeat": 56, "moveBeats": 8, "offsetAngleStart": 0, "offsetAngleMove": 0},
+
                         {"startBeat": 64, "moveBeats": 4, "withCapsule": "start", "offsetXMove": 240},
 
                         {"startBeat": 72, "warnBeats": 4, "withCapsule": "move", "angleStart": 0, "offsetXStart": 240, "offsetAngleStart": 60, "offsetXMove": -480},
@@ -490,24 +505,37 @@
                         {"startBeat": 120, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": -480, "offsetAngleMove": 0},
                         {"startBeat": 124, "offsetXStart": -240, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
                         {"startBeat": 128, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
-                        {"startBeat": 132, "offsetXStart": 240, "angleMove": -270, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 132, "offsetXStart": 240, "angleMove": -270, "offsetXMove": -120, "offsetAngleMove": 60},
 
-                        {"startBeat": 136, "moveBeats": 4, "angleStart": 90, "offsetXStart": 240, "offsetAngleStart": 180, "angleMove": 360, "offsetXMove": -480, "offsetAngleMove": 0},
-                        {"startBeat": 140, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 144, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
-                        {"startBeat": 148, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 152, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
-                        {"startBeat": 156, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 160, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
-                        {"startBeat": 164, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 168, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
-                        {"startBeat": 172, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 176, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
-                        {"startBeat": 180, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 184, "offsetXStart": 240, "angleMove": 360, "offsetXMove": -480},
-                        {"startBeat": 188, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480},
-                        {"startBeat": 192, "offsetXStart": 240, "angleMove": -360, "offsetXMove": -480},
-                        {"startBeat": 196, "offsetXStart": -240, "angleMove": 0, "offsetXMove": 480}
+                        {"startBeat": 136, "moveBeats": 4, "angleStart": 90, "offsetXStart": 120, "offsetAngleStart": 180, "angleMove": 720, "offsetXMove": -240, "offsetAngleMove": 0},
+                        {"startBeat": 140, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 144, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 148, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 152, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 156, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 160, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 164, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 168, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 172, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 176, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 180, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 184, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 188, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 192, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 196, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+
+                        {"startBeat": 200, "moveBeats": 8, "withCapsule": "start", "offsetXStart": 120, "offsetXMove": 480},
+
+                        {"startBeat": 232, "moveBeats": 4, "warnBeats": 4, "withCapsule": "move", "angleStart": 0, "offsetXStart": 240, "offsetAngleStart": 60, "offsetXMove": -480},
+                        {"startBeat": 236, "warnBeats": 0, "offsetXStart": -240, "offsetAngleStart": 60, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 240, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 244, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
+                        {"startBeat": 248, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": -480, "offsetAngleMove": 0},
+                        {"startBeat": 252, "offsetXStart": -240, "angleMove": -360, "offsetXMove": 0, "offsetAngleMove": 60},
+                        {"startBeat": 256, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 260, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
+
+                        {"startBeat": 264, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0}
                     ],
                     "spinHexagonL": [
                         {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0}
@@ -601,7 +629,7 @@
                         {"startBeat": 14, "warnBeats": 4, "fadeBeats": 1.5, "xStart": -25, "yStart": 150, "wStart": 15},
                         {"startBeat": 15, "warnBeats": 2, "fadeBeats": 0.5, "wStart": 45}
                     ],
-                    "spearsPivot": [
+                    "spearsPivotA": [
                         {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": 0, "yStart": 0, "wStart": 180, "hStart": 30, "angleStart": 0, "offsetXStart": -330, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
                         {"startBeat": 6, "wStart": 60, "offsetXStart": -270},
                         {"startBeat": 8, "wStart": 180,  "offsetXStart": -330, "offsetAngleStart": 45},
@@ -611,31 +639,97 @@
                         {"startBeat": 24, "wStart": 120, "offsetXStart": -300, "offsetAngleStart": 180},
                         {"startBeat": 28}
                     ],
-                    "spearsTriple": [
-                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": -330, "yStart": 0, "wStart": 180, "hStart": 30, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 480, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"yStart": -60},
+                    "spearsPivotB": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": 0, "yStart": 0, "wStart": 30, "hStart": 30, "angleStart": 0, "offsetXStart": -265, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+                        {"startBeat": 1},
+                        {"startBeat": 2},
+                        {"startBeat": 2.75},
+                        {"startBeat": 3.5},
+                        {"startBeat": 4},
+                        {"startBeat": 5},
+                        {"startBeat": 6, "wStart": 60, "offsetXStart": -270},
+                        {"startBeat": 8, "wStart": 30, "offsetXStart": -265, "offsetAngleStart": 45},
+                        {"startBeat": 9},
+                        {"startBeat": 10},
+                        {"startBeat": 10.75},
+                        {"startBeat": 11.5},
+                        {"startBeat": 14, "wStart": 60,  "offsetXStart": -270},
+                        {"startBeat": 16, "wStart": 180, "offsetXStart": -330, "offsetAngleStart": 135},
+                        {"startBeat": 22, "wStart": 60,  "offsetXStart": -270},
+                        {"startBeat": 24, "wStart": 120, "offsetXStart": -300, "offsetAngleStart": 180},
+                        {"startBeat": 28.5, "wStart": 30, "offsetXStart": -265},
+                        {"startBeat": 29.5},
+                        {"startBeat": 30.5},
+                        {"startBeat": 31.5},
+
+                        {"startBeat": 0, "moveBeats": 7, "fadeBeats": 0, "shape": "hexagon", "withCapsule": "move", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 240, "offsetXMove": 0},
+                        {"startBeat": 7, "moveBeats": 1, "warnBeats": 0, "offsetAngleMove": 45},
+                        {"startBeat": 8, "moveBeats": 7, "offsetAngleStart": 225, "offsetAngleMove": 0},
+                        {"startBeat": 15, "moveBeats": 1, "offsetAngleMove": 90},
+                        {"startBeat": 16, "moveBeats": 7, "offsetAngleStart": 315, "offsetAngleMove": 0},
+                        {"startBeat": 23, "moveBeats": 1, "offsetAngleMove": 45},
+                        {"startBeat": 24, "moveBeats": 8, "fadeBeats": 2, "offsetAngleStart": 0, "offsetAngleMove": 0}
+                    ],
+                    "spearsDouble": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "pentagonHomeObtuse", "withCapsule": "start", "xStart": -330, "yStart": -60, "wStart": 180, "hStart": 30, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 480, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
                         {"yStart": 60},
-                        {"startBeat": 6, "yStart": 0, "wStart": 60, "xStart": -270},
-                        {"yStart": -90},
+                        {"startBeat": 6, "yStart": -90, "wStart": 60, "xStart": -270},
                         {"yStart": 90},
-                        {"startBeat": 8, "yStart": 0, "wStart": 180,  "xStart": -330},
-                        {"yStart": -60},
+                        {"startBeat": 8, "yStart": -60, "wStart": 180,  "xStart": -330},
                         {"yStart": 60},
-                        {"startBeat": 14, "yStart": 0, "wStart": 60,  "xStart": -270},
-                        {"yStart": -90},
+                        {"startBeat": 14, "yStart": -90, "wStart": 60,  "xStart": -270},
                         {"yStart": 90},
-                        {"startBeat": 16, "yStart": 0, "wStart": 180, "xStart": -330},
-                        {"yStart": -120},
+                        {"startBeat": 16, "yStart": -120, "wStart": 180, "xStart": -330},
                         {"yStart": 120},
-                        {"startBeat": 22, "yStart": 0, "wStart": 60,  "xStart": -270},
-                        {"yStart": -150},
+                        {"startBeat": 22, "yStart": -150, "wStart": 60,  "xStart": -270},
                         {"yStart": 150},
-                        {"startBeat": 24, "yStart": 0, "wStart": 120, "xStart": -300},
-                        {"yStart": -120},
+                        {"startBeat": 24, "yStart": -120, "wStart": 120, "xStart": -300},
                         {"yStart": 120},
-                        {"startBeat": 28, "yStart": 0},
-                        {"yStart": -90},
-                        {"yStart": 90}
+                        {"startBeat": 28, "yStart": -90},
+                        {"yStart": 90},
+
+                        {"startBeat": 0, "moveBeats": 5, "fadeBeats": 0, "shape": "hexagon", "withCapsule": "move", "xStart": -240, "yStart": -60, "wStart": 60, "hStart": 30, "angleStart": 90, "xMove": 0},
+                        {"yStart": 60},
+                        {"startBeat": 5, "moveBeats": 1, "warnBeats": 0, "yStart": -60, "yMove": -30},
+                        {"yStart": 60, "yMove": 30},
+                        {"startBeat": 6, "yStart": -90, "yMove": 0},
+                        {"yStart": 90},
+                        {"startBeat": 7, "yStart": -90, "yMove": 30},
+                        {"yStart": 90, "yMove": -30},
+                        {"startBeat": 8, "moveBeats": 5, "yStart": -60, "yMove": 0},
+                        {"yStart": 60},
+                        {"startBeat": 13, "moveBeats": 1, "yStart": -60, "yMove": -30},
+                        {"yStart": 60, "yMove": 30},
+                        {"startBeat": 14, "yStart": -90, "yMove": 0},
+                        {"yStart": 90},
+                        {"startBeat": 15, "yStart": -90, "yMove": -30},
+                        {"yStart": 90, "yMove": 30},
+                        {"startBeat": 16, "moveBeats": 5, "yStart": -120, "yMove": 0},
+                        {"yStart": 120},
+                        {"startBeat": 21, "moveBeats": 1, "yStart": -120, "yMove": -30},
+                        {"yStart": 120, "yMove": 30},
+                        {"startBeat": 22, "yStart": -150, "yMove": 0},
+                        {"yStart": 150},
+                        {"startBeat": 23, "yStart": -150, "yMove": 30},
+                        {"yStart": 150, "yMove": -30},
+                        {"startBeat": 24, "moveBeats": 3, "yStart": -120, "yMove": 0},
+                        {"yStart": 120},
+                        {"startBeat": 27, "moveBeats": 1, "yStart": -120, "yMove": 30},
+                        {"yStart": 120, "yMove": -30},
+                        {"startBeat": 28, "moveBeats": 3, "yStart": -90, "yMove": 0},
+                        {"yStart": 90},
+                        {"startBeat": 31, "moveBeats": 1, "fadeBeats": 2, "yStart": -90, "yMove": 30},
+                        {"yStart": 90, "yMove": -30}
+                    ],
+                    "alternatingLasers": [
+                        {"startBeat": 0, "moveBeats": 0.5, "warnBeats": 1, "fadeBeats": 0.5, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "start", "xStart": -120, "yStart": 200, "wStart": 10, "hStart": 400, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 1, "xStart": -60, "yStart": -200},
+                        {"startBeat": 2, "xStart": 0, "yStart": 200},
+                        {"startBeat": 3, "xStart": 60, "yStart": -200},
+                        {"startBeat": 8, "xStart": -120, "yStart": -200},
+                        {"startBeat": 9, "xStart": -60, "yStart": 200},
+                        {"startBeat": 10, "xStart": 0, "yStart": -200},
+                        {"startBeat": 11, "xStart": 60, "yStart": 200}
                     ]
                 },
                 "attackProgram": [
@@ -644,7 +738,7 @@
                     {"sequence": "radialScatterR", "startBeat": 16, "xStart": -450, "offsetXStart": 30},
                     {"sequence": "capsuleCircles", "startBeat": 16},
 
-                    {"sequence": "spearsPivot", "startBeat": 32},
+                    {"sequence": "spearsPivotA", "startBeat": 32},
                     {"sequence": "capsuleCircles", "startBeat": 32},
                     {"sequence": "capsuleCircles", "startBeat": 48},
 
@@ -657,7 +751,14 @@
                     {"sequence": "radialScatterL", "startBeat": 120, "xStart": 780, "yStart": -2060, "offsetXStart": 30},
                     {"sequence": "radialScatterL", "startBeat": 120.25, "xStart": 780, "yStart": -2060, "offsetXStart": 30, "offsetAngleStart": -22.5},
 
-                    {"sequence": "spearsTriple", "startBeat": 168}
+                    {"sequence": "alternatingLasers", "startBeat": 136},
+                    {"sequence": "alternatingLasers", "startBeat": 152},
+                    {"sequence": "alternatingLasers", "startBeat": 168},
+                    {"sequence": "alternatingLasers", "startBeat": 184},
+                    {"sequence": "spearsDouble", "startBeat": 168},
+
+                    {"sequence": "spearsPivotB", "startBeat": 200, "offsetAngleStart": -90},
+                    {"sequence": "spearsPivotB", "startBeat": 232}
                 ]
             },
             {
