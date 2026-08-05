@@ -2,7 +2,6 @@
 // Carsen Waters
 // 2026
 
-////mayyybe boss can move the other way (start on right) in the chorus??
 
 //////// Constants ////////
 

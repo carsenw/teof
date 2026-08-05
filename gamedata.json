@@ -434,53 +434,66 @@
                 "details": {"name": "The Return Journey", "minorKey": "F", "tempo": 150, "colorH": 283},
                 "capsulePath": [
                         {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 300, "bdShape": "hexagon", "bdSpacing": 150, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 30, "b": 12}, "viewSize": 800},
-                        {"timeBeat": 4, "y": 180, "bdSize": 6},
-                        {"timeBeat": 8, "x": -150, "y": 270, "bdSize": 12},
-                        {"timeBeat": 12, "x": -300, "y": 180, "bdSize": 18},
-                        {"timeBeat": 16, "y": 0, "bdSize": 24},
-                        {"timeBeat": 20, "y": -180},
-                        {"timeBeat": 24, "x": -450, "y": -270},
-                        {"timeBeat": 28, "x": -600, "y": -180},
-                        {"timeBeat": 31, "y": -45},
+                        {"timeBeat": 8, "x": -300, "y": 180, "bdSize": 12},
+                        {"timeBeat": 16, "x": -600, "y": 0, "bdSize": 24},
+                        {"timeBeat": 24, "x": -900, "y": -180},
+                        {"timeBeat": 31, "x": -1162.5, "y": -22.5},
 
-                        {"timeBeat": 32, "y": 0, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
-                        {"timeBeat": 40, "x": -1080},
-                        {"timeBeat": 48, "x": -1420, "y": -340},
-                        {"timeBeat": 56, "x": -1080, "y": -680},
-                        {"timeBeat": 63, "x": -660},
+                        {"timeBeat": 32, "x": -1200, "y": 0, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 40, "x": -1680},
+                        {"timeBeat": 48, "x": -2020, "y": -340},
+                        {"timeBeat": 56, "x": -1680, "y": -680},
+                        {"timeBeat": 63, "x": -1260},
 
-                        {"timeBeat": 64, "x": -600, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}},
-                        {"timeBeat": 71, "y": -1120, "bdShape": "circle", "bdSize": 36},
+                        {"timeBeat": 64, "x": -1200, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}},
+                        {"timeBeat": 71, "y": -1100, "bdShape": "circle", "bdSize": 36},
 
                         {"timeBeat": 72, "y": -1160, "bdColorFront": {"s": 60, "b": 12}},
-                        {"timeBeat": 80, "x": -300, "y": -980},
-                        {"timeBeat": 88, "x": 0, "y": -1160},
-                        {"timeBeat": 96, "x": 300, "y": -1340},
-                        {"timeBeat": 104, "x": 600, "y": -1160},
-                        {"timeBeat": 112, "x": 780, "y": -1460},
-                        {"timeBeat": 120, "x": 600, "y": -1760},
-                        {"timeBeat": 128, "x": 420, "y": -2060},
-                        {"timeBeat": 132, "x": 510, "y": -2210},
+                        {"timeBeat": 80, "x": -900, "y": -980},
+                        {"timeBeat": 88, "x": -600, "y": -1160},
+                        {"timeBeat": 96, "x": -300, "y": -1340},
+                        {"timeBeat": 104, "x": 0, "y": -1160},
+                        {"timeBeat": 112, "x": 180, "y": -1460},
+                        {"timeBeat": 120, "x": 0, "y": -1760},
+                        {"timeBeat": 128, "x": -180, "y": -2060},
+                        {"timeBeat": 132, "x": -90, "y": -2210},
 
-                        {"timeBeat": 136 ,"x": 600, "y": -2360, "bdSize": 72, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
-                        {"timeBeat": 199, "x": -3180},
+                        {"timeBeat": 136 ,"x": 0, "y": -2360, "bdSize": 72, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
+                        {"timeBeat": 199, "x": -3780},
 
-                        {"timeBeat": 200, "x": -3240, "bdSize": 36, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 200, "x": -3840, "bdSize": 36, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
                         {"timeBeat": 208, "y": -1880},
-                        {"timeBeat": 216, "x": -3580, "y": -1540},
-                        {"timeBeat": 224, "x": -3920, "y": -1880},
+                        {"timeBeat": 216, "x": -4180, "y": -1540},
+                        {"timeBeat": 224, "x": -4520, "y": -1880},
                         {"timeBeat": 232, "y": -2360},
-                        {"timeBeat": 240, "x": -4400},
-                        {"timeBeat": 248, "x": -4740, "y": -2700},
-                        {"timeBeat": 256, "x": -4400, "y": -3040},
-                        {"timeBeat": 264, "x": -3920}
+                        {"timeBeat": 240, "x": -5000},
+                        {"timeBeat": 248, "x": -5340, "y": -2700},
+                        {"timeBeat": 256, "x": -5000, "y": -3040},
+                        {"timeBeat": 263, "x": -4580},
+
+                        {"timeBeat": 264, "x": -4520, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}},
+                        {"timeBeat": 271, "y": -3460, "bdShape": "hexagon", "bdSize": 24},
+
+                        {"timeBeat": 272, "y": -3520, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 280, "x": -4220, "y": -3340},
+                        {"timeBeat": 284, "x": -4070, "y": -3430},
+                        {"timeBeat": 288, "x": -3920, "y": -3520, "bdSize": 36, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 296, "x": -4100, "y": -3820},
+                        {"timeBeat": 300, "x": -4010, "y": -3970},
+
+                        {"timeBeat": 304, "x": -3920, "y": -4120, "bdSize": 72, "bdColorBack": {"s": 30, "b": 12}, "bdColorFront": {"s": 60, "b": 18}},
+                        {"timeBeat": 335, "x": -5780},
+                        {"timeBeat": 336, "x": -5840, "bdColorBack": {"s": 30, "b": 6}, "bdColorFront": {"s": 60, "b": 12}},
+                        {"timeBeat": 367, "x": -7700},
+
+                        {"timeBeat": 368, "x": -7760, "bdSize": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 30, "b": 12}}
                 ],
                 "attackSequences": {
                     "boss": [
-                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -150, "yStart": 0, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 16, "xStart": -450, "angleMove": 720},
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "boss1", "withCapsule": "none", "xStart": -300, "yStart": -180, "wStart": 60, "hStart": 60, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 16, "xStart": -900, "yStart": 180, "angleMove": 720},
 
-                        {"startBeat": 32, "moveBeats": 7, "warnBeats": 4, "fadeBeats": 0, "withCapsule": "move", "xStart": 0, "angleStart": 90, "offsetAngleStart": 180, "offsetXStart": 240, "angleMove": 0},
+                        {"startBeat": 32, "moveBeats": 7, "warnBeats": 4, "withCapsule": "move", "xStart": 0, "yStart": 0, "angleStart": 90, "offsetAngleStart": 180, "offsetXStart": 240, "angleMove": 0},
                         {"startBeat": 39, "moveBeats": 1, "warnBeats": 0, "offsetAngleMove": 45},
                         {"startBeat": 40, "moveBeats": 7, "offsetAngleStart": 225, "offsetAngleMove": 0},
                         {"startBeat": 47, "moveBeats": 1, "offsetAngleMove": 90},
@@ -535,7 +548,27 @@
                         {"startBeat": 256, "offsetAngleStart": 120, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
                         {"startBeat": 260, "offsetXStart": 240, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": -60},
 
-                        {"startBeat": 264, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0}
+                        {"startBeat": 264, "offsetAngleStart": 60, "angleMove": 0, "offsetXMove": 480, "offsetAngleMove": 0},
+
+                        {"startBeat": 272, "moveBeats": 16, "warnBeats": 4, "withCapsule": "none", "xStart": -4220, "yStart": -3700, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "angleMove": 720, "offsetXMove": 0},
+                        {"startBeat": 288, "xStart": -3740, "yStart": -3820, "angleMove": -720},
+
+                        {"startBeat": 304, "moveBeats": 4, "withCapsule": "move", "xStart": 0, "yStart": 0, "angleStart": 90, "offsetXStart": 120, "offsetAngleStart": 180, "angleMove": 720, "offsetXMove": -240, "offsetAngleMove": 0},
+                        {"startBeat": 308, "warnBeats": 0, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 312, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 316, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 320, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 324, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 328, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 332, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 336, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 340, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 344, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 348, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 352, "offsetXStart": 120, "angleMove": 720, "offsetXMove": -240},
+                        {"startBeat": 356, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240},
+                        {"startBeat": 360, "offsetXStart": 120, "angleMove": -720, "offsetXMove": -240},
+                        {"startBeat": 364, "fadeBeats": 4, "offsetXStart": -120, "angleMove": 0, "offsetXMove": 240}
                     ],
                     "spinHexagonL": [
                         {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "hexagon", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 60, "hStart": 30, "angleStart": 90, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -720, "offsetXMove": 0, "offsetAngleMove": 0}
@@ -716,10 +749,8 @@
                         {"yStart": 120},
                         {"startBeat": 27, "moveBeats": 1, "yStart": -120, "yMove": 30},
                         {"yStart": 120, "yMove": -30},
-                        {"startBeat": 28, "moveBeats": 3, "yStart": -90, "yMove": 0},
-                        {"yStart": 90},
-                        {"startBeat": 31, "moveBeats": 1, "fadeBeats": 2, "yStart": -90, "yMove": 30},
-                        {"yStart": 90, "yMove": -30}
+                        {"startBeat": 28, "moveBeats": 3, "fadeBeats": 2, "yStart": -90, "yMove": 0},
+                        {"yStart": 90}
                     ],
                     "alternatingLasers": [
                         {"startBeat": 0, "moveBeats": 0.5, "warnBeats": 1, "fadeBeats": 0.5, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "start", "xStart": -120, "yStart": 200, "wStart": 10, "hStart": 400, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
@@ -734,22 +765,22 @@
                 },
                 "attackProgram": [
                     {"sequence": "boss", "startBeat": 0},
-                    {"sequence": "radialScatterL", "startBeat": 0, "xStart": -150, "offsetXStart": 30},
-                    {"sequence": "radialScatterR", "startBeat": 16, "xStart": -450, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 0, "xStart": -300, "yStart": -180, "offsetXStart": 30},
+                    {"sequence": "radialScatterR", "startBeat": 16, "xStart": -900, "yStart": 180, "offsetXStart": 30},
                     {"sequence": "capsuleCircles", "startBeat": 16},
 
                     {"sequence": "spearsPivotA", "startBeat": 32},
                     {"sequence": "capsuleCircles", "startBeat": 32},
                     {"sequence": "capsuleCircles", "startBeat": 48},
 
-                    {"sequence": "spinHexagonR", "startBeat": 88, "xStart": 300, "yStart": -980},
-                    {"sequence": "radialScatterR", "startBeat": 88, "xStart": 300, "yStart": -980, "offsetXStart": 30},
-                    {"sequence": "spinHexagonR", "startBeat": 104, "xStart": 420, "yStart": -1460},
-                    {"sequence": "radialScatterR", "startBeat": 104, "xStart": 420, "yStart": -1460, "offsetXStart": 30},
-                    {"sequence": "radialScatterR", "startBeat": 104.25, "xStart": 420, "yStart": -1460, "offsetXStart": 30, "offsetAngleStart": 22.5},
-                    {"sequence": "spinHexagonL", "startBeat": 120, "xStart": 780, "yStart": -2060},
-                    {"sequence": "radialScatterL", "startBeat": 120, "xStart": 780, "yStart": -2060, "offsetXStart": 30},
-                    {"sequence": "radialScatterL", "startBeat": 120.25, "xStart": 780, "yStart": -2060, "offsetXStart": 30, "offsetAngleStart": -22.5},
+                    {"sequence": "spinHexagonL", "startBeat": 88, "xStart": -300, "yStart": -980},
+                    {"sequence": "radialScatterL", "startBeat": 88, "xStart": -300, "yStart": -980, "offsetXStart": 30},
+                    {"sequence": "spinHexagonR", "startBeat": 104, "xStart": -180, "yStart": -1460},
+                    {"sequence": "radialScatterR", "startBeat": 104, "xStart": -180, "yStart": -1460, "offsetXStart": 30},
+                    {"sequence": "radialScatterR", "startBeat": 104.25, "xStart": -180, "yStart": -1460, "offsetXStart": 30, "offsetAngleStart": 22.5},
+                    {"sequence": "spinHexagonL", "startBeat": 120, "xStart": 180, "yStart": -2060},
+                    {"sequence": "radialScatterL", "startBeat": 120, "xStart": 180, "yStart": -2060, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 120.25, "xStart": 180, "yStart": -2060, "offsetXStart": 30, "offsetAngleStart": -22.5},
 
                     {"sequence": "alternatingLasers", "startBeat": 136},
                     {"sequence": "alternatingLasers", "startBeat": 152},
@@ -758,7 +789,21 @@
                     {"sequence": "spearsDouble", "startBeat": 168},
 
                     {"sequence": "spearsPivotB", "startBeat": 200, "offsetAngleStart": -90},
-                    {"sequence": "spearsPivotB", "startBeat": 232}
+                    {"sequence": "spearsPivotB", "startBeat": 232},
+
+                    {"sequence": "radialScatterR", "startBeat": 272, "xStart": -4220, "yStart": -3700, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 288, "xStart": -3740, "yStart": -3820, "offsetXStart": 30},
+                    {"sequence": "radialScatterL", "startBeat": 288.25, "xStart": -3740, "yStart": -3820, "offsetXStart": 30, "offsetAngleStart": -22.5},
+                    {"sequence": "capsuleCircles", "startBeat": 272},
+                    {"sequence": "capsuleCircles", "startBeat": 288},
+
+                    {"sequence": "alternatingLasers", "startBeat": 304},
+                    {"sequence": "alternatingLasers", "startBeat": 320},
+                    {"sequence": "alternatingLasers", "startBeat": 336},
+                    {"sequence": "alternatingLasers", "startBeat": 352},
+                    {"sequence": "spearsDouble", "startBeat": 304},
+                    {"sequence": "capsuleCircles", "startBeat": 336},
+                    {"sequence": "capsuleCircles", "startBeat": 352}
                 ]
             },
             {
