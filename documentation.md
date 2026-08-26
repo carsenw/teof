@@ -95,3 +95,16 @@ The player will be able to explore a main world area, and play levels from porta
 
 - Thought level was too hard for a beginning level, and would work better for a later level
 - Suggested making the player movement less fast, or being able to move at different speeds
+
+### Tester 1 (WITH programming experience) - 2026-08-26
+
+- Found warning time for center of circles in second level was short
+
+### Tester 4 (WITHOUT programming experience) - 2026-08-26
+
+- Suggested adding volume control
+
+### Tester 5 (WITHOUT programming experience) - 2026-08-26
+
+- Suggested adding a way to show players all the controls
+- Suggested adding more lines in health bar to show individual lives
