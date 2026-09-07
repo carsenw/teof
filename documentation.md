@@ -9,6 +9,8 @@ The player will be able to explore a main world area, and play levels from porta
 ## Features List
 
 - [x] Title screen
+    - [x] Menu
+        - [ ] Settings
 - [ ] Introduction/opening cutscenes
 - Main world area
     - Player
@@ -29,7 +31,9 @@ The player will be able to explore a main world area, and play levels from porta
         - [ ] Change based on areas/nearby portals?
     - [ ] Ambient music in areas/near portals
     - [x] Pause menu
-    - [ ] Map?
+        - [x] Basic Functions
+        - [ ] Settings
+        - [ ] Map?
 - Levels
     - Player
         - [x] Movement
@@ -53,9 +57,12 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Hit counter
         - [x] Level Failing
     - [x] Pause menu
+        - [x] Basic Functions
+        - [ ] Settings
 - Game data
     - [ ] World area
     - [ ] Levels
+    - [ ] Progress saving?
 
 ## Testing
 
