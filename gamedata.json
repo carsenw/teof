@@ -95,7 +95,7 @@
         ],
         "portals": [
             {"levelIndex": 0, "x": -100, "y": -200},
-            {"levelIndex": 1, "x": 300, "y": -200},
+            {"levelIndex": 1, "x": 300, "y": -200}
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
