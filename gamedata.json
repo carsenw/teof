@@ -759,7 +759,16 @@
                         {"startBeat": 8, "xStart": -120, "yStart": -200},
                         {"startBeat": 9, "xStart": -60, "yStart": 200},
                         {"startBeat": 10, "xStart": 0, "yStart": -200},
-                        {"startBeat": 11, "xStart": 60, "yStart": 200}
+                        {"startBeat": 11, "xStart": 60, "yStart": 200},
+
+                        {"startBeat": 0, "moveBeats": 0.125, "warnBeats": 4, "fadeBeats": 0.125, "withCapsule": "move", "xStart": -105, "yStart": 0, "wStart": 40, "hStart": 0, "yMove": -12.5, "hMove": -25},
+                        {"startBeat": 1, "xStart": -45, "yMove": 12.5, "hMove": 25},
+                        {"startBeat": 2, "xStart": 15, "yMove": -12.5, "hMove": -25},
+                        {"startBeat": 3, "xStart": 75, "yMove": 12.5, "hMove": 25},
+                        {"startBeat": 8, "xStart": -105, "yMove": 12.5, "hMove": 25},
+                        {"startBeat": 9, "xStart": -45, "yMove": -12.5, "hMove": -25},
+                        {"startBeat": 10, "xStart": 15, "yMove": 12.5, "hMove": 25},
+                        {"startBeat": 11, "xStart": 75, "yMove": -12.5, "hMove": -25}
                     ]
                 },
                 "attackProgram": [
@@ -820,30 +829,54 @@
                         {"timeBeat": 32, "y": 600}
                     ],
                 "attackSequences": {
-                    "name": [
-                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": -400, "yStart": 225, "wStart": 0, "hStart": 150, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 200, "yMove": 0, "wMove": 550, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 4, "moveBeats": 16, "xStart": -200, "wStart": 550, "xMove": 0, "wMove": 0},
-                        {"startBeat": 4, "moveBeats": 4, "xStart": 375, "yStart": -400, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
-                        {"startBeat": 8, "moveBeats": 16, "yStart": -200, "hStart": 550, "yMove": 0, "hMove": 0},
-
-                        {"startBeat": 8, "moveBeats": 4, "xStart": -250, "yStart": 375, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
-                        {"startBeat": 12, "moveBeats": 16, "xStart": -50, "wStart": 550, "xMove": 0, "wMove": 0},
-                        {"startBeat": 12, "moveBeats": 4, "xStart": 525, "yStart": -250, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
-                        {"startBeat": 16, "moveBeats": 16, "yStart": -50, "hStart": 550, "yMove": 0, "hMove": 0},
-
-                        {"startBeat": 16, "moveBeats": 4, "xStart": -100, "yStart": 525, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
-                        {"startBeat": 20, "moveBeats": 16, "xStart": 100, "wStart": 550, "xMove": 0, "wMove": 0},
-                        {"startBeat": 20, "moveBeats": 4, "xStart": 675, "yStart": -100, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
-                        {"startBeat": 24, "moveBeats": 16, "yStart": 100, "hStart": 550, "yMove": 0, "hMove": 0},
-
-                        {"startBeat": 24, "moveBeats": 4, "xStart": 50, "yStart": 675, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
-                        {"startBeat": 28, "moveBeats": 16, "xStart": 250, "wStart": 550, "xMove": 0, "wMove": 0},
-                        {"startBeat": 28, "moveBeats": 4, "xStart": 825, "yStart": 50, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
-                        {"startBeat": 32, "moveBeats": 16, "yStart": 250, "hStart": 550, "yMove": 0, "hMove": 0}
+                    "steppingWalls": [
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 325, "yStart": -400, "wStart": 150, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 200, "wMove": 0, "hMove": 500, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 4, "moveBeats": 20, "yStart": -200, "hStart": 500, "yMove": 0, "hMove": 0},
+                        {"startBeat": 4, "moveBeats": 4, "xStart": -250, "yStart": 325, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 500},
+                        {"startBeat": 8, "moveBeats": 20, "xStart": -50, "wStart": 500, "xMove": 0, "wMove": 0},
+                        {"startBeat": 8, "moveBeats": 4, "xStart": 475, "yStart": -250, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 500},
+                        {"startBeat": 12, "moveBeats": 20, "yStart": -50, "hStart": 500, "yMove": 0, "hMove": 0},
+                        {"startBeat": 12, "moveBeats": 4, "xStart": -100, "yStart": 475, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 500},
+                        {"startBeat": 16, "moveBeats": 20, "xStart": 100, "wStart": 500, "xMove": 0, "wMove": 0},
+                        {"startBeat": 16, "moveBeats": 4, "xStart": 625, "yStart": -100, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 500},
+                        {"startBeat": 20, "moveBeats": 20, "yStart": 100, "hStart": 500, "yMove": 0, "hMove": 0},
+                        {"startBeat": 20, "moveBeats": 4, "xStart": 50, "yStart": 625, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 500},
+                        {"startBeat": 24, "moveBeats": 20, "xStart": 250, "wStart": 500, "xMove": 0, "wMove": 0},
+                        {"startBeat": 24, "moveBeats": 4, "xStart": 775, "yStart": 50, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 500},
+                        {"startBeat": 28, "moveBeats": 20, "yStart": 250, "hStart": 500, "yMove": 0, "hMove": 0},
+                        {"startBeat": 28, "moveBeats": 4, "xStart": 200, "yStart": 775, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 500},
+                        {"startBeat": 32, "moveBeats": 20, "xStart": 400, "wStart": 500, "xMove": 0, "wMove": 0}
+                    ],
+                    "wallPiston": [
+                        {"startBeat": 0, "moveBeats": 0.75, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 50, "hStart": 50, "angleStart": 0, "offsetXStart": 50, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 0.75, "moveBeats": 0.25, "warnBeats": 0, "wMove": 250},
+                        {"startBeat": 1, "moveBeats": 1.75, "wStart": 300, "wMove": 0},
+                        {"startBeat": 2.75, "moveBeats": 0.25, "wMove": -250},
+                        {"startBeat": 3, "moveBeats": 1.75, "wStart": 50, "wMove": 0},
+                        {"startBeat": 4.75, "moveBeats": 0.25, "warnBeats": 0, "wMove": 250},
+                        {"startBeat": 5, "moveBeats": 1.75, "wStart": 300, "wMove": 0},
+                        {"startBeat": 6.75, "moveBeats": 0.25, "wMove": -250},
+                        {"startBeat": 7, "moveBeats": 1.75, "wStart": 50, "wMove": 0},
+                        {"startBeat": 8.75, "moveBeats": 0.25, "warnBeats": 0, "wMove": 250},
+                        {"startBeat": 9, "moveBeats": 1.75, "wStart": 300, "wMove": 0},
+                        {"startBeat": 10.75, "moveBeats": 0.25, "wMove": -250},
+                        {"startBeat": 11, "moveBeats": 1.75, "wStart": 50, "wMove": 0},
+                        {"startBeat": 12.75, "moveBeats": 0.25, "warnBeats": 0, "wMove": 250},
+                        {"startBeat": 13, "moveBeats": 1.75, "wStart": 300, "wMove": 0},
+                        {"startBeat": 14.75, "moveBeats": 0.25, "wMove": -250},
+                        {"startBeat": 15, "moveBeats": 1.75, "wStart": 50, "wMove": 0}
+                        
                     ]
                 },
                 "attackProgram": [
-                    {"sequence": "name", "startBeat": 0}
+                    {"sequence": "steppingWalls", "startBeat": 0},
+
+                    {"sequence": "wallPiston", "startBeat": 8, "xStart": 325, "yStart": 0, "offsetAngleStart": 90},
+                    {"sequence": "wallPiston", "startBeat": 12, "xStart": 150, "yStart": 325},
+                    {"sequence": "wallPiston", "startBeat": 16, "xStart": 475, "yStart": 150, "offsetAngleStart": 90},
+                    {"sequence": "wallPiston", "startBeat": 20, "xStart": 300, "yStart": 475},
+                    {"sequence": "wallPiston", "startBeat": 24, "xStart": 625, "yStart": 300, "offsetAngleStart": 90},
+                    {"sequence": "wallPiston", "startBeat": 28, "xStart": 450, "yStart": 625}
                 ]
             },
             {
