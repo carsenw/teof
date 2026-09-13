@@ -11,6 +11,7 @@ The player will be able to explore a main world area, and play levels from porta
 - [x] Title screen
     - [x] Menu
         - [ ] Settings
+        - [ ] Controls info
 - [ ] Introduction/opening cutscenes
 - Main world area
     - Player
@@ -29,10 +30,12 @@ The player will be able to explore a main world area, and play levels from porta
     - [x] Level completions/points count
     - [x] Background
         - [ ] Change based on areas/nearby portals?
+        - [ ] Background parallax?
     - [ ] Ambient music in areas/near portals
     - [x] Pause menu
         - [x] Basic Functions
         - [ ] Settings
+        - [ ] Controls info
         - [ ] Map?
 - Levels
     - Player
@@ -41,6 +44,7 @@ The player will be able to explore a main world area, and play levels from porta
         - [x] Music
         - [x] Capsule movement
             - [x] Background animation
+                - [ ] Background parallax?
             - [x] View size animation
             - [ ] Additional screen animations?
             - [ ] Different capsule shapes?
@@ -59,6 +63,7 @@ The player will be able to explore a main world area, and play levels from porta
     - [x] Pause menu
         - [x] Basic Functions
         - [ ] Settings
+        - [ ] Controls info
 - Game data
     - [ ] World area
     - [ ] Levels

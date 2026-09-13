@@ -70,33 +70,32 @@
                 "isWorldBorder": true,
                 "color": {"h": 0, "s": 0, "b": 30},
                 "corners": [
-                    {"x": -200, "y": 200},
-                    {"x": -200, "y": -200},
-                    {"x": -600, "y": -200},
-                    {"x": -600, "y": -600},
-                    {"x": -600, "y": -800},
-                    {"x": -200, "y": -800},
-                    {"x": -200, "y": -1400},
-                    {"x": 600, "y": -1400},
-                    {"x": 600, "y": -200},
-                    {"x": 200, "y": -200},
-                    {"x": 200, "y": 200}
+                    {"x": -100, "y": 100},
+                    {"x": -100, "y": -100},
+                    {"x": -200, "y": -100},
+                    {"x": -200, "y": -300},
+                    {"x": 0, "y": -300},
+                    {"x": 0, "y": -600},
+                    {"x": 400, "y": -600},
+                    {"x": 400, "y": -100},
+                    {"x": 100, "y": -100},
+                    {"x": 100, "y": 100}
                 ]
             },
             {
                 "isWorldBorder": false,
                 "color": {"h": 0, "s": 0, "b": 30},
                 "corners": [
-                    {"x": 0, "y": -600},
-                    {"x": 400, "y": -600},
-                    {"x": 400, "y": -1000},
-                    {"x": 0, "y": -1000}
+                    {"x": 100, "y": -300},
+                    {"x": 300, "y": -300},
+                    {"x": 300, "y": -400},
+                    {"x": 100, "y": -400}
                 ]
             }
         ],
         "portals": [
-            {"levelIndex": 0, "x": -400, "y": -400},
-            {"levelIndex": 1, "x": 400, "y": -400}
+            {"levelIndex": 0, "x": -100, "y": -200},
+            {"levelIndex": 1, "x": 300, "y": -200},
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
@@ -809,11 +808,38 @@
             {
                 "details": {"name": "The Lasting Effects of Success", "minorKey": "G♯", "tempo": 160, "colorH": 125},
                 "capsulePath": [
-                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 250, "capsuleH": 250, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 750},
+                        {"timeBeat": 4, "x": 150, "bdColorBack": {"s": 50, "b": 5}},
+                        {"timeBeat": 8, "y": 150, "bdColorBack": {"s": 50, "b": 10}},
+                        {"timeBeat": 12, "x": 300},
+                        {"timeBeat": 16, "y": 300},
+                        {"timeBeat": 20, "x": 450},
+                        {"timeBeat": 24, "y": 450},
+                        {"timeBeat": 28, "x": 600},
+
+                        {"timeBeat": 32, "y": 600}
                     ],
                 "attackSequences": {
                     "name": [
-                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": -400, "yStart": 225, "wStart": 0, "hStart": 150, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 200, "yMove": 0, "wMove": 550, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 4, "moveBeats": 16, "xStart": -200, "wStart": 550, "xMove": 0, "wMove": 0},
+                        {"startBeat": 4, "moveBeats": 4, "xStart": 375, "yStart": -400, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
+                        {"startBeat": 8, "moveBeats": 16, "yStart": -200, "hStart": 550, "yMove": 0, "hMove": 0},
+
+                        {"startBeat": 8, "moveBeats": 4, "xStart": -250, "yStart": 375, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
+                        {"startBeat": 12, "moveBeats": 16, "xStart": -50, "wStart": 550, "xMove": 0, "wMove": 0},
+                        {"startBeat": 12, "moveBeats": 4, "xStart": 525, "yStart": -250, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
+                        {"startBeat": 16, "moveBeats": 16, "yStart": -50, "hStart": 550, "yMove": 0, "hMove": 0},
+
+                        {"startBeat": 16, "moveBeats": 4, "xStart": -100, "yStart": 525, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
+                        {"startBeat": 20, "moveBeats": 16, "xStart": 100, "wStart": 550, "xMove": 0, "wMove": 0},
+                        {"startBeat": 20, "moveBeats": 4, "xStart": 675, "yStart": -100, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
+                        {"startBeat": 24, "moveBeats": 16, "yStart": 100, "hStart": 550, "yMove": 0, "hMove": 0},
+
+                        {"startBeat": 24, "moveBeats": 4, "xStart": 50, "yStart": 675, "wStart": 0, "hStart": 150, "xMove": 200, "wMove": 550},
+                        {"startBeat": 28, "moveBeats": 16, "xStart": 250, "wStart": 550, "xMove": 0, "wMove": 0},
+                        {"startBeat": 28, "moveBeats": 4, "xStart": 825, "yStart": 50, "wStart": 150, "hStart": 0, "yMove": 200, "hMove": 550},
+                        {"startBeat": 32, "moveBeats": 16, "yStart": 250, "hStart": 550, "yMove": 0, "hMove": 0}
                     ]
                 },
                 "attackProgram": [
