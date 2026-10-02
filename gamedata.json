@@ -854,7 +854,21 @@
                         {"timeBeat": 176, "y": 1175},
                         {"timeBeat": 184, "x": 3900},
 
-                        {"timeBeat": 192, "y": 1575}
+                        {"timeBeat": 192, "y": 1575},
+                        {"timeBeat": 200, "x": 4300, "capsuleW": 250, "capsuleH": 250},
+                        {"timeBeat": 208, "x": 4700},
+                        {"timeBeat": 224, "y": 775},
+                        {"timeBeat": 240, "x": 5500},
+
+                        {"timeBeat": 256, "y": 1575},
+                        {"timeBeat": 260, "x": 5750},
+                        {"timeBeat": 264, "y": 1825},
+                        {"timeBeat": 268, "x": 6000},
+                        {"timeBeat": 272, "y": 1575},
+                        {"timeBeat": 276, "x": 6250},
+                        {"timeBeat": 280, "y": 1325},
+                        {"timeBeat": 284, "x": 6000},
+                        {"timeBeat": 288, "y": 1075}
                     ],
                 "attackSequences": {
                     "boss": [
@@ -1073,9 +1087,16 @@
                         {"xStart": 3200, "yStart": -125, "wStart": 650, "hStart": 650},
                         {"xStart": 3000, "yStart": 1275, "wStart": 650, "hStart": 650},
                         {"xStart": 3600, "yStart": 275, "wStart": 650, "hStart": 650},
-                        {"xStart": 3400, "yStart": 1675, "wStart": 650, "hStart": 650},
-                        {"xStart": 4000, "yStart": 675, "wStart": 650, "hStart": 650},
-                        {"xStart": 4400, "yStart": 1075, "wStart": 650, "hStart": 650}
+                        {"xStart": 4000, "yStart": 675, "wStart": 650, "hStart": 650}
+                    ],
+                    "mazeWallsC": [
+                        {"startBeat": 0, "moveBeats": 128, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 3400, "yStart": 1675, "wStart": 650, "hStart": 650, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"xStart": 4300, "yStart": 875, "wStart": 450, "hStart": 1050},
+                        {"xStart": 4400, "yStart": 1875, "wStart": 1350, "hStart": 250},
+                        {"xStart": 5100, "yStart": 1375, "wStart": 450, "hStart": 850},
+                        {"xStart": 5200, "yStart": 475, "wStart": 1350, "hStart": 250},
+                        {"xStart": 5787.5, "yStart": 1000, "wStart": 225, "hStart": 950},
+                        {"xStart": 5350, "yStart": 1750, "wStart": 600, "hStart": 150}
                     ],
                     "wallSpikes": [
                         {"startBeat": 0, "moveBeats": 0.75, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "triangleTripleRow", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 25, "hStart": 150, "angleStart": 0, "offsetXStart": 62.5, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
@@ -1267,7 +1288,11 @@
                     {"sequence": "capsuleSquaresVertical", "startBeat": 160},
                     {"sequence": "capsuleSquaresHorizontal", "startBeat": 168},
                     {"sequence": "capsuleSquaresVertical", "startBeat": 176},
-                    {"sequence": "capsuleSquaresHorizontal", "startBeat": 184}
+                    {"sequence": "capsuleSquaresHorizontal", "startBeat": 184},
+
+                    {"sequence": "mazeWallsC", "startBeat": 160},
+
+                    {"sequence": "mazeWallsA", "startBeat": 240, "xStart": 4900, "yStart": 975}
                 ]
             },
             {
