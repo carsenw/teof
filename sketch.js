@@ -488,7 +488,7 @@ function pendGameState(state, level = []) {
 
 function setGameState(state, level = []) {
   // Clean up the old game state
-  gameTime.pausedPending = false;
+  gameTime.pausedPending = state === STATES.title;
   gameTime.rewindPending = false;
   gameTime.rewindStartGameTime = 0;
   updateGameTime();
@@ -568,9 +568,6 @@ function beatsToMillis(beats) {
 
 function updateGameTime() {
   // Handle pause toggling
-  if (gameState === STATES.title) {
-    gameTime.pausedPending = false;
-  }
   if (gameTime.paused !== gameTime.pausedPending) {
     gameTime.paused = gameTime.pausedPending;
 
@@ -1020,7 +1017,7 @@ class Info {
 
   update() {
     // Check if the info should be shown
-    this.visible = gameState === STATES[this.data.showState];
+    this.visible = gameState === STATES[this.data.showState] || this.data.showState === "all";
 
     if (this.visible) {
       // Set drawing properties based on the data object and current game variables
@@ -1047,6 +1044,13 @@ class Info {
           changeAmount = 0;
         }
 
+      } else if (this.data.changeVariable.includes("pausedScreen")) {
+        if (gameTime.paused && gameTime.pauseScreen === Number(this.data.changeVariable.slice(12))) {
+          changeAmount = 1;
+        } else {
+          changeAmount = 0;
+        }
+
       } else if (this.data.changeVariable === "levelIntro") {
         changeAmount = constrain((gameTime.time - (levelState.startTime - levelState.message.infoHideDuration - levelState.message.infoAnimateDuration)) / levelState.message.infoAnimateDuration, 0, 1);
 
@@ -1065,7 +1069,7 @@ class Info {
         changeAmount = (playerMaxLives - (playerMaxLivesScore - player.livesScore) * (playerMaxLivesScore - player.livesScore + 1) / 2) / gameData.levels.playerProperties.lives;
       
       } else if (this.data.changeVariable.includes("levelLivesScoreBelow")) {
-        if (player.livesScore < this.data.changeVariable.slice(20)) {
+        if (player.livesScore < Number(this.data.changeVariable.slice(20))) {
           changeAmount = 1;
         } else {
           changeAmount = 0;
@@ -1082,7 +1086,7 @@ class Info {
 
       // Check for interaction with the info
       let mouseHover = false;
-      if (!transition.active && this.data.buttonAction !== "" && !(this.data.changeVariable === "portalPlayerHover" && player.nearestPortal.playerHover < 1) && !(this.data.changeVariable !== "paused" && gameTime.paused)) {
+      if (!transition.active && this.data.buttonAction !== "" && !(this.data.changeVariable === "portalPlayerHover" && player.nearestPortal.playerHover < 1) && !(!this.data.changeVariable.includes("paused") && gameTime.paused)) {
         let viewOffsetX = 0;
         let viewOffsetY = 0;
         if (this.data.focus !== "view") {
@@ -1205,9 +1209,14 @@ class Info {
 
         if (action === "togglePause") {
           gameTime.pausedPending = !gameTime.paused;
-        }
 
-        if (action === "exitWorld") {
+        } else if (action === "pauseScreenNext") {
+          gameTime.pauseScreen = (gameTime.pauseScreen + 1) % gameTime.pauseScreensAmount;
+
+        } else if (action === "pauseScreenPrevious") {
+          gameTime.pauseScreen = (gameTime.pauseScreen - 1 + gameTime.pauseScreensAmount) % gameTime.pauseScreensAmount;
+
+        } else if (action === "exitWorld") {
           pendGameState(STATES.title);
           
         } else if (action === "enterWorld" || action === "exitLevel") {
