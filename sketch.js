@@ -271,8 +271,9 @@ let allLevels = [];
 
 //////// Variables for playing the game ////////
 
-// Game time, states, and objects
+// Game time, settings, states, and objects
 let gameTime;
+let gameSettings;
 
 let gameState;
 let pendingState = STATES.none;
@@ -395,6 +396,7 @@ function setup() {
   }
 
   gameTime = worldData.startGameTime;
+  gameSettings = worldData.startGameSettings;
 
   worldPlayer = worldData.startPlayer;
 
@@ -617,7 +619,7 @@ function updateMusic() {
       if (!levelMusic.isPlaying()) {
         // Play the sound file, account for the loading delay so everything stays synchronized
         let startMusicTime = millis();
-        levelMusic.play(undefined, undefined, undefined, (gameTime.time - levelState.startTime) / 1000);
+        levelMusic.play(undefined, undefined, gameSettings.musicVolume, (gameTime.time - levelState.startTime) / 1000);
         gameTime.timeOffset += millis() - startMusicTime;
       }
 
@@ -629,13 +631,13 @@ function updateMusic() {
 
     // Change the music volume during rewinds
     if (gameTime.rewinding) {
-      levelMusic.setVolume(1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1));
+      levelMusic.setVolume((1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1)) * gameSettings.musicVolume);
 
     } else if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration) {
-      levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1));
+      levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1) * gameSettings.musicVolume);
 
     } else {
-      levelMusic.setVolume(1);
+      levelMusic.setVolume(gameSettings.musicVolume);
     }
 
   } else {
@@ -1116,7 +1118,10 @@ class Info {
 
       } else {
         let textVariable;
-        if (this.data.textVariable === "totalLevelScores") {
+        if (this.data.textVariable === "settingMusicVolume") {
+          textVariable = gameSettings.musicVolume;
+
+        } else if (this.data.textVariable === "totalLevelScores") {
           let scoreCount = 0;
           for (let level of allLevels) {
             scoreCount += level.bestScore;
@@ -1210,11 +1215,21 @@ class Info {
         if (action === "togglePause") {
           gameTime.pausedPending = !gameTime.paused;
 
+          if (gameTime.pausedPending) {
+            gameTime.pauseScreen = 0;
+          }
+
         } else if (action === "pauseScreenNext") {
           gameTime.pauseScreen = (gameTime.pauseScreen + 1) % gameTime.pauseScreensAmount;
 
         } else if (action === "pauseScreenPrevious") {
           gameTime.pauseScreen = (gameTime.pauseScreen - 1 + gameTime.pauseScreensAmount) % gameTime.pauseScreensAmount;
+
+        } else if (action === "settingMusicVolumeUp") {
+          gameSettings.musicVolume = constrain(round((gameSettings.musicVolume + 0.1) * 10) / 10, 0, 1);
+
+        } else if (action === "settingMusicVolumeDown") {
+          gameSettings.musicVolume = constrain(round((gameSettings.musicVolume - 0.1) * 10) / 10, 0, 1);
 
         } else if (action === "exitWorld") {
           pendGameState(STATES.title);
