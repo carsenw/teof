@@ -75,10 +75,10 @@
         {"showState": "all", "changeVariable": "pausedScreen1", "x": 0.05, "y": -0.15, "widthChange": 0.1, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "-", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "settingMusicVolumeDown", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
 
         {"showState": "all", "changeVariable": "pausedScreen2", "y": -0.3, "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Controls", "textPaddingScale": 0.75, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
-        {"showState": "all", "changeVariable": "pausedScreen2", "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Move: Arrow keys or WASD\n\nSlow move: Space or Shift\n\nPause: P or Escape\n\n\narrow test ⏵▶▸►⯈", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
+        {"showState": "all", "changeVariable": "pausedScreen2", "widthChange": 1, "heightChange": 1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "Move: Arrow keys or WASD\n\nSlow move: Space or Shift\n\nPause: P or Escape", "textPaddingScale": 0.5, "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}},
 
-        {"showState": "all", "changeVariable": "paused", "x": 0.425, "widthChange": 0.1, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⏵", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "pauseScreenNext", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
-        {"showState": "all", "changeVariable": "paused", "x": -0.425, "widthChange": 0.1, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "⏴", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "pauseScreenPrevious", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}}
+        {"showState": "all", "changeVariable": "paused", "x": 0.425, "widthChange": 0.1, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "►", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "pauseScreenNext", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}},
+        {"showState": "all", "changeVariable": "paused", "x": -0.425, "widthChange": 0.1, "heightChange": 0.1, "rectColor": {"h": 0, "s": 0, "b": 0, "a": 0}, "textString": "◄", "textColor": {"h": 0, "s": 0, "b": 80, "a": 1}, "buttonAction": "pauseScreenPrevious", "hoverColor": {"h": 0, "s": 0, "b": 50, "a": 0.5}}
     ],
     "world": {
         "walls": [
@@ -259,15 +259,15 @@
                     ],
                     "horizontalLasers1": [
                         {"startBeat": 0, "moveBeats": 0.25, "warnBeats": 4, "fadeBeats": 0.25, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "move", "xStart": -100, "yStart": -125, "wStart": 800, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 1, "yStart": 25},
-                        {"startBeat": 2, "yStart": -50},
-                        {"startBeat": 3, "yStart": 75}
+                        {"startBeat": 1, "yStart": 75},
+                        {"startBeat": 2, "yStart": 50},
+                        {"startBeat": 3, "yStart": 25}
                     ],
                     "horizontalLasers2": [
                         {"startBeat": 0, "moveBeats": 0.25, "warnBeats": 4, "fadeBeats": 0.25, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "move", "xStart": -100, "yStart": 125, "wStart": 800, "hStart": 10, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 1, "yStart": -25},
-                        {"startBeat": 2, "yStart": 50},
-                        {"startBeat": 3, "yStart": -75}
+                        {"startBeat": 1, "yStart": -75},
+                        {"startBeat": 2, "yStart": -50},
+                        {"startBeat": 3, "yStart": -25}
                     ],
                     "verticalDoubleLasers": [
                         {"startBeat": 0, "moveBeats": 0.25, "warnBeats": 4, "fadeBeats": 0.25, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "start", "xStart": 50, "yStart": 200, "wStart": 25, "hStart": 800, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
@@ -1676,23 +1676,32 @@
                     {"sequence": "wallSpikes", "startBeat": 407, "xStart": 8150, "yStart": 975, "offsetAngleStart": -90},
                     {"sequence": "wallSpikes", "startBeat": 423, "xStart": 8150, "yStart": 975, "offsetAngleStart": -90}
                 ]
-            }
-        ],
-        "levelPropertiesUnfinished": [
+            },
             {
                 "details": {"name": "Artificial Dust Machine", "minorKey": "E", "tempo": 124, "colorH": 43},
                 "capsulePath": [
-                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                        {"timeBeat": 16, "y": 1000},
+                        {"timeBeat": 20, "x": -70, "y": 1240},
+                        {"timeBeat": 24, "x": -220, "y": 1440},
+                        {"timeBeat": 28, "x": -420, "y": 1590},
+                        {"timeBeat": 32, "x": -660, "y": 1660}
                     ],
                 "attackSequences": {
-                    "name": [
-                        {"startBeat": 0, "moveBeats": 0, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0}
+                    "growingCircles": [
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "move", "xStart": 0, "yStart": -150, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 200, "hMove": 200, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 4, "xStart": 150, "yStart": 0},
+                        {"startBeat": 8, "xStart": 0, "yStart": 150},
+                        {"startBeat": 12, "xStart": -150, "yStart": 0}
+                    
                     ]
                 },
                 "attackProgram": [
-                    {"sequence": "name", "startBeat": 0}
+                    {"sequence": "growingCircles", "startBeat": 16}
                 ]
-            },
+            }
+        ],
+        "levelPropertiesUnfinished": [
             {
                 "details": {"name": "First Renewal", "minorKey": "A", "tempo": 114, "colorH": 317},
                 "capsulePath": [
