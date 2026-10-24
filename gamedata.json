@@ -1680,32 +1680,79 @@
             {
                 "details": {"name": "Artificial Dust Machine", "minorKey": "E", "tempo": 124, "colorH": 43},
                 "capsulePath": [
-                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 250, "capsuleH": 150, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
                         {"timeBeat": 16, "y": 1000},
-                        {"timeBeat": 20, "x": -70, "y": 1240},
-                        {"timeBeat": 24, "x": -220, "y": 1440},
-                        {"timeBeat": 28, "x": -420, "y": 1590},
-                        {"timeBeat": 32, "x": -660, "y": 1660}
+                        {"timeBeat": 20, "x": -70, "y": 1240, "capsuleW": 225, "capsuleH": 175},
+                        {"timeBeat": 24, "x": -220, "y": 1440, "capsuleW": 200, "capsuleH": 200},
+                        {"timeBeat": 28, "x": -420, "y": 1590, "capsuleW": 175, "capsuleH": 225},
+                        {"timeBeat": 32, "x": -660, "y": 1660, "capsuleW": 150, "capsuleH": 250},
+                        {"timeBeat": 48, "x": -1660},
+                        {"timeBeat": 52, "x": -1900, "y": 1730, "capsuleW": 175, "capsuleH": 225},
+                        {"timeBeat": 56, "x": -2100, "y": 1880, "capsuleW": 200, "capsuleH": 200},
+                        {"timeBeat": 60, "x": -2250, "y": 2080, "capsuleW": 225, "capsuleH": 175},
+                        {"timeBeat": 64, "x": -2320, "y": 2320, "capsuleW": 250, "capsuleH": 150}
                     ],
                 "attackSequences": {
+                    "boss": [
+                        {"startBeat": 0, "moveBeats": 16, "warnBeats": 4, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "start", "xStart": 0, "yStart": 0, "wStart": 100, "hStart": 100, "angleStart": 0, "offsetXStart": 250, "offsetAngleStart": -90, "xMove": 0, "yMove": 1000, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 16, "warnBeats": 0, "withCapsule": "move", "yMove": 0, "offsetAngleMove": 90}
+                    ],
+                    "circleRingA": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 4, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "move", "xStart": 0, "yStart": 0, "wStart": 25, "hStart": 25, "angleStart": 0, "offsetXStart": 50, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 800, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 45},
+                        {"offsetAngleStart": 90},
+                        {"offsetAngleStart": 135},
+                        {"offsetAngleStart": 180},
+                        {"offsetAngleStart": 225},
+                        {"offsetAngleStart": 270},
+                        {"offsetAngleStart": 315}
+                    ],
+                    "circleRingB": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 0, "fadeBeats": 4, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "move", "xStart": 0, "yStart": 0, "wStart": 25, "hStart": 25, "angleStart": 0, "offsetXStart": 50, "offsetAngleStart": 22.5, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 800, "offsetAngleMove": 0},
+                        {"offsetAngleStart": 67.5},
+                        {"offsetAngleStart": 112.5},
+                        {"offsetAngleStart": 157.5},
+                        {"offsetAngleStart": 202.5},
+                        {"offsetAngleStart": 247.5},
+                        {"offsetAngleStart": 292.5},
+                        {"offsetAngleStart": 337.5}
+                    ],
                     "growingCircles": [
-                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "move", "xStart": 0, "yStart": -150, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 200, "hMove": 200, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
-                        {"startBeat": 4, "xStart": 150, "yStart": 0},
-                        {"startBeat": 8, "xStart": 0, "yStart": 150},
-                        {"startBeat": 12, "xStart": -150, "yStart": 0}
-                    
+                        {"startBeat": 0, "moveBeats": 4, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "circle", "withCapsule": "start", "xStart": 0, "yStart": 0, "wStart": 0, "hStart": 0, "angleStart": 0, "offsetXStart": 200, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 200, "hMove": 200, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 4},
+                        {"startBeat": 8},
+                        {"startBeat": 12}
                     ]
                 },
                 "attackProgram": [
-                    {"sequence": "growingCircles", "startBeat": 16}
+                    {"sequence": "boss", "startBeat": 0},
+                    {"sequence": "circleRingA", "startBeat": 0, "yStart": -250},
+                    {"sequence": "circleRingB", "startBeat": 2, "yStart": -250},
+                    {"sequence": "circleRingA", "startBeat": 4, "yStart": -250},
+                    {"sequence": "circleRingB", "startBeat": 6, "yStart": -250},
+                    {"sequence": "circleRingA", "startBeat": 8, "yStart": -250},
+                    {"sequence": "circleRingB", "startBeat": 10, "yStart": -250},
+                    {"sequence": "circleRingA", "startBeat": 12, "yStart": -250},
+                    {"sequence": "circleRingB", "startBeat": 14, "yStart": -250},
+
+                    {"sequence": "growingCircles", "startBeat": 16},
+                    {"sequence": "circleRingA", "startBeat": 16, "xStart": 0, "yStart": -250},
+                    {"sequence": "circleRingB", "startBeat": 18, "xStart": 49, "yStart": -245},
+                    {"sequence": "circleRingA", "startBeat": 20, "xStart": 96, "yStart": -231},
+                    {"sequence": "circleRingB", "startBeat": 22, "xStart": 139, "yStart": -208},
+                    {"sequence": "circleRingA", "startBeat": 24, "xStart": 177, "yStart": -177},
+                    {"sequence": "circleRingB", "startBeat": 26, "xStart": 208, "yStart": -139},
+                    {"sequence": "circleRingA", "startBeat": 28, "xStart": 231, "yStart": -96},
+                    {"sequence": "circleRingB", "startBeat": 30, "xStart": 245, "yStart": -49},
+
+                    {"sequence": "circleRingA", "startBeat": 32, "xStart": 250, "yStart": 0}
                 ]
-            }
-        ],
-        "levelPropertiesUnfinished": [
+            },
             {
                 "details": {"name": "First Renewal", "minorKey": "A", "tempo": 114, "colorH": 317},
                 "capsulePath": [
-                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800}
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 200, "capsuleH": 200, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                        {"timeBeat": 24}
                     ],
                 "attackSequences": {
                     "name": [
@@ -1715,7 +1762,9 @@
                 "attackProgram": [
                     {"sequence": "name", "startBeat": 0}
                 ]
-            },
+            }
+        ],
+        "levelPropertiesUnfinished": [
             {
                 "details": {"name": "Beacons", "minorKey": "G", "tempo": 118, "colorH": 188},
                 "capsulePath": [
