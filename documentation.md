@@ -63,14 +63,14 @@ The player will be able to explore a main world area, and play levels from porta
 
 ## Testing
 
-### Tester 1 (WITH programming experience) - 2026-06-25
+### Tester 1 - 2026-06-25
 
 - Suggested adjusting the feel of how the player moves in the capsule, maybe having the capsule move slower
 - Initially assumed background shapes could be interacted with, so these shapes should be made less prominent
 - Found bug where portal "play level" buttons could be clicked from the pause menu, crashing the game
 - Found bug where obstacles spawn wrong if a level is reentered
 
-### Tester 2 (WITH programming experience) - 2026-06-07
+### Tester 2 - 2026-06-07
 
 - Found problem with loading music when starting game, didn't allow game to start
 - Discovered that some combinations of key presses cause unexpected movement
@@ -78,11 +78,11 @@ The player will be able to explore a main world area, and play levels from porta
 - Thought it was possible to make more interesting capsule shapes
 - Suggested adding escape key to pause
 
-### Tester 3 (WITHOUT programming experience) - 2026-06-07
+### Tester 3 - 2026-06-07
 
 - Thought world could be a little more interesting
 
-### Tester 4 (WITHOUT programming experience) - 2026-06-07
+### Tester 4 - 2026-06-07
 
 - Thought player square model is slightly simple
 - Said the game has good potential
@@ -90,25 +90,31 @@ The player will be able to explore a main world area, and play levels from porta
 - Suggested putting more thought into visual detail
 - Thought interesting game mechanics could be added
 
-### Tester 1 (WITH programming experience) - 2026-07-15
+### Tester 1 - 2026-07-15
 
 - Found that the game is laggy and crashes on Apple devices
 - Suggested possibly having the player move with the capsule
 
-### Tester 5 (WITHOUT programming experience) - 2026-07-15
+### Tester 5 - 2026-07-15
 
 - Thought level was too hard for a beginning level, and would work better for a later level
 - Suggested making the player movement less fast, or being able to move at different speeds
 
-### Tester 1 (WITH programming experience) - 2026-08-26
+### Tester 1 - 2026-08-26
 
 - Found warning time for center of circles in second level was short
 
-### Tester 4 (WITHOUT programming experience) - 2026-08-26
+### Tester 4 - 2026-08-26
 
 - Suggested adding volume control
 
-### Tester 5 (WITHOUT programming experience) - 2026-08-26
+### Tester 5 - 2026-08-26
 
 - Suggested adding a way to show players all the controls
 - Suggested adding more lines in health bar to show individual lives
+
+### Tester 5 - 2026-10-24
+
+- Agreed with the edit to the first level's lasers
+- Suggested a practice mode for levels
+- Felt the levels got progressively harder
