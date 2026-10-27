@@ -14,11 +14,14 @@ The player will be able to explore a main world area, and play levels from porta
     - Player
         - [x] Movement
         - [ ] Smooth player following view?
-    - Player interaction features
-        - [x] World walls
+    - World features
+        - [x] Walls
         - [ ] Gates (opened with level points)
-        - [ ] World obstacles
-        - [ ] Other world features?
+        - [ ] World areas
+        - [ ] Obstacles
+            - [ ] Rewinding on player collision
+            - [ ] Hit counter, failing, and checkpoints?
+        - [ ] Other elements?
         - [x] Level portals
             - [x] Best score
             - [x] Song info
@@ -26,9 +29,9 @@ The player will be able to explore a main world area, and play levels from porta
             - [ ] Portal entering animation?
     - [x] Level completions/points count
     - [x] Background
-        - [ ] Change based on areas/nearby portals?
+        - [ ] Change based on areas?
         - [ ] Background parallax?
-    - [ ] Ambient music in areas/near portals
+    - [ ] Ambient music in areas
 - Levels
     - Player
         - [x] Movement

@@ -595,16 +595,30 @@ function updateGameTime() {
 
   // Update the game time for the current frame
   if (!gameTime.paused) {
-    if (gameTime.rewinding) {
-      if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration && !(gameState === STATES.level && player.lives <= 0)) {
-        // Rewind time
-        gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
-
+    //// For debugging, allows moving through time, should be removed eventually
+    if (keyIsDown(78) || keyIsDown(77)) {
+      if (keyIsDown(78)) {
+        gameTime.timeOffset += 1000;
       } else {
-        // Hold time still
-        gameTime.timeOffset += millis() - gameTime.timeOffset - gameTime.time;
+        gameTime.timeOffset -= 1000;
       }
-    }
+      gameTime.rewindPending = true;
+      gameTime.rewinding = true;
+      gameTime.rewindStartTime = millis();
+      gameTime.rewindStartGameTime = gameTime.time + (gameTime.rewindTimeAmount - 1000);
+    } else
+    ////
+    
+      if (gameTime.rewinding) {
+        if (millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration && !(gameState === STATES.level && player.lives <= 0)) {
+        // Rewind time
+          gameTime.timeOffset += (millis() - gameTime.timeOffset - gameTime.time) * (1 + gameTime.rewindSpeed);
+
+        } else {
+        // Hold time still
+          gameTime.timeOffset += millis() - gameTime.timeOffset - gameTime.time;
+        }
+      }
     // Update game time
     gameTime.time = millis() - gameTime.timeOffset;
   }

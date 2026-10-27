@@ -92,6 +92,19 @@
                     {"x": -200, "y": -300},
                     {"x": 0, "y": -300},
                     {"x": 0, "y": -600},
+                    {"x": 100, "y": -600},
+                    {"x": 100, "y": -700},
+                    {"x": -100, "y": -700},
+                    {"x": -100, "y": -1000},
+                    {"x": 100, "y": -1000},
+                    {"x": 100, "y": -1100},
+                    {"x": 300, "y": -1100},
+                    {"x": 300, "y": -900},
+                    {"x": 400, "y": -900},
+                    {"x": 400, "y": -700},
+                    {"x": 300, "y": -700},
+                    {"x": 200, "y": -700},
+                    {"x": 200, "y": -600},
                     {"x": 400, "y": -600},
                     {"x": 400, "y": -100},
                     {"x": 100, "y": -100},
@@ -112,7 +125,9 @@
         "portals": [
             {"levelIndex": 0, "x": -100, "y": -200},
             {"levelIndex": 1, "x": 300, "y": -200},
-            {"levelIndex": 2, "x": 100, "y": -500}
+            {"levelIndex": 2, "x": 100, "y": -500},
+            {"levelIndex": 3, "x": 0, "y": -800},
+            {"levelIndex": 4, "x": 200, "y": -1000}
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
@@ -1382,10 +1397,10 @@
                         {"angleStart": 90}
                     ],
                     "wallWheelCL": [
-                        {"startBeat": 0, "moveBeats": 48, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 100, "hStart": 25, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -2160, "offsetXMove": 0, "offsetAngleMove": 0}
+                        {"startBeat": 0, "moveBeats": 48, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 50, "hStart": 50, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": -4320, "offsetXMove": 0, "offsetAngleMove": 0}
                     ],
                     "wallWheelCR": [
-                        {"startBeat": 0, "moveBeats": 48, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 100, "hStart": 25, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 2160, "offsetXMove": 0, "offsetAngleMove": 0}
+                        {"startBeat": 0, "moveBeats": 48, "warnBeats": 0, "fadeBeats": 0, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 50, "hStart": 50, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 4320, "offsetXMove": 0, "offsetAngleMove": 0}
                     ],
                     "capsuleWall": [
                         {"startBeat": 0, "moveBeats": 64, "warnBeats": 4, "fadeBeats": 1, "color": {"s": 90, "b": 90}, "shape": "square", "withCapsule": "move", "xStart": 0, "yStart": -250, "wStart": 550, "hStart": 50, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
@@ -1642,14 +1657,14 @@
 
                     {"sequence": "capsuleWall", "startBeat": 320},
                     {"sequence": "centerSpikeWaveBR", "startBeat": 320},
-                    {"sequence": "pillarWheelR", "startBeat": 332, "offsetAngleMove": -45},
-                    {"sequence": "pillarWheelR", "startBeat": 332, "offsetAngleStart": -45, "offsetAngleMove": -45},
+                    {"sequence": "pillarWheelR", "startBeat": 332, "hStart": -5, "offsetAngleMove": -45},
+                    {"sequence": "pillarWheelR", "startBeat": 332, "hStart": -5, "offsetAngleStart": -45, "offsetAngleMove": -45},
                     {"sequence": "centerSpikeWaveBL", "startBeat": 336},
-                    {"sequence": "pillarWheelL", "startBeat": 348, "offsetAngleMove": 45},
-                    {"sequence": "pillarWheelL", "startBeat": 348, "offsetAngleStart": 45, "offsetAngleMove": 45},
+                    {"sequence": "pillarWheelL", "startBeat": 348, "hStart": -5, "offsetAngleMove": 45},
+                    {"sequence": "pillarWheelL", "startBeat": 348, "hStart": -5, "offsetAngleStart": 45, "offsetAngleMove": 45},
                     {"sequence": "centerSpikeWaveBR", "startBeat": 352},
-                    {"sequence": "pillarWheelR", "startBeat": 364, "offsetAngleMove": -45},
-                    {"sequence": "pillarWheelR", "startBeat": 364, "offsetAngleStart": -45, "offsetAngleMove": -45},
+                    {"sequence": "pillarWheelR", "startBeat": 364, "hStart": -5, "offsetAngleMove": -45},
+                    {"sequence": "pillarWheelR", "startBeat": 364, "hStart": -5, "offsetAngleStart": -45, "offsetAngleMove": -45},
                     {"sequence": "centerSpikeWaveBL", "startBeat": 368},
 
                     {"sequence": "mazeWallsB", "startBeat": 368, "xStart": 4900, "yStart": -25},
@@ -1680,17 +1695,57 @@
             {
                 "details": {"name": "Artificial Dust Machine", "minorKey": "E", "tempo": 124, "colorH": 43},
                 "capsulePath": [
-                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 250, "capsuleH": 150, "bdShape": "square", "bdSpacing": 0, "bdSize": 0, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                        {"timeBeat": 0, "x": 0, "y": 0, "capsuleW": 270, "capsuleH": 150, "bdShape": "square", "bdSpacing": 50, "bdSize": 25, "bdAngle": 0, "bdColorBack": {"s": 0, "b": 0}, "bdColorFront": {"s": 0, "b": 0}, "viewSize": 800},
+                        {"timeBeat": 4, "y": 250, "bdColorFront": {"s": 100, "b": 10}, "bdColorBack": {"s": 100, "b": 5}},
                         {"timeBeat": 16, "y": 1000},
-                        {"timeBeat": 20, "x": -70, "y": 1240, "capsuleW": 225, "capsuleH": 175},
-                        {"timeBeat": 24, "x": -220, "y": 1440, "capsuleW": 200, "capsuleH": 200},
-                        {"timeBeat": 28, "x": -420, "y": 1590, "capsuleW": 175, "capsuleH": 225},
-                        {"timeBeat": 32, "x": -660, "y": 1660, "capsuleW": 150, "capsuleH": 250},
+                        {"timeBeat": 20, "x": -70, "y": 1240, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 24, "x": -220, "y": 1440, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 28, "x": -420, "y": 1590, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 32, "x": -660, "y": 1660, "capsuleW": 150, "capsuleH": 270},
                         {"timeBeat": 48, "x": -1660},
-                        {"timeBeat": 52, "x": -1900, "y": 1730, "capsuleW": 175, "capsuleH": 225},
-                        {"timeBeat": 56, "x": -2100, "y": 1880, "capsuleW": 200, "capsuleH": 200},
-                        {"timeBeat": 60, "x": -2250, "y": 2080, "capsuleW": 225, "capsuleH": 175},
-                        {"timeBeat": 64, "x": -2320, "y": 2320, "capsuleW": 250, "capsuleH": 150}
+                        {"timeBeat": 52, "x": -1900, "y": 1730, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 56, "x": -2100, "y": 1880, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 60, "x": -2250, "y": 2080, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 64, "x": -2320, "y": 2320, "capsuleW": 270, "capsuleH": 150},
+                        {"timeBeat": 80, "y": 3320},
+                        {"timeBeat": 84, "x": -2250, "y": 3560, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 88, "x": -2100, "y": 3760, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 92, "x": -1900, "y": 3910, "capsuleW": 180, "capsuleH": 240},
+
+                        {"timeBeat": 96, "x": -1660, "y": 3980, "capsuleW": 270, "capsuleH": 150},
+                        {"timeBeat": 112, "y": 4980},
+                        {"timeBeat": 116, "x": -1730, "y": 5220, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 120, "x": -1880, "y": 5420, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 124, "x": -2080, "y": 5570, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 128, "x": -2320, "y": 5640, "capsuleW": 150, "capsuleH": 270},
+                        {"timeBeat": 144, "x": -3320},
+                        {"timeBeat": 148, "x": -3560, "y": 5710, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 152, "x": -3760, "y": 5860, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 156, "x": -3910, "y": 6060, "capsuleW": 240, "capsuleH": 180},
+                        
+                        {"timeBeat": 160, "x": -3980, "y": 6300, "capsuleW": 270, "capsuleH": 150},
+                        {"timeBeat": 192, "y": 8300},
+                        {"timeBeat": 208, "y": 9300},
+                        {"timeBeat": 212, "x": -3910, "y": 9540, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 216, "x": -3760, "y": 9740, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 220, "x": -3560, "y": 9890, "capsuleW": 180, "capsuleH": 240},
+
+                        {"timeBeat": 224, "x": -3320, "y": 9960, "capsuleW": 270, "capsuleH": 150},
+                        {"timeBeat": 240, "y": 10960},
+                        {"timeBeat": 244, "x": -3390, "y": 11200, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 248, "x": -3540, "y": 11400, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 252, "x": -3740, "y": 11550, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 256, "x": -3980, "y": 11620, "capsuleW": 150, "capsuleH": 270},
+                        {"timeBeat": 272, "x": -4980},
+                        {"timeBeat": 276, "x": -5220, "y": 11690, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 280, "x": -5420, "y": 11840, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 284, "x": -5570, "y": 12040, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 288, "x": -5640, "y": 12280, "capsuleW": 270, "capsuleH": 150},
+                        {"timeBeat": 304, "y": 13280},
+                        {"timeBeat": 308, "x": -5710, "y": 13520, "capsuleW": 240, "capsuleH": 180},
+                        {"timeBeat": 312, "x": -5860, "y": 13720, "capsuleW": 210, "capsuleH": 210},
+                        {"timeBeat": 316, "x": -6060, "y": 13870, "capsuleW": 180, "capsuleH": 240},
+                        {"timeBeat": 320, "x": -6300, "y": 13940, "capsuleW": 150, "capsuleH": 270}
                     ],
                 "attackSequences": {
                     "boss": [
