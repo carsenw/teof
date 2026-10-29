@@ -121,3 +121,9 @@ The player will be able to explore a main world area, and play levels from porta
 - Agreed with the edit to the first level's lasers
 - Suggested a practice mode for levels
 - Felt the levels got progressively harder
+
+### Tester 1 - 2026-10-28
+
+- Agreed I should add more warning for a part of the first level
+- Suggested I should perfect levels after making them all
+- Agreed that a story or theme would add to the game
