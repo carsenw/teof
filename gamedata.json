@@ -122,12 +122,51 @@
                 ]
             }
         ],
-        "portals": [
-            {"levelIndex": 0, "x": -100, "y": -200},
-            {"levelIndex": 1, "x": 300, "y": -200},
-            {"levelIndex": 2, "x": 100, "y": -500},
-            {"levelIndex": 3, "x": 0, "y": -800},
-            {"levelIndex": 4, "x": 200, "y": -1000}
+        "areas": [
+            {
+                "levelIndex": 0,
+                "details": {
+                    "corners": [
+                        {"x": 100, "y": -200},
+                        {"x": 300, "y": -200},
+                        {"x": 300, "y": -300},
+                        {"x": 100, "y": -300}
+                    ]
+                },
+                "portalPosition": {"x": -100, "y": -200}
+            },
+            {
+                "levelIndex": 1,
+                "details": {
+                    "corners": [
+                    ]
+                },
+                "portalPosition": {"x": 300, "y": -200}
+            },
+            {
+                "levelIndex": 2,
+                "details": {
+                    "corners": [
+                    ]
+                },
+                "portalPosition": {"x": 100, "y": -500}
+            },
+            {
+                "levelIndex": 3,
+                "details": {
+                    "corners": [
+                    ]
+                },
+                "portalPosition": {"x": 0, "y": -800}
+            },
+            {
+                "levelIndex": 4,
+                "details": {
+                    "corners": [
+                    ]
+                },
+                "portalPosition": {"x": 200, "y": -1000}
+            }
         ],
         "backdrop": {"shape": "circle", "spacing": 100, "size": 50, "angle": 0, "colorBack": {"h": 0, "s": 0, "b": 0}, "colorFront": {"h": 0, "s": 0, "b": 5}},
         "startPlayer": {"x": 0, "y": 0, "size": 10, "speed": 5, "color": {"h": 0, "s": 0, "b": 100}},
@@ -323,12 +362,12 @@
                         {"offsetAngleStart": 270}
                     ],
                     "squareThrow": [
-                        {"startBeat": 2, "moveBeats": 2, "warnBeats": 2, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "squareDivots", "withCapsule": "start", "xStart": 150, "yStart": -300, "wStart": 25, "hStart": 25, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 800, "wMove": 0, "hMove": 0, "angleMove": 360, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 2, "moveBeats": 4, "warnBeats": 2, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "squareDivots", "withCapsule": "start", "xStart": 150, "yStart": -300, "wStart": 25, "hStart": 25, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 1600, "wMove": 0, "hMove": 0, "angleMove": 720, "offsetXMove": 0, "offsetAngleMove": 0},
                         {"xStart": 50, "yStart": -450},
                         {"xStart": -50, "yStart": -600},
                         {"xStart": -150, "yStart": -750},
 
-                        {"warnBeats": 4, "fadeBeats": 0, "shape": "square", "xStart": 150, "yStart": 1350, "wStart": 36, "hStart": 1800, "yMove": 1800, "angleMove": 0},
+                        {"warnBeats": 4, "fadeBeats": 0, "shape": "square", "xStart": 150, "yStart": 2250, "wStart": 36, "hStart": 3600, "yMove": 3600, "angleMove": 0},
                         {"xStart": 50},
                         {"xStart": -50},
                         {"xStart": -150}

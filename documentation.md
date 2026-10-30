@@ -13,11 +13,12 @@ The player will be able to explore a main world area, and play levels from porta
 - Main world area
     - Player
         - [x] Movement
+        - [ ] Special movement (slow/fast)?
         - [ ] Smooth player following view?
     - World features
         - [x] Walls
         - [ ] Gates (opened with level points)
-        - [ ] World areas
+    - [ ] World areas
         - [ ] Obstacles
             - [ ] Rewinding on player collision
             - [ ] Hit counter, failing, and checkpoints?
@@ -27,19 +28,18 @@ The player will be able to explore a main world area, and play levels from porta
             - [x] Song info
             - [ ] Level icons?
             - [ ] Portal entering animation?
+        - [ ] Ambient music
+        - [ ] Area background
     - [x] Level completions/points count
     - [x] Background
-        - [ ] Change based on areas?
-        - [ ] Background parallax?
-    - [ ] Ambient music in areas
 - Levels
     - Player
         - [x] Movement
+        - [ ] Special movement (slow/fast, move with capsule)?
     - Level content
         - [x] Music
         - [x] Capsule movement
             - [x] Background animation
-                - [ ] Background parallax?
             - [x] View size animation
             - [ ] Additional screen animations?
             - [ ] Different capsule shapes?

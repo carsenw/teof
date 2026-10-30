@@ -275,7 +275,7 @@ let gameMusic = {};
 let gameInfo = [];
 
 let worldWalls = [];
-let worldPortals = [];
+let worldAreas = [];
 
 let allLevels = [];
 
@@ -349,7 +349,7 @@ function setup() {
   // Level data
   for (let levelData of structuredClone(gameData.levels.levelProperties)) {
     // Set up the path of the capsule through the level
-    let newCapsuleNodes = [];
+    let newLevelNodes = [];
     let previousNode = levelData.capsulePath[0];
     for (let node of levelData.capsulePath) {
       // For each node, set its properties based on the data object, or the previous node's properties if not specified
@@ -357,7 +357,7 @@ function setup() {
       for (let property of Object.keys(node)) {
         newNode[property] = node[property];
       }
-      newCapsuleNodes.push(newNode);
+      newLevelNodes.push(newNode);
       previousNode = newNode;
     }
 
@@ -388,7 +388,7 @@ function setup() {
     // Add the level to the global array
     let newLevelDetails = levelData.details;
     newLevelDetails.music = gameMusic[newLevelDetails.name];
-    newLevelDetails.nodes = newCapsuleNodes;
+    newLevelDetails.nodes = newLevelNodes;
     newLevelDetails.attacks = newLevelAttacks;
     newLevelDetails.bestScore = 0;
     allLevels.push(newLevelDetails);
@@ -401,8 +401,12 @@ function setup() {
     worldWalls.push(new Wall(wallData.isWorldBorder, wallData.color, wallData.corners));
   }
 
-  for (let portalData of worldData.portals) {
-    worldPortals.push(new Portal(allLevels[portalData.levelIndex], portalData.x, portalData.y));
+  for (let areaData of worldData.areas) {
+    // Add the area to the global array
+    let newAreaDetails = areaData.details;
+    newAreaDetails.level = allLevels[areaData.levelIndex];
+    newAreaDetails.portal = new Portal(newAreaDetails.level, areaData.portalPosition.x, areaData.portalPosition.y);
+    worldAreas.push(newAreaDetails);
   }
 
   gameTime = worldData.startGameTime;
@@ -897,16 +901,17 @@ function drawTransition() {
 function checkPortals() {
   // Update player's nearest portal
   let newNearestPortal;
-  for (let portal of worldPortals) {
-    if (newNearestPortal === undefined || dist(player.x, player.y, portal.x, portal.y) < dist(player.x, player.y, newNearestPortal.x, newNearestPortal.y)) {
-      newNearestPortal = portal;
+  for (let area of worldAreas) {
+    let areaPortal = area.portal;
+    if (newNearestPortal === undefined || dist(player.x, player.y, areaPortal.x, areaPortal.y) < dist(player.x, player.y, newNearestPortal.x, newNearestPortal.y)) {
+      newNearestPortal = areaPortal;
     }
   }
   player.nearestPortal = newNearestPortal;
 
   // Check all the portals for player collision
-  for (let portal of worldPortals) {
-    portal.checkPlayer();
+  for (let area of worldAreas) {
+    area.portal.checkPlayer();
   }
 }
 
@@ -919,8 +924,8 @@ function drawWalls() {
 
 function drawPortals() {
   // Draw the world's portals
-  for (let portal of worldPortals) {
-    portal.draw();
+  for (let area of worldAreas) {
+    area.portal.draw();
   }
 }
 
