@@ -42,6 +42,7 @@ The player will be able to explore a main world area, and play levels from porta
             - [x] Background animation
             - [x] View size animation
             - [ ] Additional screen animations?
+            - [ ] Tempo changes
             - [ ] Different capsule shapes?
         - [x] Obstacles
             - [x] Basic movement

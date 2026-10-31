@@ -790,6 +790,7 @@ function drawBackground() {
   let focusY;
   let colorFrontH;
   let colorBackH;
+  let colorSMultiplier = 1;
   
   if (gameState === STATES.title) {
     focusX = 0;
@@ -808,11 +809,12 @@ function drawBackground() {
     focusY = levelState.capsule.y;
     colorFrontH = levelState.levelObject.colorH;
     colorBackH = levelState.levelObject.colorH;
+    colorSMultiplier = levelState.levelObject.colorH !== -1;
   }
   
-  background(colorBackH, backdrop.colorBack.s, backdrop.colorBack.b);
+  background(colorBackH, backdrop.colorBack.s * colorSMultiplier, backdrop.colorBack.b);
   noStroke();
-  fill(colorFrontH, backdrop.colorFront.s, backdrop.colorFront.b);
+  fill(colorFrontH, backdrop.colorFront.s * colorSMultiplier, backdrop.colorFront.b);
   
   let shapeSpacing = backdrop.spacing;
   
@@ -1136,7 +1138,7 @@ class Info {
       }
 
       if (this.rectColor.h === "portalColorH") {
-        this.rectColor = color(player.nearestPortal.levelObject.colorH, this.rectColor.s, this.rectColor.b, this.rectColor.a);
+        this.rectColor = color(player.nearestPortal.levelObject.colorH, this.rectColor.s * (player.nearestPortal.levelObject.colorH !== -1), this.rectColor.b, this.rectColor.a);
       } else {
         this.rectColor = color(this.rectColor.h, this.rectColor.s, this.rectColor.b, this.rectColor.a);
       }
@@ -1223,7 +1225,7 @@ class Info {
       // Text color
       this.textColor = this.data.textColor;
       if (this.textColor.h === "portalColorH") {
-        this.textColor = color(player.nearestPortal.levelObject.colorH, this.textColor.s, this.textColor.b, this.textColor.a);
+        this.textColor = color(player.nearestPortal.levelObject.colorH, this.textColor.s * (player.nearestPortal.levelObject.colorH !== -1), this.textColor.b, this.textColor.a);
       } else {
         this.textColor = color(this.textColor.h, this.textColor.s, this.textColor.b, this.textColor.a);
       }
@@ -1359,10 +1361,10 @@ class Portal {
     noStroke();
 
     // Draw the portal circles
-    fill(this.levelObject.colorH, this.colorPrimary.s, this.colorPrimary.b);
+    fill(this.levelObject.colorH, this.colorPrimary.s * (this.levelObject.colorH !== -1), this.colorPrimary.b);
     circle(this.x, this.y, this.size * (1 + this.playerHover / 2));
 
-    fill(this.levelObject.colorH, this.colorSecondary.s, this.colorSecondary.b);
+    fill(this.levelObject.colorH, this.colorSecondary.s * (this.levelObject.colorH !== -1), this.colorSecondary.b);
     circle(this.x, this.y, this.size * this.playerHover);
   }
 }
@@ -1470,7 +1472,7 @@ class Obstacle {
           colorA = lerp(1, 0, (gameTime.time - levelState.startTime - beatsToMillis(this.data.startBeat + this.data.moveBeats)) / beatsToMillis(this.data.fadeBeats));
         }
       }
-      fill(levelState.levelObject.colorH, this.data.color.s, this.data.color.b, colorA);
+      fill(levelState.levelObject.colorH, this.data.color.s * (levelState.levelObject.colorH !== -1), this.data.color.b, colorA);
       
       // Draw the obstacle in its proper position and orientaton
       push();
