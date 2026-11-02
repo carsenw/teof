@@ -18,7 +18,7 @@ The player will be able to explore a main world area, and play levels from porta
     - World features
         - [x] Walls
         - [ ] Gates (opened with level points)
-    - [ ] World areas
+    - [x] World areas
         - [ ] Obstacles
             - [ ] Rewinding on player collision
             - [ ] Hit counter, failing, and checkpoints?

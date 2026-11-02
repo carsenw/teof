@@ -424,8 +424,8 @@ function setup() {
   for (let areaData of worldData.areas) {
     // Add the area to the global array
     let newAreaDetails = areaData.details;
-    newAreaDetails.level = allLevels[areaData.levelIndex];
-    newAreaDetails.portal = new Portal(newAreaDetails.level, areaData.portalPosition.x, areaData.portalPosition.y);
+    newAreaDetails.levelObject = allLevels[areaData.levelIndex];
+    newAreaDetails.portal = new Portal(areaData.portalPosition.x, areaData.portalPosition.y);
     worldAreas.push(newAreaDetails);
   }
 
@@ -474,7 +474,7 @@ function draw() {
     if (!transition.active) {
       if (!gameTime.paused) {
         movePlayer();
-        checkPortals();
+        checkAreas();
       }
       updateView();
       updateInfo();
@@ -532,7 +532,8 @@ function setGameState(state, level = []) {
 
   if (gameState === STATES.world) {
     if (player !== undefined) {
-      player.nearestPortal = undefined;
+      player.currentArea = undefined;
+      player.lastArea = undefined;
       worldPlayer = structuredClone(player);
     }
   }
@@ -554,11 +555,13 @@ function setGameState(state, level = []) {
     let worldData = structuredClone(gameData.world);
 
     player = worldPlayer;
+    player.lastArea = worldAreas[0];
+
     backdrop = worldData.backdrop;
     view = worldData.startView;
 
     // Set up and register first frame of world state
-    checkPortals();
+    checkAreas();
     updateView();
     updateInfo();
     
@@ -920,19 +923,16 @@ function drawTransition() {
 
 //////// Draw loop funcitons used in the world game state ////////
 
-function checkPortals() {
-  // Update player's nearest portal
-  let newNearestPortal;
+function checkAreas() {
+  player.currentArea = undefined;
   for (let area of worldAreas) {
-    let areaPortal = area.portal;
-    if (newNearestPortal === undefined || dist(player.x, player.y, areaPortal.x, areaPortal.y) < dist(player.x, player.y, newNearestPortal.x, newNearestPortal.y)) {
-      newNearestPortal = areaPortal;
+    // Check if the player is in each area
+    if (collideRectPoly(player.x - player.size/2, player.y - player.size/2, player.size, player.size, area.corners, true)) {
+      player.currentArea = area;
+      player.lastArea = area;
     }
-  }
-  player.nearestPortal = newNearestPortal;
 
-  // Check all the portals for player collision
-  for (let area of worldAreas) {
+    // Check all portals for player collision
     area.portal.checkPlayer();
   }
 }
@@ -947,7 +947,7 @@ function drawWalls() {
 function drawPortals() {
   // Draw the world's portals
   for (let area of worldAreas) {
-    area.portal.draw();
+    area.portal.draw(area.levelObject.colorH);
   }
 }
 
@@ -1081,8 +1081,8 @@ class Info {
         this.focusY = view.y;
 
       } else if (this.data.focus === "portal") {
-        this.focusX = player.nearestPortal.x;
-        this.focusY = player.nearestPortal.y;
+        this.focusX = player.lastArea.portal.x;
+        this.focusY = player.lastArea.portal.y;
       }
 
       // Position and size
@@ -1129,7 +1129,7 @@ class Info {
         }
 
       } else if (this.data.changeVariable === "portalPlayerHover") {
-        changeAmount = player.nearestPortal.playerHover;
+        changeAmount = player.lastArea.portal.playerHover;
       }
 
       this.x = lerp(this.data.x, this.data.x + this.data.xChange, changeAmount);
@@ -1139,7 +1139,7 @@ class Info {
 
       // Check for interaction with the info
       let mouseHover = false;
-      if (!transition.active && this.data.buttonAction !== "" && !(this.data.changeVariable === "portalPlayerHover" && player.nearestPortal.playerHover < 1) && !(!this.data.changeVariable.includes("paused") && gameTime.paused)) {
+      if (!transition.active && this.data.buttonAction !== "" && !(this.data.changeVariable === "portalPlayerHover" && player.lastArea.portal.playerHover < 1) && !(!this.data.changeVariable.includes("paused") && gameTime.paused)) {
         let viewOffsetX = 0;
         let viewOffsetY = 0;
         if (this.data.focus !== "view") {
@@ -1158,7 +1158,7 @@ class Info {
       }
 
       if (this.rectColor.h === "portalColorH") {
-        this.rectColor = color(player.nearestPortal.levelObject.colorH, this.rectColor.s * (player.nearestPortal.levelObject.colorH !== -1), this.rectColor.b, this.rectColor.a);
+        this.rectColor = color(player.lastArea.levelObject.colorH, this.rectColor.s * (player.lastArea.levelObject.colorH !== -1), this.rectColor.b, this.rectColor.a);
       } else {
         this.rectColor = color(this.rectColor.h, this.rectColor.s, this.rectColor.b, this.rectColor.a);
       }
@@ -1179,19 +1179,19 @@ class Info {
           }
           textVariable = scoreCount;
 
-        } else if (this.data.textVariable === "portalLevelName") {
-          textVariable = player.nearestPortal.levelObject.name;
+        } else if (this.data.textVariable === "worldLevelName") {
+          textVariable = player.lastArea.levelObject.name;
 
-        } else if (this.data.textVariable === "portalLevelTempo") {
-          textVariable = player.nearestPortal.levelObject.tempo;
+        } else if (this.data.textVariable === "worldLevelTempo") {
+          textVariable = player.lastArea.levelObject.tempo;
 
-        } else if (this.data.textVariable === "portalLevelKey") {
-          textVariable = player.nearestPortal.levelObject.minorKey;
+        } else if (this.data.textVariable === "worldLevelKey") {
+          textVariable = player.lastArea.levelObject.minorKey;
 
-        } else if (this.data.textVariable === "portalLevelScore" || this.data.textVariable === "levelScore") {
+        } else if (this.data.textVariable === "worldLevelScore" || this.data.textVariable === "levelScore") {
           let scoreTextVariable;
-          if (this.data.textVariable === "portalLevelScore") {
-            scoreTextVariable = player.nearestPortal.levelObject.bestScore;
+          if (this.data.textVariable === "worldLevelScore") {
+            scoreTextVariable = player.lastArea.levelObject.bestScore;
           } else if (this.data.textVariable === "levelScore") {
             scoreTextVariable = player.livesScore;
           }
@@ -1245,7 +1245,7 @@ class Info {
       // Text color
       this.textColor = this.data.textColor;
       if (this.textColor.h === "portalColorH") {
-        this.textColor = color(player.nearestPortal.levelObject.colorH, this.textColor.s * (player.nearestPortal.levelObject.colorH !== -1), this.textColor.b, this.textColor.a);
+        this.textColor = color(player.lastArea.levelObject.colorH, this.textColor.s * (player.lastArea.levelObject.colorH !== -1), this.textColor.b, this.textColor.a);
       } else {
         this.textColor = color(this.textColor.h, this.textColor.s, this.textColor.b, this.textColor.a);
       }
@@ -1289,7 +1289,7 @@ class Info {
           pendGameState(STATES.world);
 
         } else if (action === "enterLevel") {
-          pendGameState(STATES.level, player.nearestPortal.levelObject);
+          pendGameState(STATES.level, player.lastArea.levelObject);
           
         } else if (action === "restartLevel") {
           pendGameState(STATES.level, levelState.levelObject);
@@ -1356,13 +1356,12 @@ class Wall {
 }
 
 class Portal {
-  constructor(levelObject, x, y) {
+  constructor(x, y) {
     this.x = x;
     this.y = y;
     this.size = 100;
     this.colorPrimary = {s: 70, b: 40};
     this.colorSecondary = {s: 70, b: 80};
-    this.levelObject = levelObject;
     this.playerHover = 0;
     this.hoverSpeed = 0.1;
   }
@@ -1377,14 +1376,14 @@ class Portal {
     this.playerHover = constrain(this.playerHover, 0, 1);
   }
 
-  draw() {
+  draw(colorH) {
     noStroke();
 
     // Draw the portal circles
-    fill(this.levelObject.colorH, this.colorPrimary.s * (this.levelObject.colorH !== -1), this.colorPrimary.b);
+    fill(colorH, this.colorPrimary.s * (colorH !== -1), this.colorPrimary.b);
     circle(this.x, this.y, this.size * (1 + this.playerHover / 2));
 
-    fill(this.levelObject.colorH, this.colorSecondary.s * (this.levelObject.colorH !== -1), this.colorSecondary.b);
+    fill(colorH, this.colorSecondary.s * (colorH !== -1), this.colorSecondary.b);
     circle(this.x, this.y, this.size * this.playerHover);
   }
 }
