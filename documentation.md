@@ -29,7 +29,7 @@ The player will be able to explore a main world area, and play levels from porta
             - [ ] Level icons?
             - [ ] Portal entering animation?
         - [ ] Ambient music
-        - [ ] Area background
+        - [x] Area backgrounds
     - [x] Level completions/points count
     - [x] Background
 - Levels

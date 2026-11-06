@@ -294,9 +294,11 @@ let gameMusic = {};
 
 let gameInfo = [];
 
+let worldAttributes = {};
 let worldWalls = [];
 let worldAreas = [];
 
+let levelAttributes = {};
 let allLevels = [];
 
 //////// Variables for playing the game ////////
@@ -367,11 +369,18 @@ function setup() {
   // Set up game data
 
   // Level data
-  for (let levelData of structuredClone(gameData.levels.levelProperties)) {
+  let levelData = structuredClone(gameData.levels);
+
+  levelAttributes.playerProperties = levelData.playerProperties;
+  levelAttributes.capsuleProperties = levelData.capsuleProperties;
+  levelAttributes.pathProperties = levelData.pathProperties;
+  levelAttributes.messageProperties = levelData.messageProperties;
+
+  for (let levelPropertiesData of levelData.levelProperties) {
     // Set up the path of the capsule through the level
     let newLevelNodes = [];
-    let previousNode = levelData.capsulePath[0];
-    for (let node of levelData.capsulePath) {
+    let previousNode = levelPropertiesData.capsulePath[0];
+    for (let node of levelPropertiesData.capsulePath) {
       // For each node, set its properties based on the data object, or the previous node's properties if not specified
       let newNode = structuredClone(previousNode);
       for (let property of Object.keys(node)) {
@@ -383,9 +392,9 @@ function setup() {
 
     // Set up the attacks to avoid in the level
     let newLevelAttacks = [];
-    for (let sequenceCall of levelData.attackProgram) {
+    for (let sequenceCall of levelPropertiesData.attackProgram) {
       // Make the attacks based on the sequences and programs in the data file
-      let sequenceAttacks = levelData.attackSequences[sequenceCall.sequence];
+      let sequenceAttacks = levelPropertiesData.attackSequences[sequenceCall.sequence];
       let previousAttack = sequenceAttacks[0];
       for (let attack of sequenceAttacks) {
       // For each attack, set its properties based on the data object, or the previous attack's properties if not specified
@@ -406,7 +415,7 @@ function setup() {
     }
     
     // Add the level to the global array
-    let newLevelDetails = levelData.details;
+    let newLevelDetails = levelPropertiesData.details;
     newLevelDetails.music = gameMusic[newLevelDetails.name];
     newLevelDetails.nodes = newLevelNodes;
     newLevelDetails.attacks = newLevelAttacks;
@@ -417,6 +426,9 @@ function setup() {
   // World data
   let worldData = structuredClone(gameData.world);
 
+  worldAttributes.backdrop = worldData.backdrop;
+  worldAttributes.view = worldData.view;
+
   for (let wallData of worldData.walls) {
     worldWalls.push(new Wall(wallData.isWorldBorder, wallData.color, wallData.corners));
   }
@@ -426,6 +438,8 @@ function setup() {
     let newAreaDetails = areaData.details;
     newAreaDetails.levelObject = allLevels[areaData.levelIndex];
     newAreaDetails.portal = new Portal(areaData.portalPosition.x, areaData.portalPosition.y);
+    newAreaDetails.playerHover = 0;
+    newAreaDetails.playerHoverSpeed = 0.1;
     worldAreas.push(newAreaDetails);
   }
 
@@ -473,8 +487,9 @@ function draw() {
   } else if (gameState === STATES.world) {
     if (!transition.active) {
       if (!gameTime.paused) {
-        movePlayer();
         checkAreas();
+        moveBackground();
+        movePlayer();
       }
       updateView();
       updateInfo();
@@ -542,23 +557,19 @@ function setGameState(state, level = []) {
   gameState = state;
   
   if (state === STATES.title) {
-    let worldData = structuredClone(gameData.world);
-
-    backdrop = worldData.backdrop;
-    view = worldData.startView;
+    backdrop = structuredClone(worldAttributes.backdrop);
+    view = structuredClone(worldAttributes.view);
 
     // Register first frame of title state
     updateView();
     updateInfo();
     
   } else if (state === STATES.world) {
-    let worldData = structuredClone(gameData.world);
-
     player = worldPlayer;
     player.lastArea = worldAreas[0];
 
-    backdrop = worldData.backdrop;
-    view = worldData.startView;
+    backdrop = structuredClone(worldAttributes.backdrop);
+    view = structuredClone(worldAttributes.view);
 
     // Set up and register first frame of world state
     checkAreas();
@@ -566,16 +577,14 @@ function setGameState(state, level = []) {
     updateInfo();
     
   } else if (state === STATES.level) {
-    let levelsData = structuredClone(gameData.levels);
-    
-    player = levelsData.playerProperties;
+    player = levelAttributes.playerProperties;
     
     backdrop = {};
     
-    levelState.capsule = levelsData.capsuleProperties;
-    levelState.path = levelsData.pathProperties;
+    levelState.capsule = levelAttributes.capsuleProperties;
+    levelState.path = levelAttributes.pathProperties;
 
-    levelState.message = levelsData.messageProperties;
+    levelState.message = levelAttributes.messageProperties;
 
     levelState.levelObject = level;
 
@@ -826,6 +835,7 @@ function drawBackground() {
     focusY = player.y;
     colorFrontH = backdrop.colorFront.h;
     colorBackH = backdrop.colorBack.h;
+    colorSMultiplier = colorFrontH !== -1 && colorBackH !== -1;
     
   } else if (gameState === STATES.level) {
     focusX = levelState.capsule.x;
@@ -930,11 +940,40 @@ function checkAreas() {
     if (collideRectPoly(player.x - player.size/2, player.y - player.size/2, player.size, player.size, area.corners, true)) {
       player.currentArea = area;
       player.lastArea = area;
+
+      area.playerHover += area.playerHoverSpeed;
+
+    } else {
+      area.playerHover -= area.playerHoverSpeed;
+
     }
+    area.playerHover = constrain(area.playerHover, 0, 1);
 
     // Check all portals for player collision
     area.portal.checkPlayer();
   }
+}
+
+function moveBackground() {
+  // Set backdrop properties to values between those of the main and area backdrops
+  backdrop.shape = worldAttributes.backdrop.shape;
+  backdrop.spacing = lerp(worldAttributes.backdrop.spacing, player.lastArea.backdrop.spacing, player.lastArea.playerHover);
+  backdrop.size = lerp(worldAttributes.backdrop.size, player.lastArea.backdrop.size, player.lastArea.playerHover);
+  backdrop.angle = lerp(worldAttributes.backdrop.angle, player.lastArea.backdrop.angle, player.lastArea.playerHover);
+  
+  let newcolorBack = {};
+  let newcolorFront = {};
+  
+  newcolorBack.h = player.lastArea.levelObject.colorH;
+  newcolorBack.s = lerp(worldAttributes.backdrop.colorBack.s, player.lastArea.backdrop.colorBack.s, player.lastArea.playerHover);
+  newcolorBack.b = lerp(worldAttributes.backdrop.colorBack.b, player.lastArea.backdrop.colorBack.b, player.lastArea.playerHover);
+  
+  newcolorFront.h = player.lastArea.levelObject.colorH;
+  newcolorFront.s = lerp(worldAttributes.backdrop.colorFront.s, player.lastArea.backdrop.colorFront.s, player.lastArea.playerHover);
+  newcolorFront.b = lerp(worldAttributes.backdrop.colorFront.b, player.lastArea.backdrop.colorFront.b, player.lastArea.playerHover);
+
+  backdrop.colorBack = newcolorBack;
+  backdrop.colorFront = newcolorFront;
 }
 
 function drawWalls() {
@@ -996,7 +1035,7 @@ function moveCapsule() {
   // Amount from the last node to the next one (0 to 1)
   let amountBetweenNodes = constrain((gameTime.time - levelState.lastNodeTime) / (beatsToMillis(nextPath.timeBeat) - beatsToMillis(currentPath.timeBeat)), 0, 1);
   
-  // Set capsule, backdrop, and view properties to values between those of the last and next node
+  // Set capsule, backdrop, and view properties to values between those of the last and next nodes
   levelCapsule.x = lerp(currentPath.x, nextPath.x, amountBetweenNodes);
   levelCapsule.y = lerp(currentPath.y, nextPath.y, amountBetweenNodes);
   levelCapsule.width = lerp(currentPath.capsuleW, nextPath.capsuleW, amountBetweenNodes);
@@ -1114,12 +1153,12 @@ class Info {
         changeAmount = constrain((gameTime.time - levelState.startTime) / beatsToMillis(levelState.levelObject.nodes[levelState.levelObject.nodes.length-1].timeBeat), 0, 1);
       
       } else if (this.data.changeVariable === "levelLives") {
-        changeAmount = player.lives / gameData.levels.playerProperties.lives;
+        changeAmount = player.lives / levelAttributes.playerProperties.lives;
 
       } else if (this.data.changeVariable === "levelScoreLives") {
-        let playerMaxLives = gameData.levels.playerProperties.lives;
-        let playerMaxLivesScore = gameData.levels.playerProperties.livesScore;
-        changeAmount = (playerMaxLives - (playerMaxLivesScore - player.livesScore) * (playerMaxLivesScore - player.livesScore + 1) / 2) / gameData.levels.playerProperties.lives;
+        let playerMaxLives = levelAttributes.playerProperties.lives;
+        let playerMaxLivesScore = levelAttributes.playerProperties.livesScore;
+        changeAmount = (playerMaxLives - (playerMaxLivesScore - player.livesScore) * (playerMaxLivesScore - player.livesScore + 1) / 2) / levelAttributes.playerProperties.lives;
       
       } else if (this.data.changeVariable.includes("levelLivesScoreBelow")) {
         if (player.livesScore < Number(this.data.changeVariable.slice(20))) {
@@ -1197,7 +1236,7 @@ class Info {
           }
 
           let scoreText = "";
-          for (let score = 1; score <= gameData.levels.playerProperties.livesScore; score += 1) {
+          for (let score = 1; score <= levelAttributes.playerProperties.livesScore; score += 1) {
             if (scoreTextVariable >= score) {
               scoreText += "■";
             } else {
@@ -1363,15 +1402,15 @@ class Portal {
     this.colorPrimary = {s: 70, b: 40};
     this.colorSecondary = {s: 70, b: 80};
     this.playerHover = 0;
-    this.hoverSpeed = 0.1;
+    this.playerHoverSpeed = 0.1;
   }
 
   checkPlayer() {
     // Check if the player is touching the portal
     if (collideRectCircle(player.x - player.size/2, player.y - player.size/2, player.size, player.size, this.x, this.y, this.size)) {
-      this.playerHover += this.hoverSpeed;
+      this.playerHover += this.playerHoverSpeed;
     } else {
-      this.playerHover -= this.hoverSpeed;
+      this.playerHover -= this.playerHoverSpeed;
     }
     this.playerHover = constrain(this.playerHover, 0, 1);
   }
@@ -1464,8 +1503,8 @@ class Obstacle {
         if (collision) {
           player.lives -= 1;
 
-          let playerMaxLives = gameData.levels.playerProperties.lives;
-          let playerMaxLivesScore = gameData.levels.playerProperties.livesScore;
+          let playerMaxLives = levelAttributes.playerProperties.lives;
+          let playerMaxLivesScore = levelAttributes.playerProperties.livesScore;
           if (player.lives <= playerMaxLives - (playerMaxLivesScore - (player.livesScore - 1)) * (playerMaxLivesScore - (player.livesScore - 1) + 1) / 2) {
             player.livesScore -= 1;
           }
