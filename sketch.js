@@ -341,6 +341,7 @@ function preloadMusic() {
   for (let level of gameData.levels.levelProperties) {
     let musicName = level.details.name;
     gameMusic[musicName] = loadSound("music/" + musicName + ".mp3");
+    gameMusic[musicName + " (Ambient)"] = loadSound("music/" + musicName + " (Ambient).mp3");
   }
 }
 
@@ -417,6 +418,7 @@ function setup() {
     // Add the level to the global array
     let newLevelDetails = levelPropertiesData.details;
     newLevelDetails.music = gameMusic[newLevelDetails.name];
+    newLevelDetails.musicAmbient = gameMusic[newLevelDetails.name + " (Ambient)"];
     newLevelDetails.nodes = newLevelNodes;
     newLevelDetails.attacks = newLevelAttacks;
     newLevelDetails.bestScore = 0;
@@ -577,14 +579,14 @@ function setGameState(state, level = []) {
     updateInfo();
     
   } else if (state === STATES.level) {
-    player = levelAttributes.playerProperties;
+    player = structuredClone(levelAttributes.playerProperties);
     
     backdrop = {};
     
-    levelState.capsule = levelAttributes.capsuleProperties;
-    levelState.path = levelAttributes.pathProperties;
+    levelState.capsule = structuredClone(levelAttributes.capsuleProperties);
+    levelState.path = structuredClone(levelAttributes.pathProperties);
 
-    levelState.message = levelAttributes.messageProperties;
+    levelState.message = structuredClone(levelAttributes.messageProperties);
 
     levelState.levelObject = level;
 
@@ -704,6 +706,51 @@ function updateMusic() {
     // Stop level music
     if (levelState.levelObject !== undefined && levelState.levelObject.music.isPlaying()) {
       levelState.levelObject.music.stop();
+    }
+  }
+
+  for (let area of worldAreas) {
+    if (gameState === STATES.world) {
+      // Update the ambient world music to play or stop
+      let areaMusic = area.levelObject.musicAmbient;
+  
+      if (!gameTime.paused /*&& !(gameTime.rewinding && millis() - gameTime.rewindStartTime >= gameTime.rewindWaitDuration)*/ && getAudioContext().state === "running") {
+        if (!areaMusic.isPlaying()) {
+          // Play the sound file, account for the loading delay so everything stays synchronized
+          let startMusicTime = millis();
+          areaMusic.loop(undefined, undefined, 0, gameTime.time / 1000 % areaMusic.duration());
+          gameTime.timeOffset += millis() - startMusicTime;
+        }
+  
+      } else {
+        if (areaMusic.isPlaying()) {
+          areaMusic.stop();
+        }
+      }
+
+      // Adjust music volume based on the transition and if the player is in the area or not
+      let transitionVolume = 1;
+      if (transition.active) {
+        transitionVolume = abs(millis() - transition.switchTime) / transition.duration;
+      }
+      areaMusic.setVolume(transitionVolume * area.playerHover * gameSettings.musicVolume * 0.5);
+  
+      // Change the music volume during rewinds
+      // if (gameTime.rewinding) {
+      //   levelMusic.setVolume((1 - constrain((millis() - gameTime.rewindStartTime) / gameTime.rewindWaitDuration, 0, 1)) * gameSettings.musicVolume);
+  
+      // } else if (gameTime.rewindStartGameTime - gameTime.time >= gameTime.rewindTimeAmount - gameTime.rewindCooldownDuration) {
+      //   levelMusic.setVolume(constrain((gameTime.time - (gameTime.rewindStartGameTime - gameTime.rewindTimeAmount)) / gameTime.rewindCooldownDuration, 0, 1) * gameSettings.musicVolume);
+  
+      // } else {
+      //   levelMusic.setVolume(gameSettings.musicVolume);
+      // }
+  
+    } else {
+      // Stop world music
+      if (area.levelObject.musicAmbient.isPlaying()) {
+        area.levelObject.musicAmbient.stop();
+      }
     }
   }
 }
