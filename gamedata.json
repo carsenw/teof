@@ -2018,6 +2018,33 @@
                         {"startBeat": 29, "angleStart": 90},
                         {"startBeat": 30, "xStart": -1625, "yStart": 540, "angleStart": 0},
                         {"startBeat": 31, "angleStart": 90}
+                    ],
+                    "shapePhraseB": [
+                        {"startBeat": 0, "moveBeats": 8, "warnBeats": 2, "fadeBeats": 2, "color": {"s": 90, "b": 90}, "shape": "diagonalSquareHollow", "withCapsule": "none", "xStart": 0, "yStart": 0, "wStart": 50, "hStart": 50, "angleStart": 0, "offsetXStart": 0, "offsetAngleStart": 0, "xMove": 0, "yMove": 0, "wMove": 0, "hMove": 0, "angleMove": 0, "offsetXMove": 0, "offsetAngleMove": 0},
+                        {"startBeat": 2, "xStart": 0, "yStart": 125},
+                        {"startBeat": 4, "xStart": 0, "yStart": 250},
+                        {"startBeat": 6, "shape": "diagonalRectangleLong", "xStart": 0, "yStart": 375},
+                        {"startBeat": 7, "angleStart": 90},
+                        {"startBeat": 8, "shape": "diagonalSquareHollow", "xStart": 0, "yStart": 500, "angleStart": 0},
+                        {"startBeat": 10, "shape": "diagonalRectangleLong", "xStart": 0, "yStart": 625},
+                        {"startBeat": 11, "angleStart": 90},
+                        {"startBeat": 12, "xStart": 0, "yStart": 750, "angleStart": 0},
+                        {"startBeat": 13, "angleStart": 90},
+                        {"startBeat": 14, "xStart": 0, "yStart": 875, "angleStart": 0},
+                        {"startBeat": 15, "angleStart": 90},
+
+                        {"startBeat": 16, "shape": "diagonalSquareHollow", "xStart": 0, "yStart": 1000, "angleStart": 0},
+                        {"startBeat": 18, "xStart": 35, "yStart": 1120},
+                        {"startBeat": 20, "xStart": 70, "yStart": 1240},
+                        {"startBeat": 22, "shape": "diagonalRectangleLong", "xStart": 145, "yStart": 1340},
+                        {"startBeat": 23, "angleStart": 90},
+                        {"startBeat": 24, "shape": "diagonalSquareHollow", "xStart": 220, "yStart": 1440, "angleStart": 0},
+                        {"startBeat": 26, "shape": "diagonalRectangleLong", "xStart": 320, "yStart": 1515},
+                        {"startBeat": 27, "angleStart": 90},
+                        {"startBeat": 28, "xStart": 420, "yStart": 1590, "angleStart": 0},
+                        {"startBeat": 29, "angleStart": 90},
+                        {"startBeat": 30, "xStart": 540, "yStart": 1625, "angleStart": 0},
+                        {"startBeat": 31, "angleStart": 90}
                     ]
                 },
                 "attackProgram": [
@@ -2057,7 +2084,13 @@
                     {"sequence": "growingCircle", "startBeat": 48, "xStart": -1900, "yStart": 1590},
                     {"sequence": "growingCircle", "startBeat": 52, "xStart": -2000, "yStart": 1980},
                     {"sequence": "growingCircle", "startBeat": 56, "xStart": -2350, "yStart": 1980},
-                    {"sequence": "growingCircle", "startBeat": 60, "xStart": -2180, "yStart": 2320}
+                    {"sequence": "growingCircle", "startBeat": 60, "xStart": -2180, "yStart": 2320},
+                    
+                    {"sequence": "shapePhraseB", "startBeat": 64, "xStart": -2320, "yStart": 2320},
+
+                    {"sequence": "shapePhraseA", "startBeat": 128, "xStart": -2320, "yStart": 5640},
+
+                    {"sequence": "shapePhraseA", "startBeat": 256, "xStart": -3980, "yStart": 11620}
                 ]
             },
             {

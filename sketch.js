@@ -582,6 +582,7 @@ function setGameState(state, level = []) {
     player = structuredClone(levelAttributes.playerProperties);
     
     backdrop = {};
+    view = structuredClone(worldAttributes.view);
     
     levelState.capsule = structuredClone(levelAttributes.capsuleProperties);
     levelState.path = structuredClone(levelAttributes.pathProperties);
